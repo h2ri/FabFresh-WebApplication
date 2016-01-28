@@ -1,0 +1,3 @@
+<ul>
+    <li ng-repeat="sc in scotches">{{ sc.name}} {{sc.price}}</li>
+</ul>

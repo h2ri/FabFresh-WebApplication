@@ -1,0 +1,27 @@
+#login{
+    height: 400px;
+    width: 300px;
+    margin:0 auto;
+    background-color : lightblue;
+}
+
+#reset-password{
+    height: 400px;
+    width: 300px;
+    margin:0 auto;
+    background-color : lightblue;
+}
+
+#sign-up{
+    height: 400px;
+    width: 300px;
+    margin:0 auto;
+    background-color : lightblue;
+}
+
+#forgot-password{
+    height: 200px;
+    width: 300px;
+    margin:0 auto;
+    background-color : lightblue;
+}

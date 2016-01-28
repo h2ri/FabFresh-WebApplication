@@ -1,0 +1,11 @@
+<div id='login'>
+    <link rel="stylesheet" href="styles/login.css">
+    <input type="text" > </input><br>
+    <input type="text" > </input><br>
+    
+    <a ui-sref=".list" class="btn btn-primary">Submit</a><br>
+    New User <a ui-sref=".paragraph" class="btn btn-danger">New User</a>
+</div>
+
+<div ui-view></div>
+
