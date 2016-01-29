@@ -1,0 +1,25 @@
+.id_pass {
+    position: inherit;
+    align-items: center
+}
+
+.submit {
+    height: 100px;
+    float: left;
+    padding-left: 110px;
+    margin-bottom: 0px;
+    
+}
+.forgot {
+    padding-left: 30px;
+    margin-top: -1px;
+    padding-left: -100px;
+    float: left;
+    
+}
+.signup {
+    font-size: 15px;
+    margin-top: -5px;
+    padding-left: -30px;
+    padding-bottom: 0px;
+}

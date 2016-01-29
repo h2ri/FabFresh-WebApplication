@@ -2,10 +2,10 @@
 <html>
 <head>
 
-    <!-- CSS (load bootstrap) -->
-
     <link rel="stylesheet" href="styles/users.css">
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="styles/login.css">
+    <link rel="stylesheet" type="text/css" href="styles/main.css">
     
     <style>
         .navbar { border-radius:0; }
@@ -22,23 +22,22 @@
 <body ng-app="routerApp">
 
 <!-- NAVIGATION -->
-<nav class="navbar navbar-inverse" role="navigation">
-    <div class="navbar-header">
-        <a class="navbar-brand" ui-sref="#">AngularUI Router</a>
-    </div>
-    <ul class="nav navbar-nav">
-        <li><a ui-sref="login" id="login-btn">Login</a></li>
+<nav  role="navigation">
+    <ul class="nav">
+        <li><div class="btn-cont">
+        <a href="javascript:void(0)" class="btn" ui-sref="login"><span>login</span></a>  
+    </div></li>
     </ul>
 </nav>
 
 <!-- MAIN CONTENT -->
-<div class="container">
-
     <!-- THIS IS WHERE WE WILL INJECT OUR CONTENT ============================== -->
-    <div ui-view></div>
-    
-</div>
+<div class = "test"> 
+        <div ui-view></div>
 
+</div>    
+
+    
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
     <script src="bower_components/jquery/dist/jquery.js"></script>
@@ -51,5 +50,7 @@
         <script src="scripts/app.js"></script>
         <script src="scripts/controllers/main.js"></script>
         <script src="scripts/hide.js"></script>
+        
         <!-- endbuild -->
+    </body>
 </html>

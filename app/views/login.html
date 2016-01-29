@@ -1,15 +1,16 @@
-<div id="login" class="jumbotron text-center" >
-    
-    <input type="text" placeholder="Email"> </input><br>
-    <br>
-    <input type="text" placeholder="Password"> </input><br>
-    <br>
+<div id="login" class="container" >
+    <input type="text" placeholder="Email" id="login-email"> </input><br>
+    <input type="password" placeholder="Password" id="login-password"> </input><br>
+    <br><br>
+    <!--
     <a ui-sref=".done" class="btn btn-primary">Submit</a><br><br>
     New User? <a ui-sref="sign-up" class="btn btn-danger">Sign Up</a><br><br>
-    <a ui-sref="forgot-password" class="btn btn-danger">Forgot Password</a>
+    <a ui-sref="forgot-password" class="btn btn-danger">Forgot Password</a>-->
+    <div class="btn-cont">
+        <a href="javascript:void(0)" class="btn" ui-sref=".done"><span>Login</span></a> 
+        <a href="javascript:void(0)" class="forget-link" ui-sref="forgot-password"><span>Forget Password..?</span></a><br><br>
+        <a href="javascript:void(0)" class="btn" ui-sref="sign-up"><span>Signup</span></a> 
+    </div>
+    
 </div>
 <div ui-view>  </div>
-
-
-
-
