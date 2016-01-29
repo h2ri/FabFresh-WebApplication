@@ -5,8 +5,13 @@
   padding: 0.2em 0;
 }
 
+#a{
+  background-color: #7500ED;
+}
+
 body {
   padding: 0;
+  background-color: #7500ED;
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
@@ -31,7 +36,7 @@ body {
 }
 
 /* Custom page footer */
-.footer {
+.css {
   padding-top: 19px;
   color: #777;
   border-top: 1px solid #e5e5e5;

@@ -22,27 +22,24 @@ routerApp.config(function($stateProvider, $urlRouterProvider) {
         
         // HOME STATES AND NESTED VIEWS ========================================
         .state('login', {
-            url: '/login',
+            url: '',
             templateUrl: '../views/login.html'
         })
         
 
          // nested list with custom controller
         .state('sign-up', {
-            url: '/sign-up',
+            url: '',
             templateUrl: '../views/sign-up.html',
         })
 
         .state('forgot-password', {
-            url: '/forgot-password',
+            url: '',
             templateUrl: '../views/forgot-password.html',
         })
         .state('reset-password', {
-            url: '/reset-password',
+            url: '',
             templateUrl: '../views/reset-password.html',
         })
         // nested list with just some random string data
 });
-
-
-
