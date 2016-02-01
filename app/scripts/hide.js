@@ -8,6 +8,12 @@ $(document.body).click(function(e){
 
   var $box = $('#sign_up');
    if($box[0] && e.target.id !== 'sign_up' && !$.contains($box[0], e.target))
+      $box.remove();
+  var $box = $('#otp');
+   if($box[0] && e.target.id !== 'otp' && !$.contains($box[0], e.target))
+      $box.remove();
+  var $box = $('#reset_password');
+   if($box[0] && e.target.id !== 'reset_password' && !$.contains($box[0], e.target))
       $box.remove();  
 });
 

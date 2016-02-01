@@ -1,17 +1,5 @@
 'use strict';
 
-/**
- * @ngdoc overview
- * @name gauravApp
- * @description
- * # gauravApp
- *
- * Main module of the application.
-angular
-  .module('gauravApp', [
-    'ngResource'
-  ]);
-*/
 var routerApp = angular.module('routerApp', [
     'ui.router',
     //'Login.services'
@@ -39,9 +27,13 @@ routerApp.config(function($stateProvider, $urlRouterProvider) {
             url: '/#',
             templateUrl: '../views/forgot_password.html',
         })
+        .state('otp', {
+            url: '/#',
+            templateUrl: '../views/otp.html',
+            controller: 'otpCTRL'
+        })
         .state('reset_password', {
             url: '/reset_password',
             templateUrl: '../views/reset_password.html',
         })
-        // nested list with just some random string data
 });

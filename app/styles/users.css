@@ -52,6 +52,20 @@
     background-color: #FFF
 }
 
+#otp{
+    border-radius: 10px;
+    position: absolute;
+    left: 50%;
+    top: 45%;
+    box-shadow: 10px 10px 5px black;
+    transform: translate(-50%, -50%);
+    width: 250px; 
+    height: 160px;
+    border: 1px solid #CCC; 
+    padding: 40px; 
+    background-color: #FFF
+}
+
 p.input-container {
   width: 100%; 
   position: relative;
