@@ -12,7 +12,10 @@ angular
     'ngResource'
   ]);
 */
-var routerApp = angular.module('routerApp', ['ui.router']);
+var routerApp = angular.module('routerApp', [
+    'ui.router',
+    //'Login.services'
+    ]);
 
 routerApp.config(function($stateProvider, $urlRouterProvider) {
     
@@ -20,29 +23,25 @@ routerApp.config(function($stateProvider, $urlRouterProvider) {
     
     $stateProvider
         
-        // HOME STATES AND NESTED VIEWS ========================================
         .state('login', {
             url: '/#',
-            templateUrl: '../views/login.html'
+            templateUrl: '../views/login.html',
+            controller: 'loginCTRL'
         })
         
-        .state('homepage', {
-            url: '',
-            templateUrl: '..views/homepage.html'
-        })
-         // nested list with custom controller
-        .state('sign-up', {
+        .state('sign_up', {
             url: '/#',
-            templateUrl: '../views/sign-up.html',
+            templateUrl: '../views/sign_up.html',
+            controller: 'sign_upCTRL'
         })
 
-        .state('forgot-password', {
+        .state('forgot_password', {
             url: '/#',
-            templateUrl: '../views/forgot-password.html',
+            templateUrl: '../views/forgot_password.html',
         })
-        .state('reset-password', {
-            url: '/resetpassword',
-            templateUrl: '../views/reset-password.html',
+        .state('reset_password', {
+            url: '/reset_password',
+            templateUrl: '../views/reset_password.html',
         })
         // nested list with just some random string data
 });

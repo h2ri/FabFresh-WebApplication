@@ -22,17 +22,12 @@
 <body ng-app="routerApp">
 
 <!-- NAVIGATION -->
-<nav  role="navigation">
-    <ul class="nav">
-        <li><div class="btn-cont">
-        <a href="javascript:void(0)" class="btn" ui-sref="login"><span>login</span></a>  
-    </div></li>
-    </ul>
+<nav class="nav" role="navigation">
+        <li><a ui-sref="login" id="login_btn">Login</a></li>
 </nav>
-
 <!-- MAIN CONTENT -->
     <!-- THIS IS WHERE WE WILL INJECT OUR CONTENT ============================== -->
-<div class = "test"> 
+<div class='test'> 
         <div ui-view></div>
 
 </div>    
@@ -49,7 +44,10 @@
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="scripts/app.js"></script>
         <script src="scripts/controllers/main.js"></script>
+        <script src="scripts/controllers/loginCTRL.js"></script>
+        <script src="scripts/controllers/sign_upCTRL.js"></script>
         <script src="scripts/hide.js"></script>
+        <script src="scripts/services/services.js"></script>
         
         <!-- endbuild -->
     </body>

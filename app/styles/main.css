@@ -5,19 +5,11 @@
   padding: 0.2em 0;
 }
 
-#a{
-  background-color: #7500ED;
-}
+
 .nav {
     float: right;
     margin: 20px 30px;
 }
-
-.test {
-    position:relative;
-    height:  100vh;
-}
-
 
 input {
   -webkit-transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1);
@@ -37,6 +29,7 @@ input:focus {
 body {
   background-image: url("http://www.cortlandasc.com/cmsimages/colorful_socks_in_a_laundry_basket.jpg");
   font-family: 'Roboto';
+  height: 100vh;
   width: inherit;
   margin: inherit;
   background-attachment: fixed;
@@ -51,26 +44,26 @@ h1 {
 .container {
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.24);
   background-color: white;
-  height: 100px;
 }
 
-body .btn-cont .btn {
+body .btn {
   border: 1px solid black;
   padding: 5px 10px;
   color: black;
   text-decoration: none;
 }
-body .btn-cont .btn span {
+body .btn span {
   position: relative;
   z-index: 1;
   -webkit-transition: all 300ms ease-in;
   transition: all 300ms ease-in;
 }
-body .btn-cont .btn:hover span {
+body .btn:hover span {
   opacity: 0;
   visibility: hidden;
 }
-.forget-link {
+.forget_link {
+    float: right;
     font-kerning: auto;
     font-size: 15px;
     font-stretch: condensed;
