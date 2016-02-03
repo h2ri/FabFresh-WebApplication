@@ -62,7 +62,7 @@ body .btn:hover span {
   opacity: 0;
   visibility: hidden;
 }
-.forget_link {
+.link_class {
     float: right;
     font-kerning: auto;
     font-size: 15px;

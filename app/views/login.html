@@ -1,13 +1,22 @@
 <div  id="login" class="container">	
-    <form ng-submit="submitForm()">
-        <input type="email" placeholder="Email"  ng-model="login.email" required><br>
-        <input type="password" placeholder="Password" ng-model="login.password" required><br>
-        <br>
-        <input type="submit" class="btn">
+    <form ng-submit="submitForm()" name="myForm">
+        <input placeholder="Email"  name="email" type="text" ng-pattern="/^[a-z]+[a-z0-9._]+@[a-z]+\.[a-z.]{2,5}$/" ng-model="login.email" required><br>
+
+        <span ng-show="myForm.email.$dirty && myForm.email.$error.required">Required</span>
+    	<span ng-show="!myForm.email.$error.required && !myForm.email.$valid">Email Invalid</span>
+        
+        <input type="password" placeholder="Password" name="password" ng-minlength="6" ng-model="login.password" required>
+
+        <span ng-show="myForm.password.$dirty && myForm.password.$error.required">Required</span>
+        <span ng-show="!myForm.password.$error.required && !myForm.password.$valid">Password should be atleast 6 character long</span>
+
+        <br><br>
+        <input ng-disabled="!myForm.email.$valid || !myForm.password.$valid" type="submit" class="btn">
     </form>
     <br>    
-    <a class="forget_link" ui-sref="forgot_password"><span>Forget Password..?</span></a><br><br>
-    <a class="btn" ui-sref="sign_up"><span>Signup</span></a> 
+    <a class="link_class" ui-sref="forgot_password"><span>Forget Password..?</span></a><br><br>
+    <a class="btn" ui-sref="sign_up"><span>Sign Up</span></a> 
     
 </div>
+
 <div ui-view>  </div>

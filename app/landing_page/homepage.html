@@ -1,0 +1,137 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <script src="http://code.angularjs.org/1.2.13/angular.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.8/angular-ui-router.min.js"></script>
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <link rel="stylesheet" type="text/css" href="mainApp.css">
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+    <meta charset="utf-8">
+    <title>Home</title>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
+  </head>
+  <body ng-model="mainApp">
+    <ul class="sidebar">
+      <li class="sidebar-brand"><a href="">Welcome to fabfresh</a></li>
+      <li><a ui-sref="address" class="address">Address</a></li>
+      <li><a href="#">Placeorder</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Logout</a></li>
+      </ul>
+  <div class="address-by-map">
+    <div id="map"></div>
+</div>
+<!--
+<div class="address-by-manual">
+  <input type="text" placeholder="Door number" ><br>
+  <input type="text" placeholder="Street Address"><br>
+  <input type="text" placeholder="Landmark">
+  </div><br>
+  <button class="btn btn-dafault" type="submit" value="Continue"></button>
+</div> -->
+  </body>
+<script src="app1.js"></script>
+    <style>
+      #map {
+        height: 625px;
+        width: 1075px;
+      }
+    </style>
+
+  <style type="text/css">
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-size:14px;
+}
+.sidebar {
+  list-style-type:none;
+  background-color:#333;
+  width:230px;
+  height:100%;
+  top:0;
+  bottom:0;
+  left:0;
+  text-align:left;
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  transition:1s ease;
+}
+
+.sidebar a {
+  text-decoration:none;
+  color:white;
+  transition:1s ease;
+}
+
+.sidebar li {
+  text-indent: 20px;
+  line-height: 40px;
+  transition:0.5s ease;
+}
+
+.sidebar li:hover {
+  background-color:#777;
+  cursor:pointer;
+  text-indent: 30px;
+}
+
+.sidebar > .sidebar-brand {
+height: 65px;
+font-size: 18px;
+line-height: 60px;
+}
+  </style>
+
+  <script>
+var marker;
+
+function initMap() {
+  var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 18,
+    center: {lat: 12.934170, lng: 77.615511}
+  });
+  //bounds  = new google.maps.LatLngBounds();
+  //var geocoder = new google.maps.Geocoder;
+  var infowindow = new google.maps.InfoWindow;
+  marker = new google.maps.Marker({
+    map: map,
+    animation: google.maps.Animation.DROP,
+    position: {lat: 12.934170, lng: 77.615511}
+  });
+  marker.bindTo('position', map, 'center');
+  //loc = new google.maps.LatLng(marker.position.lat(), marker.position.lng());
+  //bounds.extend(loc);
+  //map.fitBounds(bounds);
+  //map.PanToBounds(bounds);
+  google.maps.event.addListener(map, 'dragend', function (event) {
+    //alert("zasad");
+    var lat_lng = marker.getPosition();
+    //alert(latlng);
+    getReverseGeocodingData(lat_lng.lat(), lat_lng.lng());
+});
+}
+function getReverseGeocodingData(lat, lng) {
+    var latlng = new google.maps.LatLng(lat, lng);
+    // This is making the Geocode request
+    var geocoder = new google.maps.Geocoder();
+    geocoder.geocode({ 'latLng': latlng }, function (results, status) {
+        if (status !== google.maps.GeocoderStatus.OK) {
+            alert(status);
+        }
+        // This is checking to see if the Geoeode Status is OK before proceeding
+        if (status == google.maps.GeocoderStatus.OK) {
+            console.log(results);
+            var address = (results[0].formatted_address);
+            alert(address);
+        }
+    });
+}
+
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?callback=initMap"
+        async defer></script>
+</html>

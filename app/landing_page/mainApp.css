@@ -1,0 +1,15 @@
+.address-div {
+	position: left;
+	background-color: gray;
+	border-radius: 4px; 
+	width: 1000px;
+	height: 400px;
+	float: right;
+	margin-top: -10px;
+}
+
+.address-by-map {
+	position: center;
+	float: right;
+
+}

@@ -1,9 +1,26 @@
 'use strict';
 
 routerApp
-  .controller('otpCTRL', function($rootScope, $scope, $http) {
+  .controller('otpCTRL', function($rootScope, $scope, $http, $state) {
     $scope.user = [];
     var URL = 'http://fabfresh-dev.elasticbeanstalk.com'
+    $scope.otpResend = function() {
+    $http({
+      method  : 'GET',
+      url     : URL+'/users/otpresend/',
+      headers : {'Authorization': 'Bearer '+$rootScope.access_token} 
+     })
+      .success(function(data) {
+        if (data.errors) {
+          alert("Some error occured");
+
+        } else {
+          alert("OTP has been resent");
+        }
+      });
+    }; 
+
+
     $scope.submitForm = function() {
     $http({
       method  : 'GET',
@@ -15,9 +32,17 @@ routerApp
         if (data.errors) {
           alert("Some error occured");
         } else {
-          alert("Successfully Verified");
-          $scope = data;
+          if(data.Status=="Verified"){
+            alert("Successfully Verified");
+            $scope = data;
+          }
+          else{
+            alert("You entered wrong OTP");
+            $state.go('otp');
+          }
         }
       });
-    };      
+    };   
+
+
 });

@@ -1,13 +1,27 @@
 
 <div id="sign_up" class="container">
     
-    <form ng-submit="submitForm()">
-	    <input type="text" placeholder="Username" ng-model="sign_up.name" required> <br><br>
-	    <input type="email" placeholder="Email" ng-model="sign_up.email" required> <br><br>
-	    <input type="text" placeholder="Mobile No" ng-model="sign_up.phone" required><br><br>
-	    <input type="password" placeholder="Password" ng-model="sign_up.password" required><br><br>
-	    <input type="password" placeholder="Confirm password" required><br><br>
-	    <input type="submit" class="btn">
+    <form ng-submit="submitForm()" name="myForm">
+	    <input type="text" ng-pattern="/^[a-z]+[a-z0-9._]+@[a-z]+\.[a-z.]{2,5}$/" name="email" placeholder="Email" ng-model="sign_up.email" required>
+	    
+	    <span ng-show="myForm.email.$dirty && myForm.email.$error.required">Required</span>
+	    <span ng-show="!myForm.email.$error.required && !myForm.email.$valid">Invalid email</span>
+
+	    <br><br>
+	    <input type="text" placeholder="Mobile No" name="phone" ng-pattern="/^[0-9]{10}$/" ng-model="sign_up.phone" required>
+
+	    <span ng-show="myForm.phone.$dirty && myForm.phone.$error.required">Required</span>
+	    <span ng-show="!myForm.phone.$error.required && !myForm.phone.$valid">Mobile No. not valid</span>
+
+	    <br><br>
+	    <input type="password" placeholder="Password" ng-minlength="6" name="password" ng-model="sign_up.password" required><br><br>
+
+	     <span ng-show="myForm.password.$dirty && myForm.password.$error.required">Required</span>
+	     <span ng-show="!myForm.password.$error.required && !myForm.password.$valid">Password should be atleast 6 character long</span>
+
+
+	    <br><br>
+	    <input ng-disabled="!myForm.email.$valid || !myForm.phone.$valid || !myForm.password.$valid" type="submit" class="btn">
 	</form>
 </div>
 

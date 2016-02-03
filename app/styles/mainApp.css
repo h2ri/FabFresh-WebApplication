@@ -1,0 +1,65 @@
+.address-div {
+	position: left;
+	background-color: gray;
+	border-radius: 4px; 
+	width: 1000px;
+	height: 400px;
+	float: right;
+	margin-top: -10px;
+}
+
+.address-by-map {
+	position: center;
+	float: right;
+
+}
+
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-size:14px;
+}
+.sidebar {
+  list-style-type:none;
+  background-color:#333;
+  width:230px;
+  height:100%;
+  top:0;
+  bottom:0;
+  left:0;
+  text-align:left;
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  transition:1s ease;
+}
+
+.sidebar a {
+  text-decoration:none;
+  color:white;
+  transition:1s ease;
+}
+
+.sidebar li {
+  text-indent: 20px;
+  line-height: 40px;
+  transition:0.5s ease;
+}
+
+.sidebar li:hover {
+  background-color:#777;
+  cursor:pointer;
+  text-indent: 30px;
+}
+
+.sidebar > .sidebar-brand {
+height: 65px;
+font-size: 18px;
+line-height: 60px;
+}
+
+#map {
+        height: 625px;
+        width: 1075px;
+      }

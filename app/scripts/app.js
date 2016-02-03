@@ -2,7 +2,6 @@
 
 var routerApp = angular.module('routerApp', [
     'ui.router',
-    //'Login.services'
     ]);
 
 routerApp.config(function($stateProvider, $urlRouterProvider) {
@@ -36,4 +35,5 @@ routerApp.config(function($stateProvider, $urlRouterProvider) {
             url: '/reset_password',
             templateUrl: '../views/reset_password.html',
         })
+        
 });
