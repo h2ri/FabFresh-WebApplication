@@ -10,10 +10,11 @@ routerApp.config(function($stateProvider, $urlRouterProvider) {
     
     $stateProvider
         
+
         .state('login', {
             url: '/#',
             templateUrl: '../views/login.html',
-            controller: 'loginCTRL'
+            controller: 'loginCTRL',
         })
         
         .state('sign_up', {
@@ -35,5 +36,14 @@ routerApp.config(function($stateProvider, $urlRouterProvider) {
             url: '/reset_password',
             templateUrl: '../views/reset_password.html',
         })
-        
+        .state('homepage', {
+            url: '/#',
+            templateUrl: '../views/homepage.html',
+            controller: 'homepageCTRL',
+        })
+        .state('orders', {
+            url: '/#',
+            templateUrl: '../views/orders.html',
+            controller: 'ordersCTRL',
+        })
 });

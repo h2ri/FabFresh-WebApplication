@@ -24,17 +24,20 @@ routerApp
         else if(data.status=="Not Authenticated"){
             alert("Either email or password is wrong");
         }
-
+        else if(data.user_status){
+          //alert("Successfully Logged in");
+          $rootScope.access_token = data.access_token;
+          $rootScope.user_status = data.user_status;
+          $state.go('otp');
+          //$window.location.href = '/homepage.html';
+        }
         else {
-          alert("Successfully Logged in");
-          $rootScope = data;
-          //$state.go('homepage');
-          $window.location.href = '/homepage.html';
-          $scope = data;
+          //alert("Successfully Logged in");
+          $rootScope.access_token = data.access_token;
+          $rootScope.user_status = data.user_status;
+          $state.go('homepage');
+          //$window.location.href = '/homepage.html';
         }
       });
     };
 });
-
-
-

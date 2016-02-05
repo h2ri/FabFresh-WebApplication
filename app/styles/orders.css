@@ -1,0 +1,64 @@
+caption
+{
+  font-size: 64px;
+  margin: 25px;
+  color: #222;
+  text-shadow: 0px 1px 1px rgba(255, 255, 255, 0.4);
+}
+
+table
+{
+  text-align: left;
+  width: 625px;
+  border-collapse:collapse;
+  border-radius: 2px;
+  margin: 0 auto;
+  max-width: 625px;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+td, th
+{
+  padding: 16px;
+  width: 200px;
+  line-height: 18px;
+  font-weight: 300;
+}
+
+thead
+{
+  display: block;
+  background: white;
+}
+
+th
+{
+  border-bottom: 0;
+  color: white;
+  color: #444;
+  font-weight: 700;
+  text-shadow: 0px 1px 1px rgba(255, 255, 255, 0.7);
+}
+
+th:last-child
+{
+  width: 219px;
+}
+
+tbody
+{
+  width: 100%;
+  overflow: auto;
+  height: 200px;
+  display: block;
+}
+
+tr:nth-child(even)
+{
+  background: rgba(255, 255, 255, 0.15);
+}
+
+tr td:first-child
+{
+  font-weight: bold;
+}

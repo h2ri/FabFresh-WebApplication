@@ -2,7 +2,7 @@
 <div id="sign_up" class="container">
     
     <form ng-submit="submitForm()" name="myForm">
-	    <input type="text" ng-pattern="/^[a-z]+[a-z0-9._]+@[a-z]+\.[a-z.]{2,5}$/" name="email" placeholder="Email" ng-model="sign_up.email" required>
+	    <input type="text" ng-pattern="/^[a-z0-9._]+@[a-z]+\.[a-z.]{2,5}$/" name="email" placeholder="Email" ng-model="sign_up.email" required>
 	    
 	    <span ng-show="myForm.email.$dirty && myForm.email.$error.required">Required</span>
 	    <span ng-show="!myForm.email.$error.required && !myForm.email.$valid">Invalid email</span>

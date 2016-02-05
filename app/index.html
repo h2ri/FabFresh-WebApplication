@@ -3,8 +3,10 @@
 <head>
 
     <link rel="stylesheet" href="styles/users.css">
+    <link rel="stylesheet" href="styles/orders.css">
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="styles/main.css">
+    <link rel="stylesheet" type="text/css" href="styles/mainApp.css">
     
     <style>
         .navbar { border-radius:0; }
@@ -23,37 +25,51 @@
 </head>
 <title>Fabfresh</title>
 <!-- apply our angular app to our site -->
-<body ng-app="routerApp">
+<body ng-app="routerApp" ng-controller="homeCTRL">
 
 <!-- NAVIGATION -->
-<nav class="nav" role="navigation">
-        <li><a ui-sref="login" id="login_btn">Login</a></li>
+<nav ng-hide="sub()" class="nav" role="navigation">
+
+        <li><a  ui-sref="login" id="login_btn">Login</a></li>
 </nav>
 <!-- MAIN CONTENT -->
     <!-- THIS IS WHERE WE WILL INJECT OUR CONTENT ============================== -->
-<div class='test'> 
-        <div ui-view></div>
 
-</div>    
+<div ng-show="sub()" id="nav1">
+    <ul class="sidebar">
+      <li><a >Welcome to fabfresh</a></li>
+      <li><a ui-sref="homepage">Address</a></li>
+      <li><a >Placeorder</a></li>
+      <li><a ui-sref="orders">Orders</a></li>
+      <li><a >About</a></li>
+      <li><a >Logout</a></li>
+    </ul>
+</div>
 
-    
+<div ui-view></div>
+
+
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="bower_components/angular-ui-router-styles/ui-router-styles.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
-        <script src="scripts/app.js"></script>
-        <script src="scripts/controllers/loginCTRL.js"></script>
-        <script src="scripts/controllers/sign_upCTRL.js"></script>
-        <script src="scripts/controllers/otpCTRL.js"></script>
-        <script src="scripts/hide.js"></script>
-        <script src="scripts/services/services.js"></script>
-        
-        
+    <script src="scripts/app.js"></script>
+    <script src="scripts/geomap.js"></script>
+    <script src="scripts/controllers/homeCTRL.js"></script>
+    <script src="scripts/controllers/ordersCTRL.js"></script>
+    <script src="scripts/controllers/loginCTRL.js"></script>
+    <script src="scripts/controllers/homepageCTRL.js"></script>
+    <script src="scripts/controllers/sign_upCTRL.js"></script>
+    <script src="scripts/controllers/otpCTRL.js"></script>
+    <script src="scripts/hide.js"></script>
+    <script src="scripts/services/services.js"></script>
         <!-- endbuild -->
     </body>
 </html>

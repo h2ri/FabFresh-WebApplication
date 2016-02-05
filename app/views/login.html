@@ -1,15 +1,11 @@
 <div  id="login" class="container">	
     <form ng-submit="submitForm()" name="myForm">
-        <input placeholder="Email"  name="email" type="text" ng-pattern="/^[a-z]+[a-z0-9._]+@[a-z]+\.[a-z.]{2,5}$/" ng-model="login.email" required><br>
+        <input placeholder="Email"  name="email" type="text" ng-pattern="/^[a-z0-9._]+@[a-z]+\.[a-z.]{2,5}$/" ng-model="login.email" required><br>
 
         <span ng-show="myForm.email.$dirty && myForm.email.$error.required">Required</span>
     	<span ng-show="!myForm.email.$error.required && !myForm.email.$valid">Email Invalid</span>
         
-        <input type="password" placeholder="Password" name="password" ng-minlength="6" ng-model="login.password" required>
-
-        <span ng-show="myForm.password.$dirty && myForm.password.$error.required">Required</span>
-        <span ng-show="!myForm.password.$error.required && !myForm.password.$valid">Password should be atleast 6 character long</span>
-
+        <input type="password" placeholder="Password" name="password" ng-model="login.password" required>
         <br><br>
         <input ng-disabled="!myForm.email.$valid || !myForm.password.$valid" type="submit" class="btn">
     </form>
@@ -20,3 +16,4 @@
 </div>
 
 <div ui-view>  </div>
+
