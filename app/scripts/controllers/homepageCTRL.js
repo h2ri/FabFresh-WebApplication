@@ -5,6 +5,7 @@ routerApp
   .controller('homepageCTRL', function($http, $rootScope,$scope) {
   $scope.addres = [];
     var URL = 'http://fabfresh-dev.elasticbeanstalk.com';
+    var flag=0;
 
     $scope.submitForm = function() {
       $scope.addres = {
@@ -44,8 +45,9 @@ routerApp
 
 
 routerApp.directive('script1', function() {
-	
+  var flag=0;
 	 function load_script() {
+
             var s = document.createElement('script'); // use global document since Angular's $document is weak
             s.src = "https://maps.googleapis.com/maps/api/js?callback=initMap";
             document.body.appendChild(s);
@@ -54,7 +56,6 @@ routerApp.directive('script1', function() {
       restrict: 'E',
       scope: false,
       link: function(scope, elem, attr) {
-
         if (attr.type === 'text/javascript-lazy') {
           load_script();
         }

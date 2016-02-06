@@ -31,7 +31,7 @@ function initMap() {
     var lat_lng = marker.getPosition();
 
     getReverseGeocodingData(lat_lng.lat(), lat_lng.lng());
-    $( "#section1" ).show( "fold");
+    $( "#map_sidebar" ).show( "fold");
     updateMarkerPosition(marker.getPosition());
     lat=lat_lng.lat();
     lng=lat_lng.lng();

@@ -34,7 +34,8 @@ routerApp
         } else {
           if(data.Status=="Verified"){
             alert("Successfully Verified");
-            $scope = data;
+            $rootScope.otp_flag=1;
+            $state.go("homepage");
           }
           else{
             alert("You entered wrong OTP");

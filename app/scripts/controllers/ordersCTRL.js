@@ -10,7 +10,6 @@ routerApp
     $http({
       method  : 'GET',
       url     : URL+'/orders/',
-      data    : $scope.user,
       headers : {'Authorization': 'Bearer '+$rootScope.access_token} 
      })
       .success(function(data) {

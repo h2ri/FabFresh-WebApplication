@@ -1,0 +1,21 @@
+<div id="address_list">
+  <table border="0.8">
+    <caption>Address List</caption>
+    <thead>
+      <tr>
+        <th>PostalCode</th>
+        <th>Locality</th>
+        <th>SubLocality</th>
+        <th>Address</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="x in data">
+        <td>{{x.postalcode}}</td>
+        <td>{{x.addressLocality}}</td>
+        <td>{{x.addressSubLocality}}</td>
+        <td>{{x.address}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

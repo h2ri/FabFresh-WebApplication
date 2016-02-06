@@ -4,6 +4,7 @@
 
     <link rel="stylesheet" href="styles/users.css">
     <link rel="stylesheet" href="styles/orders.css">
+    <link rel="stylesheet" href="styles/address_list.css">
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="styles/main.css">
     <link rel="stylesheet" type="text/css" href="styles/mainApp.css">
@@ -28,17 +29,18 @@
 <body ng-app="routerApp" ng-controller="homeCTRL">
 
 <!-- NAVIGATION -->
-<nav ng-hide="sub()" class="nav" role="navigation">
+<nav ng-hide="otp_flag" class="nav" role="navigation">
 
         <li><a  ui-sref="login" id="login_btn">Login</a></li>
 </nav>
 <!-- MAIN CONTENT -->
     <!-- THIS IS WHERE WE WILL INJECT OUR CONTENT ============================== -->
-
-<div ng-show="sub()" id="nav1">
-    <ul class="sidebar">
+<div id="Main">
+<div ng-show="otp_flag" id="sidebar">
+    <ul>
       <li><a >Welcome to fabfresh</a></li>
       <li><a ui-sref="homepage">Address</a></li>
+      <li><a ui-sref="address_list">Address List</a></li>
       <li><a >Placeorder</a></li>
       <li><a ui-sref="orders">Orders</a></li>
       <li><a >About</a></li>
@@ -46,9 +48,8 @@
     </ul>
 </div>
 
-<div ui-view></div>
-
-
+<div id="ui_view" ui-view></div>
+</div>
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
     <script src="bower_components/jquery/dist/jquery.js"></script>
@@ -63,6 +64,8 @@
     <script src="scripts/app.js"></script>
     <script src="scripts/geomap.js"></script>
     <script src="scripts/controllers/homeCTRL.js"></script>
+    <script src="scripts/controllers/reset_passwordCTRL.js"></script>
+    <script src="scripts/controllers/address_listCTRL.js"></script>
     <script src="scripts/controllers/ordersCTRL.js"></script>
     <script src="scripts/controllers/loginCTRL.js"></script>
     <script src="scripts/controllers/homepageCTRL.js"></script>

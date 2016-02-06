@@ -1,51 +1,20 @@
-<table border="0.8">
-  <caption>order List</caption>
-  <thead>
-    <tr>
-      <th>Order ID</th>
-      <th>Discription</th>
-      <th>Status</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr ng-repeat="x in data">
-      <td>{{x.id}}</td>
-      <td>Amount:{{x.amount}}<br>Type:{{x.order_type}}</td>
-      <td>{{x.status}}</td>
-    </tr>
+<div id="orders">
+  <table border="0.8">
+    <caption>order List</caption>
+    <thead>
+      <tr>
+        <th>Order ID</th>
+        <th>Discription</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="x in data">
+        <td>{{x.id}}</td>
+        <td>Amount:{{x.amount}}<br>Type:{{x.order_type}}</td>
+        <td>{{x.status}}</td>
+      </tr>
 
-  </tbody>
-</table>
-
-
-<!-- 
-<tr>
-      <td>201</td>
-      <td>order type: wash
-        price: 119rs</td>
-      <td>picked</td>
-    </tr>
-    <tr>
-      <td>007</td>
-      <td>order type: wash+iron
-        price: 210rs</td>
-      <td>canceled</td>
-    </tr>
-    <tr>
-      <td>rdx001</td>
-      <td>order type: iron
-        price: 786</td>
-      <td>delivered</td>
-    </tr>
-    <tr>
-      <td>100</td>
-      <td>order type: iron
-        price: 123</td>
-      <td>Complicated</td>
-    </tr>
-    <tr>
-      <td>f12</td>
-      <td>order type: Wash
-        price: 1000</td>
-      <td>in process</td>
-    </tr> -->
+    </tbody>
+  </table>
+</div>

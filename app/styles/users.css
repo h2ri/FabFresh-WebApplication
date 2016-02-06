@@ -11,19 +11,7 @@
   padding: 40px; 
   background-color: #FFF;
 }
-#reset_password{
-  border-radius: 10px;
-  position: absolute;
-  left: 50%;
-  top: 45%;
-  box-shadow: 10px 10px 5px black;
-  transform: translate(-50%, -50%);
-  min-width: 250px; 
-  min-height: 300px;
-  border: 1px solid #CCC; 
-  padding: 40px; 
-  background-color: #FFF
-}
+
 #sign_up{
   border-radius: 15px;
   position: absolute;
@@ -38,7 +26,7 @@
   background-color: #FFF
 }
 
-#forgot_password{
+#reset_password{
     border-radius: 10px;
     position: absolute;
     left: 50%;
@@ -46,7 +34,7 @@
     box-shadow: 10px 10px 5px black;
     transform: translate(-50%, -50%);
     width: 250px; 
-    height: 150px;
+    height: 180px;
     border: 1px solid #CCC; 
     padding: 40px; 
     background-color: #FFF
@@ -66,12 +54,6 @@
     background-color: #FFF
 }
 
-p.input-container {
-  width: 100%; 
-  position: relative;
-  top: 50px;
-  margin-bottom: 25px;
-}
 
 
 .cointainer input, .btn {

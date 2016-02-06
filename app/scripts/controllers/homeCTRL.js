@@ -2,10 +2,7 @@
 
 
 routerApp
-  .controller('homeCTRL', function($rootScope,$scope) {
-    $scope.sub = function() {
-    	//alert($rootScope.access_token);
-       return $rootScope.access_token && !$rootScope.user_status;
-    };
+  .controller('homeCTRL', function($http, $rootScope,$scope) {
+  	$rootScope.otp_flag=0;
 });
 

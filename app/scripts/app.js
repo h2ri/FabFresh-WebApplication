@@ -10,7 +10,6 @@ routerApp.config(function($stateProvider, $urlRouterProvider) {
     
     $stateProvider
         
-
         .state('login', {
             url: '/#',
             templateUrl: '../views/login.html',
@@ -23,18 +22,15 @@ routerApp.config(function($stateProvider, $urlRouterProvider) {
             controller: 'sign_upCTRL'
         })
 
-        .state('forgot_password', {
+        .state('reset_password', {
             url: '/#',
-            templateUrl: '../views/forgot_password.html',
+            templateUrl: '../views/reset_password.html',
+            controller: 'reset_passwordCTRL'
         })
         .state('otp', {
             url: '/#',
             templateUrl: '../views/otp.html',
             controller: 'otpCTRL'
-        })
-        .state('reset_password', {
-            url: '/reset_password',
-            templateUrl: '../views/reset_password.html',
         })
         .state('homepage', {
             url: '/#',
@@ -45,5 +41,10 @@ routerApp.config(function($stateProvider, $urlRouterProvider) {
             url: '/#',
             templateUrl: '../views/orders.html',
             controller: 'ordersCTRL',
+        })
+        .state('address_list', {
+            url: '/#',
+            templateUrl: '../views/address_list.html',
+            controller: 'address_listCTRL',
         })
 });
