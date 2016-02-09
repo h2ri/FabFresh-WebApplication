@@ -1,20 +1,13 @@
-<div id="orders">
-  <table border="0.8">
-    <caption>order List</caption>
-    <thead>
-      <tr>
-        <th>Order ID</th>
-        <th>Discription</th>
-        <th>Status</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr ng-repeat="x in data">
-        <td>{{x.id}}</td>
-        <td>Amount:{{x.amount}}<br>Type:{{x.order_type}}</td>
-        <td>{{x.status}}</td>
-      </tr>
-
-    </tbody>
-  </table>
+<div id="ord">
+  <div id="orders" ng-repeat="x in data">
+    <div id="oid" >
+      <h2  style="color:white;" >#{{x.id}}</h2>
+    </div>
+    <div id="odes">
+      <p style="color:black;"><b>Order Date: </b>{{x.created_at_time}}</br><b>Amount: </b>{{x.amount}}</br><b>Amount After Discount: </b>{{x.afterDiscount}}<br><b>Weight: </b>{{x.weight}}</br><b>Quantity: </b>{{x.quantity}}</br><b>Type: </b>{{x.order_type}}</br><b>Coupon: </b>{{x.coupon}}</p>
+    </div>
+    <div id="ost">
+      <h4 style="color:white;">{{x.status}}</h4>
+    </div>
+  </div>
 </div>

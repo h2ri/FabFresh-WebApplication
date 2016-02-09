@@ -1,69 +1,46 @@
+#ord{
+  height: 100vh;
+  width: 100%;
+  background-color: white;
+}
+
 #orders{
-  height:inherit;
-  width: 100%;
+  border-radius: 15px;
+  position: relative;
+  margin-left: 30px;
+  margin-top: 40px;
+  float: left;
+  width: 220px; 
+  height: 320px; 
+  padding: 0px; 
 }
+#oid{
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  text-align:center;
+  background-color:#707070;
+  width:220px;
+  height: 70px;
+  padding-top:1px;
+  
 
-caption
-{
-  font-size: 64px;
-  margin: 25px;
-  color: #222;
-  text-shadow: 0px 1px 1px rgba(255, 255, 255, 0.4);
 }
-
-table
-{
-  text-align: left;
-  width: 625px;
-  border-collapse:collapse;
-  border-radius: 2px;
-  margin: 0 auto;
-  max-width: 625px;
-  background: rgba(255, 255, 255, 0.15);
-}
-
-td, th
-{
-  padding: 16px;
-  width: 200px;
-  line-height: 18px;
-  font-weight: 300;
-}
-
-thead
-{
-  display: block;
-  background: white;
-}
-
-th
-{
-  border-bottom: 0;
-  color: white;
-  color: #444;
-  font-weight: 700;
-  text-shadow: 0px 1px 1px rgba(255, 255, 255, 0.7);
-}
-
-th:last-child
-{
-  width: 219px;
-}
-
-tbody
-{
-  width: 100%;
-  overflow: auto;
+#odes{
+  border: 1px solid #707070; 
+  text-align:left;
+  background-color:#F8F8F8 ;
+  width:220px;
   height: 200px;
-  display: block;
-}
+  padding:10px;
 
-tr:nth-child(even)
-{
-  background: rgba(255, 255, 255, 0.15);
 }
+#ost{
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  text-align:center;
+  background-color:#707070 ;
+  width:220px;
+  height: 50px;
+  padding:5px;
 
-tr td:first-child
-{
-  font-weight: bold;
 }

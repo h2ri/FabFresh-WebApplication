@@ -12,14 +12,15 @@
 
 
 #sidebar {
+  position: fixed;
   background-color:#333;
   width:20%;
   height:inherit;
   float:left;
   background-color:#333;
-  top:0;
-  bottom:0;
-  left:0;
+  //top:0;
+  //bottom:0;
+  //left:0;
   text-align:left;
   margin: 0;
   padding: 0;
