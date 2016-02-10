@@ -18,4 +18,7 @@ routerApp
           $scope.data=data;
         }
       });
+
+      $cookieStore.put('count',1);
+
 });

@@ -2,12 +2,13 @@
 
 var routerApp = angular.module('routerApp', [
     'ui.router',
+    'ngCookies'
     ]);
-
-routerApp.config(function($stateProvider, $urlRouterProvider) {
+ 
+routerApp.config(function($stateProvider, $urlRouterProvider ) {
     
     $urlRouterProvider.otherwise('/home');
-    
+
     $stateProvider
         
         .state('login', {
@@ -47,4 +48,23 @@ routerApp.config(function($stateProvider, $urlRouterProvider) {
             templateUrl: '../views/address_list.html',
             controller: 'address_listCTRL',
         })
+         .state('Logout', {
+            url: '/#',
+            template: '<h1>BYE<h1>',
+            controller: 'logoutCTRL',
+        })
+         .state('About', {
+            url: '/#',
+            template: '<h1>yoyoyoyoyooy<h1>',
+            controller: 'AboutCTRL',
+        })
+        
+
+
 });
+/*
+routerApp.factory('UserService', function() {
+    return {
+        name : ''
+    };
+});*/

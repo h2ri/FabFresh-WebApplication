@@ -2,15 +2,16 @@
 
 
 routerApp
-  .controller('loginCTRL', function($window, $rootScope,$scope, $http, $state) {
+  .controller('loginCTRL', function($window, $rootScope,$scope, $http, $state, $cookieStore) {
     $scope.user = [];
-    
+   
     var URL = 'http://fabfresh-dev.elasticbeanstalk.com';
-    $scope.submitForm = function() {
+       $scope.submitForm = function() {
       $scope.user = {
         "username": $scope.login.email,
         "password": $scope.login.password
       };
+
     $http({
       method  : 'POST',
       url     : URL+'/users/login/',
@@ -26,7 +27,11 @@ routerApp
         }
        
         else {
-        $rootScope.access_token = data.access_token;
+      $rootScope.access_token = data.access_token;
+        $cookieStore.put('key',data.access_token);
+        console.log(typeof($cookieStore.get('key')));     // testing
+        console.log($cookieStore.get('key'));             // testing
+         
         $http({
           method  : 'GET',
           url     : URL+'/users/info/',
@@ -38,6 +43,7 @@ routerApp
             }
             else {
               if(data[0].UserInfo.flag){
+                console.log(data[0]);                 // everything about user ,console
                   $rootScope.otp_flag=1;
                   $state.go('homepage');
                   
@@ -49,4 +55,7 @@ routerApp
         }
       });
     };
+    
+
+
 });

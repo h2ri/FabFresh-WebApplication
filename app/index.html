@@ -17,6 +17,7 @@
     <script src="http://code.angularjs.org/1.2.13/angular.js"></script>-->
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script> 
     <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.8/angular-ui-router.min.js"></script>
+    <script src="/bower_components/angular-cookies/angular-cookies.js"></script>
 
 
      <meta charset="utf-8">
@@ -43,8 +44,8 @@
       <li><a ui-sref="address_list">Address List</a></li>
       <li><a >Placeorder</a></li>
       <li><a ui-sref="orders">Orders</a></li>
-      <li><a >About</a></li>
-      <li><a >Logout</a></li>
+      <li><a ui-sref="About">About</a></li>
+      <li><a ui-sref="Logout">Logout</a></li>
     </ul>
 </div>
 
@@ -55,7 +56,8 @@
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
-    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="bower_components/angular-ui-router-styles/ui-router-styles.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -70,6 +72,8 @@
     <script src="scripts/controllers/homepageCTRL.js"></script>
     <script src="scripts/controllers/sign_upCTRL.js"></script>
     <script src="scripts/controllers/otpCTRL.js"></script>
+    <script src="scripts/controllers/aboutCTRL.js"></script>
+    <script src="scripts/controllers/logoutCTRL.js"></script>
     <script src="scripts/hide.js"></script>
     <script src="scripts/services/services.js"></script>
         <!-- endbuild -->

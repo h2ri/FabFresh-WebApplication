@@ -2,7 +2,7 @@
 
 
 routerApp
-  .controller('homepageCTRL', function($http, $rootScope,$scope) {
+  .controller('homepageCTRL', function($http, $rootScope,$scope,$cookieStore) {
   $scope.addres = [];
     var URL = 'http://fabfresh-dev.elasticbeanstalk.com';
     var flag=0;
@@ -39,7 +39,7 @@ routerApp
       });
     };
 
-
+     $cookieStore.put('count',4);
 });
 
 

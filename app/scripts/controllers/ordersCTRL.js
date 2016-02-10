@@ -2,7 +2,7 @@
 
 
 routerApp
-  .controller('ordersCTRL', function($rootScope,$scope, $http) {
+  .controller('ordersCTRL', function($rootScope,$scope, $http,$cookieStore) {
 
     $scope.user = [];
     
@@ -59,4 +59,6 @@ routerApp
 
         }
       });
+     $cookieStore.put('count',3);
+
 });
