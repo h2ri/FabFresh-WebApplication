@@ -1,13 +1,26 @@
-<div id="ord">
-  <div id="orders" ng-repeat="x in data">
-    <div id="oid" >
-      <h2  style="color:white;" >#{{x.id}}</h2>
-    </div>
-    <div id="odes">
-      <p style="color:black;"><b>Order Date: </b>{{x.created_at_time}}</br><b>Amount: </b>{{x.amount}}</br><b>Amount After Discount: </b>{{x.afterDiscount}}<br><b>Weight: </b>{{x.weight}}</br><b>Quantity: </b>{{x.quantity}}</br><b>Type: </b>{{x.order_type}}</br><b>Coupon: </b>{{x.coupon}}</p>
-    </div>
-    <div id="ost">
-      <h4 style="color:white;">{{x.status}}</h4>
+<div id="order">
+  <div id="orders_list">
+    <div id="orders" ng-repeat="x in data" >
+      <div id="menu">
+        <div id="order_id">
+          <h2  style="color:white;" >#{{x.id}}</h2>
+        </div>
+        <div id="order_description">
+          <p style="color:black;">
+            <p style="color:black;"><b> email_id : </b>{{x.owner}}<br>
+              <b>Order Date: </b>
+              {{x.created_at_time}}
+            </br><b>Amount: </b>
+            {{x.amount}}</br><b>Amount After Discount: </b>{{x.afterDiscount}}<br><b>Weight: </b>{{x.weight}}</br><b>Quantity: </b>{{x.quantity}}</br><b>Type: </b>{{x.order_type}}</br><b>Coupon: </b>{{x.coupon}}</p>
+          </p>
+        </div>
+        <div id="order_status"">
+          <h4 style="color:white;">{{x.status}}</h4>
+        </div>
+      </div>
+      <div id="cancel_order" >
+          <a  style="margin-left:80px;" href ng-click="track_order(x.id)">Track Order</a>
+      </div>
     </div>
   </div>
 </div>

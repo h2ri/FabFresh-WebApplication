@@ -1,0 +1,37 @@
+#placebody{
+   background-color: white;
+   height: 100vh;
+}
+#header1 {
+   background-color:#00FFFF ;
+   color:white;
+   text-align:center;
+   padding:3px;
+}
+
+#header2{
+   color:black;
+   text-align:left;
+   padding:3px;
+}
+
+#header3 {
+   color:black;
+   text-align:left;
+   padding:3px;
+}
+
+#header4 {
+   color:black;
+   text-align:left;
+   padding:3px;
+}
+
+
+
+#address_l{
+   margin-left: 20px;
+ height: 142px;
+ width: 95%;
+ overflow:auto;
+}

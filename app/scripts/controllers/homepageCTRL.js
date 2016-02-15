@@ -3,6 +3,13 @@
 
 routerApp
   .controller('homepageCTRL', function($http, $rootScope,$scope,$cookieStore) {
+
+     if($cookieStore.get('key') == null)
+            {
+              $state.go('home');
+              alert("Please log in to continue");
+            }
+          
   $scope.addres = [];
     var URL = 'http://fabfresh-dev.elasticbeanstalk.com';
     var flag=0;
@@ -20,7 +27,7 @@ routerApp
       method  : 'POST',
       url     : URL+'/users/address/',
       data    : $scope.addres,
-      headers : {'Content-Type': 'application/json', 'Authorization': 'Bearer '+$rootScope.access_token}
+      headers : {'Content-Type': 'application/json', 'Authorization': 'Bearer '+$cookieStore.get('key')}
      })
       .success(function(data) {
         if (data.errors) {
@@ -29,12 +36,6 @@ routerApp
         }
         else {
           alert("address has been added");
-          // alert(data.addressLatitude);
-          // alert(data.addressLogitude);
-          // alert(data.addressSubLocality);
-          // alert(data.addressLocality);
-          // alert(data.address);
-          // alert(data.postalcode);
         }
       });
     };

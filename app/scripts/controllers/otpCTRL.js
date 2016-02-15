@@ -8,7 +8,7 @@ routerApp
     $http({
       method  : 'GET',
       url     : URL+'/users/otpresend/',
-      headers : {'Authorization': 'Bearer '+$rootScope.access_token} 
+      headers : {'Authorization': 'Bearer '+$cookieStore.get('key')} 
      })
       .success(function(data) {
         if (data.errors) {
@@ -26,7 +26,7 @@ routerApp
       method  : 'GET',
       url     : URL+'/users/otp/',
       params : {otp: $scope.otp},
-      headers : {'Authorization': 'Bearer '+$rootScope.access_token} 
+      headers : {'Authorization': 'Bearer '+$cookieStore.get('key')} 
      })
       .success(function(data) {
         if (data.errors) {

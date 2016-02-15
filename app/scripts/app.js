@@ -34,19 +34,35 @@ routerApp.config(function($stateProvider, $urlRouterProvider ) {
             controller: 'otpCTRL'
         })
         .state('homepage', {
-            url: '/#',
+            url: '/homepage',
             templateUrl: '../views/homepage.html',
             controller: 'homepageCTRL',
+            authenticate: 'true',
         })
         .state('orders', {
-            url: '/#',
+            url: '/orders',
             templateUrl: '../views/orders.html',
             controller: 'ordersCTRL',
         })
         .state('address_list', {
-            url: '/#',
+            url: '/address',
             templateUrl: '../views/address_list.html',
             controller: 'address_listCTRL',
+        })
+        .state('place_order', {
+            url: '/place_order',
+            templateUrl: '../views/place_order.html',
+            controller: 'address_listCTRL',
+        })
+        .state('track_order', {
+            url: '/track_order',
+            templateUrl: '../views/track.html',
+            controller: 'trackCTRL',
+        })
+        .state('profiles', {
+            url: '/#',
+            templateUrl: '../views/profile.html',
+            //controller: 'profileCTRL',
         })
          .state('Logout', {
             url: '/#',
@@ -58,13 +74,10 @@ routerApp.config(function($stateProvider, $urlRouterProvider ) {
             template: '<h1>yoyoyoyoyooy<h1>',
             controller: 'AboutCTRL',
         })
+
+          .state('home', {
+            url: '/#',
+            
+        })
         
-
-
 });
-/*
-routerApp.factory('UserService', function() {
-    return {
-        name : ''
-    };
-});*/

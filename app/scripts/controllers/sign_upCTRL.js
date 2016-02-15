@@ -28,8 +28,7 @@ routerApp
           }
           else{
 
-            $scope = data;
-            $rootScope.access_token=$scope.access_token;
+           $cookieStore.put('key',data.access_token);
             alert("Successfully Signed up");
             $state.go('otp');
           }

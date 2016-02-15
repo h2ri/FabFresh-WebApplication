@@ -1,0 +1,30 @@
+<div id="placebody">    
+<div id="header1">
+    <h2><img src="images/fabfresh.png" height="30px;"></h2>
+</div>
+
+    <form ng-submit="placeorderForm()">
+    <div id="header2">
+        <h2>Select a service</h2>
+          <input type="radio" name="service_t" value="2" ng-model="stype" > Wash + Iron <br>
+          <input type="radio" name="service_t" value="0" ng-model="stype"> Wash + Fold<br>
+          <input type="radio" name="service_t" value="1" ng-model="stype"> Iron<br>
+    </div>
+
+   <h2>Address List</h2>
+   <div id="address_l">
+          <div  ng-repeat="x in data">
+        <input type="radio" value="{{x.id}}" ng-model= "$parent.id" name="address" id="inputid">{{x.address}}<b>
+        {{x.id}}
+        </div>
+   </div>
+
+   <div id="header4">
+        <br><input type="text" placeholder="Coupon Code" size="20" ng-model="coupon">
+        <input type="button"  value="Apply" ng-click="check_couponvalidity()">
+        <b>{{isvalid}}</b>
+        <br><br><textarea rows="5" cols="50" placeholder="Special Request" value="spe_req" ng-model="sp_request">Special Request</textarea><br><br><br>
+    </div>
+        <center><button type="submit">PLACE ORDER</button></center>
+    </form>
+</div>

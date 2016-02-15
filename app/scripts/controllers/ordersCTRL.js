@@ -2,10 +2,14 @@
 
 
 routerApp
-  .controller('ordersCTRL', function($rootScope,$scope, $http,$cookieStore) {
-
+  .controller('ordersCTRL', function($rootScope,$scope,$state, $http,$cookieStore) {
+         if($cookieStore.get('key') == null)
+            {
+              $state.go('home');
+              alert("Please log in to continue");
+            }  
+          
     $scope.user = [];
-    
     var URL = 'http://fabfresh-dev.elasticbeanstalk.com';
     $http({
       method  : 'GET',
@@ -59,6 +63,11 @@ routerApp
 
         }
       });
-     $cookieStore.put('count',3);
-
+    
+    $scope.track_order = function(id) {
+        $rootScope.order_id=id;
+        alert($rootScope.order_id);
+        $state.go('track_order');
+    };
+    
 });

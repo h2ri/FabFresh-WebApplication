@@ -3,11 +3,15 @@
 <head>
 
     <link rel="stylesheet" href="styles/users.css">
+    <link rel="stylesheet" href="styles/track.css">
     <link rel="stylesheet" href="styles/orders.css">
+    <link rel="stylesheet" href="styles/profile.css">
     <link rel="stylesheet" href="styles/address_list.css">
+    <link rel="stylesheet" href="styles/place_order.css">
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="styles/main.css">
     <link rel="stylesheet" type="text/css" href="styles/mainApp.css">
+    <link rel="stylesheet" href="bower_components/angular-chart.js/dist/angular-chart.css">
     
     <style>
         .navbar { border-radius:0; }
@@ -20,7 +24,7 @@
     <script src="/bower_components/angular-cookies/angular-cookies.js"></script>
 
 
-     <meta charset="utf-8">
+    <meta charset="utf-8">
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
     
       
@@ -37,14 +41,15 @@
 <!-- MAIN CONTENT -->
     <!-- THIS IS WHERE WE WILL INJECT OUR CONTENT ============================== -->
 <div id="Main">
+
 <div ng-show="otp_flag" id="sidebar">
     <ul>
       <li><a >Welcome to fabfresh</a></li>
       <li><a ui-sref="homepage">Address</a></li>
       <li><a ui-sref="address_list">Address List</a></li>
-      <li><a >Placeorder</a></li>
+      <li><a ui-sref="place_order">Placeorder</a></li>
       <li><a ui-sref="orders">Orders</a></li>
-      <li><a ui-sref="About">About</a></li>
+      <li><a ui-sref="profiles">About</a></li>
       <li><a ui-sref="Logout">Logout</a></li>
     </ul>
 </div>
@@ -64,6 +69,7 @@
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
     <script src="scripts/app.js"></script>
     <script src="scripts/geomap.js"></script>
+    <script src="scripts/profile.js"></script>
     <script src="scripts/controllers/homeCTRL.js"></script>
     <script src="scripts/controllers/reset_passwordCTRL.js"></script>
     <script src="scripts/controllers/address_listCTRL.js"></script>
@@ -72,6 +78,7 @@
     <script src="scripts/controllers/homepageCTRL.js"></script>
     <script src="scripts/controllers/sign_upCTRL.js"></script>
     <script src="scripts/controllers/otpCTRL.js"></script>
+    <script src="scripts/controllers/trackCTRL.js"></script>
     <script src="scripts/controllers/aboutCTRL.js"></script>
     <script src="scripts/controllers/logoutCTRL.js"></script>
     <script src="scripts/hide.js"></script>

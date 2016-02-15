@@ -1,4 +1,4 @@
-#ord{
+#order{
   height: 100vh;
   width: 100%;
   background-color: white;
@@ -14,7 +14,7 @@
   height: 320px; 
   padding: 0px; 
 }
-#oid{
+#order_id{
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
   text-align:center;
@@ -25,7 +25,7 @@
   
 
 }
-#odes{
+#order_description{
   border: 1px solid #707070; 
   text-align:left;
   background-color:#F8F8F8 ;
@@ -34,9 +34,15 @@
   padding:10px;
 
 }
-#ost{
+
+#cancel_order{
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
+   background-color:#707070 ;
+}
+
+#order_status{
+  
   text-align:center;
   background-color:#707070 ;
   width:220px;

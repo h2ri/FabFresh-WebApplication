@@ -1,13 +1,13 @@
 <div id="otp" class="container">
 	{{$rootScope.user_status}}
     <form ng-submit="submitForm()" name="myForm">
-    	<input type="text" name="otp" placeholder="Enter OTP" ng-pattern="/^[0-9]+$/" ng-model="otp" required>
+    	<input id="input1" type="text" name="otp" placeholder="Enter OTP" ng-pattern="/^[0-9]+$/" ng-model="otp" required>
 
     	<span ng-show="myForm.otp.$dirty && myForm.otp.$error.required">Required</span>
     	<span ng-show="!myForm.otp.$error.required && !myForm.otp.$valid">OTP should be numeric</span>
 
     	<br><br>
-        <input ng-disabled="!myForm.otp.$valid" type="submit" class="btn">
+        <input id="input1" ng-disabled="!myForm.otp.$valid" type="submit" class="btn">
     </form><br>
     <!-- <a class="forget_link" ng-submit='otpResend()'><span>Resend OTP..?</span></a><br><br> -->
     <button ng-click='otpResend()' class='btn'><span>Resend OTP..?</span></button><br><br>

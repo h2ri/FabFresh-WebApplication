@@ -1,0 +1,25 @@
+track {
+    position:relative;
+    margin:80px;
+    width:220px; height:220px;
+    float: right;
+    margin-right: 400px;
+}
+canvas {
+    display: block;
+    position:absolute;
+    top:0;
+    left:0;
+}
+span1 {
+    color:#7500E2;
+    display:block;
+    line-height:220px;
+    text-align:center;
+    width:220px;
+    font-family:sans-serif;
+    font-size:40px;
+    font-weight:100;
+    margin-left:5px;
+}
+
