@@ -2,15 +2,18 @@
 
 
 routerApp
-  .controller('logoutCTRL', function( $rootScope,$state,$cookieStore) {
-  			 if($cookieStore.get('key') == null)
+  .controller('logoutCTRL', function( $rootScope,$state,$cookies) {
+  			 if($cookies.get('key') == null)
             {
               $state.go('home');
               alert("Please log in to continue");
-            }
-          
-  				 $cookieStore.put('key',null);
+            }else
+        {
+        	 $cookies.put('key',null);
+        	 $cookies.put('cstate',null);
           $rootScope.otp_flag = 0;
+        }  
+  		
   
 });
 

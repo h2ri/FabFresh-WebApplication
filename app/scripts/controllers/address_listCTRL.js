@@ -2,13 +2,13 @@
 
 
 routerApp
- .controller('address_listCTRL', function($window,$cookieStore, $rootScope,$scope, $http, $state) {
+ .controller('address_listCTRL', function($window,$cookies, $rootScope,$scope, $http, $state) {
    $scope.user = [];
    var URL = 'http://fabfresh-dev.elasticbeanstalk.com'
    $http({
      method  : 'GET',
      url     : URL+'/users/address/',
-     headers : {'Authorization': 'Bearer '+$cookieStore.get('key')} 
+     headers : {'Authorization': 'Bearer '+$cookies.get('key')} 
     })
      .success(function(data) {
        if (data.errors) {
@@ -28,7 +28,7 @@ routerApp
      method  : 'POST',
      url     : URL+'/couponsvalididty/',
      data : $scope.user,
-     headers : {'Authorization': 'Bearer '+$cookieStore.get('key'), 'Content-Type': 'application/json'} 
+     headers : {'Authorization': 'Bearer '+$cookies.get('key'), 'Content-Type': 'application/json'} 
     })
      .success(function(data) {
        if (data.errors) {
@@ -59,7 +59,7 @@ routerApp
      url     : URL+'/v1/placeorder/'+$rootScope.userid+'/address/'+$scope.id+'/type/'+$scope.stype+'/',
      params  :{special_request: $scope.sp_request},
      data : $scope.user,
-     headers : {'Authorization': 'Bearer '+$cookieStore.get('key'), 'Content-Type': 'application/json'} 
+     headers : {'Authorization': 'Bearer '+$cookies.get('key'), 'Content-Type': 'application/json'} 
     })
    };
 

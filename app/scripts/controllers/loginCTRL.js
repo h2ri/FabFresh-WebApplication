@@ -2,9 +2,9 @@
 
 
 routerApp
-  .controller('loginCTRL', function($window, $rootScope,$scope, $http, $state, $cookieStore) {
-
-    
+  .controller('loginCTRL', function($window, $rootScope,$scope, $http, $state,$cookies) {
+    var expireDate = new Date();
+    expireDate.setDate(expireDate.getDate() + 1);
     $scope.user = [];
    
     var URL = 'http://fabfresh-dev.elasticbeanstalk.com';
@@ -30,14 +30,16 @@ routerApp
        
         else {
 //$rootScope.access_token = data.access_token;
-        $cookieStore.put('key',data.access_token);
-        console.log(typeof($cookieStore.get('key')));     // testing
-        console.log($cookieStore.get('key'));             // testing
+        $cookies.put('key',data.access_token, {'expires': expireDate});
+         $cookies.put('key1',data.access_token, {'expires': expireDate});
+        console.log(typeof($cookies.get('key')));     // testing
+       console.log($cookies.get('key'));   
+                  // testing
          
         $http({
           method  : 'GET',
           url     : URL+'/users/info/',
-          headers : {'Authorization': 'Bearer '+$cookieStore.get('key')} 
+          headers : {'Authorization': 'Bearer '+$cookies.get('key')} 
          })
           .success(function(data) {
             if (data.errors) {

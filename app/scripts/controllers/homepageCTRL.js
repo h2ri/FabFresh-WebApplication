@@ -2,9 +2,9 @@
 
 
 routerApp
-  .controller('homepageCTRL', function($http, $rootScope,$scope,$cookieStore) {
+  .controller('homepageCTRL', function($http, $rootScope,$scope,$cookies,$state) {
 
-     if($cookieStore.get('key') == null)
+     if($cookies.get('key') == null)
             {
               $state.go('home');
               alert("Please log in to continue");
@@ -27,7 +27,7 @@ routerApp
       method  : 'POST',
       url     : URL+'/users/address/',
       data    : $scope.addres,
-      headers : {'Content-Type': 'application/json', 'Authorization': 'Bearer '+$cookieStore.get('key')}
+      headers : {'Content-Type': 'application/json', 'Authorization': 'Bearer '+$cookies.get('key')}
      })
       .success(function(data) {
         if (data.errors) {
@@ -40,7 +40,7 @@ routerApp
       });
     };
 
-     $cookieStore.put('count',4);
+     $cookies.put('count',4);
 });
 
 

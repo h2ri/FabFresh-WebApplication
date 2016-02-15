@@ -2,8 +2,8 @@
 
 
 routerApp
-  .controller('ordersCTRL', function($rootScope,$scope,$state, $http,$cookieStore) {
-         if($cookieStore.get('key') == null)
+  .controller('ordersCTRL', function($rootScope,$scope,$state, $http,$cookies) {
+         if($cookies.get('key') == null || $cookies.get('key') == undefined)
             {
               $state.go('home');
               alert("Please log in to continue");

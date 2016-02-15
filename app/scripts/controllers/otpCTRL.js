@@ -1,14 +1,14 @@
 'use strict';
 
 routerApp
-  .controller('otpCTRL', function($rootScope, $scope, $http, $state) {
+  .controller('otpCTRL', function($rootScope, $scope, $http, $state,$cookies) {
     $scope.user = [];
     var URL = 'http://fabfresh-dev.elasticbeanstalk.com'
     $scope.otpResend = function() {
     $http({
       method  : 'GET',
       url     : URL+'/users/otpresend/',
-      headers : {'Authorization': 'Bearer '+$cookieStore.get('key')} 
+      headers : {'Authorization': 'Bearer '+$cookies.get('key')} 
      })
       .success(function(data) {
         if (data.errors) {
@@ -26,7 +26,7 @@ routerApp
       method  : 'GET',
       url     : URL+'/users/otp/',
       params : {otp: $scope.otp},
-      headers : {'Authorization': 'Bearer '+$cookieStore.get('key')} 
+      headers : {'Authorization': 'Bearer '+$cookies.get('key')} 
      })
       .success(function(data) {
         if (data.errors) {

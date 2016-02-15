@@ -28,7 +28,7 @@ routerApp
           }
           else{
 
-           $cookieStore.put('key',data.access_token);
+           $cookies.put('key',data.access_token);
             alert("Successfully Signed up");
             $state.go('otp');
           }

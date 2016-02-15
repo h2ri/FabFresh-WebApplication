@@ -2,11 +2,12 @@
 
 
 routerApp
-  .controller('homeCTRL', function($rootScope,$scope,$cookieStore,$state) {
-          
+  .controller('homeCTRL', function($rootScope,$scope,$state,$cookies) {
+          var expireDate = new Date();
+    expireDate.setDate(expireDate.getDate() + 1);
 
   		
-         if(angular.isUndefined($cookieStore.get('cstate')) || $cookieStore.get('cstate') == null)
+         if(angular.isUndefined($cookies.get('cstate')) || $cookies.get('cstate') == null)
           $rootScope.otp_flag=0;
         
           $rootScope.previousState;
@@ -16,18 +17,19 @@ routerApp
     $rootScope.currentState = to.name;
     console.log('Previous state:'+$rootScope.previousState)
     console.log('Current state:'+$rootScope.currentState)
-    $cookieStore.put('cstate',$rootScope.currentState);
-    console.log($cookieStore.get('key'));
-    console.log($cookieStore.get('cstate'));
+    $cookies.put('cstate',$rootScope.currentState,{'expires': expireDate});
+    console.log($cookies.get('key')); 
+    console.log($cookies.get('cstate'));
+
    
     
    
 });
 
-if($cookieStore.get('cstate') != null)
+if($cookies.get('cstate') != null)
 {
-  $state.go($cookieStore.get('cstate'));
-  if($cookieStore.get('key') == null)
+  $state.go($cookies.get('cstate'));
+  if($cookies.get('key') == null)
   $rootScope.otp_flag=0;
   else  
   $rootScope.otp_flag=1;

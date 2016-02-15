@@ -2,9 +2,9 @@
 
 
 routerApp
-  .controller('AboutCTRL', function($rootScope,$scope,$cookieStore) {
+  .controller('AboutCTRL', function($rootScope,$scope,$cookies) {
 
-  			 if($cookieStore.get('key') == null)
+  			 if($cookies.get('key') == null)
             {
               $state.go('home');
               alert("Please log in to continue");
