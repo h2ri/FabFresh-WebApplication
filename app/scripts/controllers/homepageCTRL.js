@@ -4,7 +4,7 @@
 routerApp
   .controller('homepageCTRL', function($http, $rootScope,$scope,$cookies,$state) {
 
-     if($cookies.get('key') == null)
+     if($cookies.get('key') == undefined)
             {
               $state.go('home');
               alert("Please log in to continue");

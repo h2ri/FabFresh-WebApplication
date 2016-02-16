@@ -3,14 +3,16 @@
 
 routerApp
   .controller('logoutCTRL', function( $rootScope,$state,$cookies) {
-  			 if($cookies.get('key') == null)
+  			 if($cookies.get('key')== undefined)
             {
               $state.go('home');
               alert("Please log in to continue");
             }else
         {
-        	 $cookies.put('key',null);
-        	 $cookies.put('cstate',null);
+        	 $cookies.remove('key');
+        	 $cookies.remove('cstate');
+           console.log($cookies.get('key'));
+            console.log($cookies.get('cstate'));
           $rootScope.otp_flag = 0;
         }  
   		
