@@ -1,12 +1,6 @@
 #placebody{
    background-color: white;
-   height: 100vh;
-}
-#header1 {
-   background-color:#00FFFF ;
-   color:white;
-   text-align:center;
-   padding:3px;
+   height: fixed;
 }
 
 #header2{
@@ -27,6 +21,10 @@
    padding:3px;
 }
 
+#in{
+    margin-left: 20px;
+}
+
 
 
 #address_l{
@@ -34,4 +32,8 @@
  height: 142px;
  width: 95%;
  overflow:auto;
+}
+#placeorder_hover:hover{
+   background-color: #777;
+   border-radius: 10px;
 }

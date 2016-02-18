@@ -29,6 +29,10 @@ function boxCloser(e){
      document.body.removeEventListener('click', boxCloser, true);
      $('#login').hide();
   }
+    else if(e.target.id == 'login_submit'){
+        document.body.removeEventListener('click', boxCloser, true);
+     $('#login').hide();
+    }
 }
 
 

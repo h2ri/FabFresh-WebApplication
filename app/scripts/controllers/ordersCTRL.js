@@ -8,13 +8,12 @@ routerApp
               $state.go('home');
               alert("Please log in to continue");
             }  
-          
     $scope.user = [];
     var URL = 'http://fabfresh-dev.elasticbeanstalk.com';
     $http({
       method  : 'GET',
       url     : URL+'/orders/',
-      headers : {'Authorization': 'Bearer '+"hari"} 
+      headers : {'Authorization': 'Bearer '+ $cookies.get('key')} 
      })
       .success(function(data) {
         if (data.errors) {
@@ -66,8 +65,9 @@ routerApp
     
     $scope.track_order = function(id) {
         $rootScope.order_id=id;
-        alert($rootScope.order_id);
         $state.go('track_order');
     };
-    
-});
+     $cookies.put('count',3);
+        //alert($rootScope.order_id);
+        //$state.go('track_order');
+    });

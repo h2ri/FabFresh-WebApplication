@@ -1,7 +1,25 @@
-<h1 class="header">Status : {{Status}}</h1>
+
 <div class="track_orders">
 <track class="chart" id="graph"></track>
 
+<!--<h1>Status = {{Status}}</h1>-->
+<div class="processing">
+<div id="track_id">{{data.id}}</div>
+<hr class="style-two">
+<div id="track_details">
+<ul>
+	<li><rdx>Amount: {{data.amount}}</rdx></li>
+	<br>
+	<li><rdx>Weight: {{data.weight}}</rdx></li>
+	<br>
+	<li><rdx>Quantity: {{data.quantity}}</rdx></li>
+	<br>
+	<li><rdx>Current Status:  {{Status}}</rdx></li>
+</ul>
+</div>
+</div>
+<div class="track_orders">
+<track class="chart" id="graph"></track>
 
 <!--    <p><strong>this is a track page</strong></p>-->
 </div>

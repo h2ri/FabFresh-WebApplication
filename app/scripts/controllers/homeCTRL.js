@@ -15,12 +15,9 @@ routerApp
   $rootScope.$on('$stateChangeSuccess', function(ev, to, toParams, from, fromParams) {
     $rootScope.previousState = from.name;
     $rootScope.currentState = to.name;
-    console.log('Previous state:'+$rootScope.previousState)
-    console.log('Current state:'+$rootScope.currentState)
+    
     $cookies.put('cstate',$rootScope.currentState,{'expires': expireDate});
-    console.log($cookies.get('key')); 
-    console.log($cookies.get('cstate'));
-
+    
    
     
    

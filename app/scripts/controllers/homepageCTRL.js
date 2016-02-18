@@ -3,7 +3,6 @@
 
 routerApp
   .controller('homepageCTRL', function($http, $rootScope,$scope,$cookies,$state) {
-
      if($cookies.get('key') == undefined)
             {
               $state.go('home');
@@ -48,7 +47,6 @@ routerApp
 routerApp.directive('script1', function() {
   var flag=0;
 	 function load_script() {
-
             var s = document.createElement('script'); // use global document since Angular's $document is weak
             s.src = "https://maps.googleapis.com/maps/api/js?callback=initMap";
             document.body.appendChild(s);

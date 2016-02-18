@@ -3,6 +3,8 @@
 
 routerApp
   .controller('logoutCTRL', function( $rootScope,$state,$cookies) {
+  				$cookies.put('count',null);
+  				$rootScope.otp_flag = 0;
   			 if($cookies.get('key')== undefined)
             {
               $state.go('home');
@@ -15,7 +17,5 @@ routerApp
             console.log($cookies.get('cstate'));
           $rootScope.otp_flag = 0;
         }  
-  		
-  
 });
 

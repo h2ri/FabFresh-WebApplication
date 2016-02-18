@@ -7,12 +7,22 @@
         
         <input id="input1" type="password" placeholder="Password" name="password" ng-model="login.password" required>
         <br><br>
-        <input id="input1" ng-disabled="!myForm.email.$valid || !myForm.password.$valid" type="submit"  class="btn">
+        <input id="input1" ng-disabled="!myForm.email.$valid || !myForm.password.$valid" type="submit" id="login_submit" class="btn">
+<!--<i class="loading" ng-show="loading">Loading</i>-->
+<!--        <input id="input1" ng-disabled="!myForm.email.$valid || !myForm.password.$valid" type="submit"  class="btn">-->
     </form>
     <br>    
     <a class="link_class" ui-sref="reset_password"><span>Forget Password..?</span></a><br><br>
     <a class="btn" ui-sref="sign_up"><span>Sign Up</span></a> 
     
+</div>
+
+<!--<i class="loading" ng-show="loading"></i>-->
+<div class="loader" ng-show="loading">
+    
+  <div class="inner one"></div>
+  <div class="inner two"></div>
+  <div class="inner three"></div>
 </div>
 
 <div ui-view>  </div>

@@ -2,20 +2,15 @@
 
 
 routerApp
-  .controller('trackCTRL', function($rootScope,$scope, $http) {
 
-   /*  if($cookieStore.get('key') == null)
-            {
-              $state.go('home');
-              alert("Please log in to continue");
-            } */
-        
+  .controller('trackCTRL', function($rootScope,$scope, $http, $cookies) {
     $scope.user = [];
     var URL = 'http://fabfresh-dev.elasticbeanstalk.com';
     $http({
       method  : 'GET',
       url     : URL+'/orders/'+$rootScope.order_id+'/',
-      headers : {'Authorization': 'Bearer ' + 'hari'} 
+      headers : {'Authorization': 'Bearer ' + $cookies.get('key')
+                } 
      })
       .success(function(data) {
         if (data.errors) {
@@ -51,8 +46,11 @@ routerApp
           type1["10"] = 80;
           type1["11"] = 90;
           type1["12"] = 100;  
+            
           $scope.data=data;
-        
+    //alert(data.id);
+    //$rootScope.data = data;
+          $scope.data=data;
     var Status;
     data.status=parseInt(data.status);
     switch (data.status) {
@@ -100,7 +98,6 @@ $scope.Status=Status;
              $scope.data.status=type1[data.status];
 //script for track is begin ;)            
         var el = document.getElementById('graph'); // get canvas
-
 var options = {
     percent:  el.getAttribute('data-percent') || 25,
     size: el.getAttribute('data-size') || 220,
@@ -111,6 +108,9 @@ var options = {
 var canvas = document.createElement('canvas');
 var span = document.createElement('span1');
 //options.percent = 
+
+//span.textContent = options.percent + '%';
+    span.textContent = Status;
 span.textContent = options.percent + '%';
     
 if (typeof(G_vmlCanvasManager) !== 'undefined') {
@@ -142,25 +142,8 @@ drawCircle('#efefef', options.lineWidth, 1);
             if(data.status==0)
 drawCircle('#efefef', options.lineWidth, options.percent / 100);
             else
-                drawCircle('#7500E2', options.lineWidth, options.percent / 100);
+                drawCircle('#7500e2', options.lineWidth, options.percent / 100);
 // script for track is end here ;)
         }
       });
 });
-//routerApp.directive('script2', function() {
-//  var flag=0;
-//	 function load_script() {
-//            var s = document.createElement('script'); // use global document since Angular's $document is weak
-//            s.src = "scripts/track.js";
-//            document.body.appendChild(s);
-//        }
-//    return {
-//      restrict: 'E',
-//      scope: false,
-//      link: function(scope, elem, attr) {
-//        //if (attr.type === 'text/javascript-lazy') {
-//          load_script();
-//        //}
-//      }
-//    };
-//  });
