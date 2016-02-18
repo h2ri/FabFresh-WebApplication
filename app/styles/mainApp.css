@@ -68,7 +68,12 @@
 }
 
 #t5{
- color:#000000 ;
+ color:#000 ;
+ background-color: #fff; 
  border-radius: 10px;
- style="position:relative;
+ position:fixed;
+ bottom: 45%;
+}
+#home_button{
+  margin-left: 35%;
 }
