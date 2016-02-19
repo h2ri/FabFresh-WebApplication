@@ -67,7 +67,8 @@ routerApp.config(function($stateProvider, $urlRouterProvider ) {
         })
          .state('Logout', {
             url: '/#',
-            template: '<h1>BYE<h1>',
+            templateUrl: '../views/logout.html',
+            //template: '<h1>BYE<h1>',
             controller: 'logoutCTRL',
         })
          .state('About', {
@@ -75,6 +76,12 @@ routerApp.config(function($stateProvider, $urlRouterProvider ) {
             template: '<h1>yoyoyoyoyooy<h1>',
             controller: 'AboutCTRL',
         })
+         .state('deliver', {
+            url: '/#',
+            templateUrl: '../views/deliver.html',
+            controller: 'address_listCTRL',
+        })
+
         
 });
 /*

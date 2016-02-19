@@ -1,48 +1,76 @@
-
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300);
 .details {
   align-content: center;
   text-align: center;
   font-size: 15px;
   text-shadow: 1px 0px;
-  font-weight: 500;
-  background-color: #F8F8F8  ;
+  font-weight: 100;
+  background-color: #F3E8E8;
 
 }
-
-
+.details span{
+    margin-top: -10px;
+}
+hr.style-three {
+    border: 0;
+    border-bottom: 1px dashed #ccc;
+    background: #999;
+}
 .coupon {
- color: #000; 
+ color: #F90B6D; 
  font-family: 'Open Sans', sans-serif; 
- font-size: 15px; 
+ font-size: 20px; 
  font-weight: 300; 
- line-height: 30px; 
- padding-left: 15px;
+ line-height: 40px; 
+ padding-left: 10px;
 }
-
-.order_description {
- color: #000; 
- font-family: 'Open Sans', sans-serif; 
- font-size: 15px; 
- font-weight: 300; 
- line-height: 30px; 
- padding-left: 15px;
+hr { 
+    display: block;
+    margin-top: -10px;
+    margin-bottom: -10px;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 10px;
 }
-
+.track{
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-align: right;
+  padding-top: 15px;
+  margin-right: 10px;
+  border-radius: 10px;
+}
+.track_button{
+ color:#000 ;
+ background-color: #fff; 
+ border-radius: 10px;
+ position:relative;
+ bottom: 45%;
+}
 
 
 .orders {
-  width: 210px;
-  height: 310px;
+  width: 250px;
+  height: 400px;
   background-color: white;
   border-radius: 10px;
+  
   box-shadow: 0 0 5px 3px rgba(0, 0, 0, 0.1), 2px 2px 8px rgba(0, 0, 0, 0.1);
   position: relative;
   float: left;
-  margin-left: 20px;
-  margin-top: 30px;
+  margin-left: 33px;
+  margin-top: 35px;
 }
-
-
+.orders .orders-header {
+  height: 40px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.orders .orders-body {
+  position: relative;
+}
 /*.orders .orders-body img {
   height: 100px;
   width: 100px;
@@ -55,27 +83,57 @@
   box-shadow: 0 6px 6px -4px rgba(0, 0, 0, 0.2);
 }*/
 .orders .orders-body .status {
-  font-size: 15px;
+  font-size: 32px;
   text-align: center;
-
 }
-
+.orders .orders-body .description {
+  padding: 0 25px;
+  line-height: 1.5;
+  text-align: left;
+  font-kerning: initial;
+  font-family: "Goudy Bookletter 1911", sans-serif;
+  font-size: 20px;
+    position: fixed;
+    margin-bottom: 10px;
+}
 .orders .orders-body .time {
   font-size: 12px;
+  letter-spacing: 2px;
   text-transform: uppercase;
   text-align: right;
-  padding-top: -3px;
+  padding-top: 50px;
   margin-right: 10px;
 }
-
-.orders .orders-body .track{
-  font-size: 10px;
-  text-transform: uppercase;
-  text-align: right;
-  text-shadow: 1px 1px;
-  margin-right: 10px;
+hr.style-two {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
 }
 
- 
+hr.style-thr{
+  margin-left: 60px;
+  margin-top: -1px;
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
+
+.order_description{
+  color: #000; 
+ font-family: 'Open Sans', sans-serif; 
+ font-size: 20px; 
+ font-weight: 300; 
+ line-height: 30px; 
+ padding-left: 10px;
+}
 
 
+
+
+
+hr.style13 {
+    position: relative;
+  height: 10px;
+  border: 0;
+  box-shadow: 0 10px 10px -10px #8c8b8b inset;
+}

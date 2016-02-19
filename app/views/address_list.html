@@ -6,8 +6,9 @@
   </div> 
 </div>
       <center>
-          <button  ng-disabled="currentPage == 0" ng-click="currentPage=currentPage-1"><b><<</b></button>
-          <button  ng-disabled="currentPage >= l" ng-click="currentPage=currentPage+1"><b>>></b></button>
+        <p ng-hide="currentPage < l" id="box"></p>
+          <button id="boxes" ng-disabled="currentPage == 0" ng-click="currentPage=currentPage-1"><b><<</b></button>
+          <button  id="boxes" ng-disabled="currentPage >= l" ng-click="currentPage=currentPage+1"><b>>></b></button>
       </center><br>
 
-<center><button  ui-sref="homepage" >Add New Address</button</center>
+<center><button  ng-show="currentPage == l" ui-sref="homepage" >Add New Address</button</center>

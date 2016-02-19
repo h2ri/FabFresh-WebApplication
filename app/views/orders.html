@@ -1,23 +1,23 @@
 <div class="orders" ng-repeat="x in data" >
         <div class="orders-header">
-           <center><h2>#{{x.id}}</h2></center>
-           <hr class="style-two">
+            <text>{{x.id}}</text>
+            <hr class="style-two">
         </div>
 
   <div class="orders-body">
-    <div class="time"><b>{{x.created_at_time}}</b></div>
-    
-    <div class="coupon"><b>Coupon Code: </b>{{x.coupon}}</div>
+    <div class="time">{{x.created_at_time}}</div>
+    <div class="status">{{x.status | uppercase}}</div>
+    <div class="coupon">Coupon Code: {{x.coupon}}</div>
     <div class="details"><span>Cloths Details</span></div>
-   
-    <div class="order_description"><b>Quantity: </b>{{x.quantity}} ps<br>
-                                  <b>Weight: </b>{{x.weight}} kg<br>
-                                  <b>Type: </b>{{x.order_type}}
-    </div> 
-    <div class="status">{{x.status | uppercase }}</div>
-   <div class="track" ng-click="track_order(x.id)"><button style="border-radius: 50px;"><b>track order</b></button></div>
-  </div>  
-</div>
+    <hr class="style-thr" width="50%">
+    <div class="order_description">
+                        Quantity: {{x.quantity}}<br>
+                        Weight: {{x.weight}}<br>
+                        Type: {{x.order_type}}<br>
+    </div>
+    <div class="track"><button class="track_button" ng-click="track_order(x.id)">track order</button></div>
+  </div>
+</div>        
 <!--
 <div id="order">
   <div id="orders_list">

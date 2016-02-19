@@ -23,6 +23,17 @@ span1 {
     font-weight:100;
     margin-left:5px;
 }
+#deliver_button_position{
+    margin-top: 20px;
+    position: relative;
+}
+ #deliver_button{
+    color:#000 ;
+ background-color: #fff; 
+ border-radius: 10px;
+ position:relative;
+ bottom: 45%;
+}
 
 
 /*

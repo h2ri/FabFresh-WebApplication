@@ -54,7 +54,7 @@ routerApp
               if(data[i].quantity==null)
                   $scope.data[i].quantity=0;
               if(data[i].coupon==null)
-                  $scope.data[i].coupon="No Coupaon";
+                  $scope.data[i].coupon="____";
               if(data[i].afterDiscount==null)
                   $scope.data[i].afterDiscount="No Discount";
 
