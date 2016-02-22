@@ -182,5 +182,44 @@ angular.module('routerApp')
 
 
 
+    task.login1 = function(us){
+      var deferl = $q.defer();
+      $http({
+      method  : 'POST',
+      url     : URL+'/users/login/',
+      data    : us,
+      headers : {'Content-Type': 'application/json'} 
+     })
+      .success(function(response){
+        deferl.resolve(response);
+    })
+    .error(function(error,status){
+      deferl.reject(error);
+    })
+
+    return deferl.promise
+
+    }
+
+    task.login2 = function(){
+      var deferll = $q.defer();
+      $http({
+          method  : 'GET',
+          url     : URL+'/users/info/',
+          headers : {'Authorization': 'Bearer '+$cookies.get('key')} 
+         })
+      .success(function(response){
+        deferll.resolve(response);
+    })
+    .error(function(error,status){
+      deferll.reject(error);
+    })
+
+    return deferll.promise
+  }
+
+
+
+
   return task;
  });
