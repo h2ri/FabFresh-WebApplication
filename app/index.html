@@ -18,48 +18,15 @@
     <style>
         .navbar { border-radius:0; }
     </style>
-
-    <!-- JS (load angular, ui-router, and our custom js file) 
-    <script src="http://code.angularjs.org/1.2.13/angular.js"></script>-->
-     <script src="https://storage.googleapis.com/code.getmdl.io/1.0.4/material.min.js"></script>
-    <!-- Material Design icon font -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script> 
-    <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.8/angular-ui-router.min.js"></script>
-   <script src="/bower_components/angular-cookies/angular-cookies.js"></script>
-
-    <meta charset="utf-8">
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
     
-      
 </head>
 <title>Fabfresh</title>
-<!-- apply our angular app to our site -->
+
 <body ng-app="routerApp" ng-controller="homeCTRL">
 
-<!-- NAVIGATION -->
-<!-- <nav ng-hide="otp_flag" class="nav" role="navigation">
 
-        <li><a  ui-sref="login" id="login_btn" class="btn">Login</a></li>
-</nav> -->
-<!-- MAIN CONTENT -->
-    <!-- THIS IS WHERE WE WILL INJECT OUR CONTENT ============================== -->
 <div id="Main">
 
-<!--
-<div ng-show="otp_flag" id="sidebar">
-    <ul>
-      <li><a ui-sref="homepage">Address</a></li>
-      <li><a ui-sref="address_list">Address List</a></li>
-      <li><a ui-sref="orders">Orders</a></li>
-      <li><a ui-sref="place_order">Placeorder</a></li>
-      <li><a ui-sref="profiles">About</a></li>
-      <li><a ui-sref="Logout">Logout</a></li>
-    </ul>
-</div>
--->
-     <!-- Always shows a header, even in smaller screens. -->
-     <!-- Always shows a header, even in smaller screens. -->
 
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
       <header style="position: fixed; background-color: #111" class="mdl-layout__header">
@@ -77,14 +44,10 @@
       <div class="mdl-layout__drawer">
         <span class="mdl-layout-title">{{u_name}}</span>
         <nav class="mdl-navigation">
-          <!-- <a class="mdl-navigation__link" href="">View Orders</a>
-          <a class="mdl-navigation__link" href="">Account Settings</a>
-          <a class="mdl-navigation__link" href="">Pricing Agreements</a> -->
 
       <a class="mdl-navigation__link" ui-sref="homepage">Address</a>
-      <a class="mdl-navigation__link" ui-sref="address_list">Address List</a>
       <a class="mdl-navigation__link" ui-sref="orders">Orders</a>
-      <a class="mdl-navigation__link" ui-sref="place_order">Placeorder</a>
+      <a class="mdl-navigation__link" id="placebtn" ui-sref="place_order">Placeorder</a>
       <a class="mdl-navigation__link" ui-sref="profiles">About</a>
       <a class="mdl-navigation__link" ui-sref="Logout">Logout</a>
     
@@ -108,7 +71,10 @@
     <script src="bower_components/angular-ui-router-styles/ui-router-styles.js"></script>
     <script src="bower_components/Chart.js/Chart.js"></script>
     <script src="bower_components/angular-chart.js/dist/angular-chart.js"></script>
-     <script src="bower_components/ng-simplePagination/simplePagination.js"></script>
+    <script src="bower_components/angular-simple-logger/dist/angular-simple-logger.js"></script>
+    <script src="bower_components/lodash/lodash.js"></script>
+    <script src="bower_components/angular-google-maps/dist/angular-google-maps.js"></script>
+    <script src="bower_components/ng-simplePagination/simplePagination.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -118,10 +84,11 @@
     <script src="scripts/profile.js"></script>
     <script src="scripts/controllers/homeCTRL.js"></script>
     <script src="scripts/controllers/reset_passwordCTRL.js"></script>
-    <script src="scripts/controllers/address_listCTRL.js"></script>
+    <script src="scripts/controllers/deliverCTRL.js"></script>
+    <script src="scripts/controllers/place_orderCTRL.js"></script>
     <script src="scripts/controllers/ordersCTRL.js"></script>
     <script src="scripts/controllers/loginCTRL.js"></script>
-    <script src="scripts/controllers/homepageCTRL.js"></script>
+    <script src="scripts/controllers/addressCTRL.js"></script>
     <script src="scripts/controllers/sign_upCTRL.js"></script>
     <script src="scripts/controllers/otpCTRL.js"></script>
     <script src="scripts/controllers/trackCTRL.js"></script>
@@ -130,5 +97,14 @@
     <script src="scripts/hide.js"></script>
     <script src="scripts/services/services.js"></script>
         <!-- endbuild -->
+
+
+     <script src="https://storage.googleapis.com/code.getmdl.io/1.0.4/material.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.8/angular-ui-router.min.js"></script>
+   <script src="/bower_components/angular-cookies/angular-cookies.js"></script>
+    <meta charset="utf-8">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
+    
     </body>
 </html>

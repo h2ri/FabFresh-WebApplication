@@ -7,8 +7,8 @@ routerApp
   				$rootScope.otp_flag = 0;
   			 if($cookies.get('key')== undefined)
             {
-              $state.go('home');
-              alert("Please log in to continue");
+              $state.go('login');
+              alert("Please log in first");
             }else
         {
         	 $cookies.remove('key');

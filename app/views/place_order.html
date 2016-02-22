@@ -1,27 +1,107 @@
 <div id="placebody">    
+    <!-- The Modal -->
+<div id="myModal" class="modal">
+      <!-- Modal content -->
+  <div class="modal-content">
+    <h3>Place order</h3>
+      <div class="modal-body">
+          <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-2">
+                          <input type="radio" id="option-2" class="mdl-radio__button" name="options" ng-model="type" value="0">
+                          <span class="mdl-radio__label">Wash + Iron</span>
+                          </label>
+                          <br>
+                          <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-3">
+                          <input type="radio" id="option-3" class="mdl-radio__button" name="options" ng-model="type" value="1">
+                          <span class="mdl-radio__label">Wash + Fold</span>
+                          </label>
+                          <br>
+                          <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-4">
+                          <input type="radio" id="option-4" class="mdl-radio__button" name="options" ng-model="type" value="2">
+                          <span class="mdl-radio__label">Iron</span>
+                          </label><br>
+
+                          <button id="btn1">Next</button>
+      </div>
+  </div>  
+</div>                 
+        <!-- <span class="close">x</span> -->
+        
+
+    <div id="myModal1" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+         <h3>Address</h3>
+          <div class="modal-body" >
 
 
-    <form ng-submit="placeorderForm()">
-    <div id="header2">
-        <center><h2><b>Select a service</b></h2></center>
-          <input type="radio" name="service_t" value="2" ng-model="stype" id="in"><b> Wash + Iron </b><br>
-          <input type="radio" name="service_t" value="0" ng-model="stype" id="in"><b> Wash + Fold </b><br>
-          <input type="radio" name="service_t" value="1" ng-model="stype" id="in"><b> Iron </b><br>
+            <div ng-repeat="x in data | startFrom:currentPage*1 | limitTo:1" >
+
+               <div id="place_address_box">
+
+                      <tst >{{x.address}}__{{x.id}}</tst><br>
+
+               
+               </div> 
+               
+               <button ng-click="getAddress(x)" id = "btn2">Next</button>
+            </div>
+          <button id="btn5">Back</button>
+            
+              <button ng-hide="currentPage == 0" id="place_left_button" ng-disabled="currentPage == 0" ng-click="currentPage=currentPage-1"><b><<</b></button>
+
+              <button  ng-hide="currentPage == l" id="place_right_button" ng-disabled="currentPage >= l" ng-click="currentPage=currentPage+1"><b>>></b></button>
+
+          
+              <button id="place_addr_button" ng-show="currentPage == l" ui-sref="address" ><h2>Add New Address</h2></button> 
+          
+              
+              
+          
+          </div>
+      </div>
+    </div>
+    <div id="myModal2" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+         <h3>Coupon</h3>
+          <div class="modal-body">
+          <!-- Textfield with Floating Label -->
+
+            <form ng-submit="check_couponvalidity()">
+              <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <input ng-model="coupon" class="mdl-textfield__input" type="text" id="sample3" required>
+                <label  class="mdl-textfield__label" for="sample3">Coupon</label>
+              </div>
+              <!-- Flat button with ripple -->
+              <button  type="submit" id="apply">
+              Apply
+              </button>
+            </form>
+            <button id="btn6">Back</button>
+            <button id="btn3">Next</button>
+          </div>
+      </div>
+    </div>
+    
+    <div id="myModal3" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+         <h3>Spacial Instructions</h3>
+          <div class="modal-body">
+          <!-- Floating Multiline Textfield -->
+<form ng-submit="placeOrderForm()">
+  <div class="mdl-textfield mdl-js-textfield">
+    <textarea ng-model="special_ins" class="mdl-textfield__input" type="text" rows= "4" id="sample5" ></textarea>
+    <label class="mdl-textfield__label" for="sample5">Special Instructions....</label>
+  </div>
+  <button type="submit" id="btn4">Place Order</button>
+</form>
+<button id="btn7">Back</button>
+              
+              
+          
+          </div>
+      </div>
     </div>
 
-   <center><h2><b>Address List</b></h2></center>
-   <div id="address_l">
-          <div  ng-repeat="x in data">
-        <b id="placeorder_hover"><input type="radio" value="{{x.id}}" ng-model= "$parent.id" name="address" id="inputid"> <b>{{x.address}}</b></b>
-        </div>
-   </div>
-
-   <div id="header4">
-        <br><input type="text" placeholder="Coupon Code" size="20" ng-model="coupon" id="in">
-        <input type="button"  value="Apply" ng-click="check_couponvalidity()">
-        <b>{{isvalid}}</b>
-        <br><br><textarea rows="5" cols="50" placeholder="Special Request" value="spe_req" ng-model="sp_request" id="in">Special Request</textarea><br><br><br>
-    </div>
-        <center><button type="submit">PLACE ORDER</button></center>
-    </form>
 </div>

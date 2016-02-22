@@ -1,15 +1,58 @@
-#box
-{
-  height: 300px;
-  width: 250px;
-  background: yellow;
-  font-size: 20px;
-  font-style: oblique;
-  color: #000;
-  margin-top: 10%;
-  margin-left: 40%;
+#add_list_box{
+  
+  position: absolute;
+  left: 50%;
+  top: 65%;
+  border-radius: 20px;
+  transform: translate(-50%, -50%);
+  width: 400px; 
+  height: 250px;
+   
+  padding: 40px; 
+  background-color: white ;
 }
 
-#boxes{
-	position: relative;
+#add_left_button{
+ color:#000 ;
+ background-color: #fff; 
+ border-radius: 10px;
+ position:absolute;
+ bottom: 37%;
+ left: 20%;
+ box-shadow: 3px 3px 5px #888888;
+
 }
+
+#add_right_button{
+  color:#000 ;
+ background-color: #fff; 
+ border-radius: 10px;
+ position:absolute;
+ bottom: 37%;
+ right: 20%;
+ box-shadow: 3px 3px 5px #888888;
+
+}
+
+#add_addr_button{
+
+ color:#000 ;
+ background-color:#fff; 
+ border-radius: 100px;
+position:absolute;
+ bottom: 37%;
+ right: 20%;
+ box-shadow: 5px 5px 5px #888888;
+
+}
+
+tst {
+color: #000;
+font-weight:60;
+font-size: 20px;
+font-family: Arial;
+}
+
+
+
+

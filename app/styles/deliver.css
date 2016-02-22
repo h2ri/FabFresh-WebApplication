@@ -7,62 +7,68 @@
   transform: translate(-50%, -50%);
   width: 400px; 
   height: 450px;
-  border: 1px solid #CCC; 
+  
   padding: 40px; 
-  background-color: #F8F8F8 ;
+  background-color: #282828 ;
+   box-shadow: 10px 10px 5px #404040;
 }
 #address_box{
   position: absolute;
   border-radius: 50px;
   left: 12%;
-  top: 37%;
+  top: 40%;
   width: 300px; 
   height: 200px;
-  border: 1px solid #CCC; 
+  border: 1px solid #111; 
   padding-top: 500px;
   padding: 20px; 
-  background-color: white;
+  background-color: #505050 ;
+  box-shadow: 8px 8px 5px #404040 ;
 
 }
 #drop_req_button{
   color:#000 ;
- background-color: #fff; 
+ background-color: #707070; 
  border-radius: 10px;
  position:absolute;
  bottom: 5%;
  left: 38%;
+  box-shadow: 3px 3px 5px #888888;
 }
 
 #left_button{
  color:#000 ;
- background-color: #fff; 
+ background-color: #707070; 
  border-radius: 10px;
  position:absolute;
- bottom: 40%;
+ bottom: 37%;
  left: 2%;
+ box-shadow: 3px 3px 5px #888888;
 
 }
 
 #right_button{
   color:#000 ;
- background-color: #fff; 
+ background-color: #707070; 
  border-radius: 10px;
  position:absolute;
- bottom: 40%;
+ bottom: 37%;
  right: 2%;
+ box-shadow: 3px 3px 5px #888888;
 
 }
 
 #addr_button{
 
  color:#000 ;
- background-color:#fff; 
- border-radius: 10000px;
+ background-color:#707070; 
+ border-radius: 100px;
  width: 250px; 
  height: 100px;
  position:absolute;
  bottom: 30%;
  right: 20%;
+ box-shadow: 5px 5px 5px #888888;
 
 }
 
@@ -74,14 +80,24 @@ font-family: Arial;
 }
 
 #coupon_text{
+  color:#000;
+  padding-left: 8px;
+  background-color: #888888;
   border-top-left-radius: .9em;
   border-bottom-left-radius: .9em;
+  box-shadow: 5px 5px 5px #888888;
 }
 #coupon_button{
+  color:#000 ;
+  background-color:#707070;
   border-top-right-radius: .9em;
   border-bottom-right-radius: .9em;
+  box-shadow: 5px 5px 5px #888888;
 }
-
+#text_shadow{
+  color: #909090;
+   text-shadow: 2px 2px #000000;
+}
 
 
 

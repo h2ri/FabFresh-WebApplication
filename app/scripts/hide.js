@@ -29,7 +29,7 @@ function boxCloser(e){
      document.body.removeEventListener('click', boxCloser, true);
      $('#login').hide();
   }
-    else if(e.target.id == 'login_submit'){
+    else if(e.target.id == 'input1'){
         document.body.removeEventListener('click', boxCloser, true);
      $('#login').hide();
     }

@@ -9,11 +9,6 @@ routerApp
               $state.go('home');
               alert("Please log in to continue");
             }
-          
   			$rootScope.otp_flag=1;
-  			
-
-
-
 });
 

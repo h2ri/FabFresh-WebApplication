@@ -51,99 +51,99 @@ routerApp
     //alert(data.id);
     //$rootScope.data = data;
           $scope.data=data;
-    var Status;
-    data.status=parseInt(data.status);
-    switch (data.status) {
-    case 0:
-        Status = "cancelled";
-        break;
-    case 1:
-        Status = "created";
-        break;
-    case 2:
-        Status = "pickup";
-        break;
-    case 3:
-        Status = "receivedAtCenter";
-        break;
-    case 4:
-        Status = "precheck";
-        break;
-    case 5:
-        Status = "tagging";
-        break;
-    case 6:
-        Status = "wash";
-        break;
-    case 7:
-        Status = "dry";
-        break;
-    case 8:
-        Status = "iron";
-        break;
-    case 9:
-        Status = "package";
-        break;
-    case 10:
-        Status = "shipped";
-        break;
-    case 11:
-        Status = "drop";
-        break;
-    case 12:
-        Status = "completed";
-        break;        
-}
-$scope.Status=Status;
-             $scope.data.status=type1[data.status];
-//script for track is begin ;)            
-        var el = document.getElementById('graph'); // get canvas
-var options = {
-    percent:  el.getAttribute('data-percent') || 25,
-    size: el.getAttribute('data-size') || 220,
-    lineWidth: el.getAttribute('data-line') || 15,
-    rotate: el.getAttribute('data-rotate') || 0
-}
-    options.percent = data.status;
-var canvas = document.createElement('canvas');
-var span = document.createElement('span1');
-//options.percent = 
+          var Status;
+          data.status=parseInt(data.status);
+          switch (data.status) {
+          case 0:
+              Status = "cancelled";
+              break;
+          case 1:
+              Status = "created";
+              break;
+          case 2:
+              Status = "pickup";
+              break;
+          case 3:
+              Status = "receivedAtCenter";
+              break;
+          case 4:
+              Status = "precheck";
+              break;
+          case 5:
+              Status = "tagging";
+              break;
+          case 6:
+              Status = "wash";
+              break;
+          case 7:
+              Status = "dry";
+              break;
+          case 8:
+              Status = "iron";
+              break;
+          case 9:
+              Status = "package";
+              break;
+          case 10:
+              Status = "shipped";
+              break;
+          case 11:
+              Status = "drop";
+              break;
+          case 12:
+              Status = "completed";
+              break;        
+      }
+      $scope.Status=Status;
+                   $scope.data.status=type1[data.status];
+      //script for track is begin ;)            
+              var el = document.getElementById('graph'); // get canvas
+      var options = {
+          percent:  el.getAttribute('data-percent') || 25,
+          size: el.getAttribute('data-size') || 220,
+          lineWidth: el.getAttribute('data-line') || 15,
+          rotate: el.getAttribute('data-rotate') || 0
+      }
+          options.percent = data.status;
+      var canvas = document.createElement('canvas');
+      var span = document.createElement('span1');
+      //options.percent = 
 
-//span.textContent = options.percent + '%';
-    span.textContent = Status;
-span.textContent = options.percent + '%';
-    
-if (typeof(G_vmlCanvasManager) !== 'undefined') {
-    G_vmlCanvasManager.initElement(canvas);
-}
-var ctx = canvas.getContext('2d');
-canvas.width = canvas.height = options.size;
+      //span.textContent = options.percent + '%';
+          span.textContent = Status;
+      span.textContent = options.percent + '%';
+          
+      if (typeof(G_vmlCanvasManager) !== 'undefined') {
+          G_vmlCanvasManager.initElement(canvas);
+      }
+      var ctx = canvas.getContext('2d');
+      canvas.width = canvas.height = options.size;
 
-el.appendChild(span);
-el.appendChild(canvas);
+      el.appendChild(span);
+      el.appendChild(canvas);
 
-ctx.translate(options.size / 2, options.size / 2); // change center
-ctx.rotate((-1 / 2 + options.rotate / 180) * Math.PI); // rotate -90 deg
+      ctx.translate(options.size / 2, options.size / 2); // change center
+      ctx.rotate((-1 / 2 + options.rotate / 180) * Math.PI); // rotate -90 deg
 
-//imd = ctx.getImageData(0, 0, 240, 240);
-var radius = (options.size - options.lineWidth) / 2;
+      //imd = ctx.getImageData(0, 0, 240, 240);
+      var radius = (options.size - options.lineWidth) / 2;
 
-var drawCircle = function(color, lineWidth, percent) {
-		percent = Math.min(Math.max(0, percent || 1), 1);
-		ctx.beginPath();
-		ctx.arc(0, 0, radius, 0, Math.PI * 2 * percent, false);
-		ctx.strokeStyle = color;
-        ctx.lineCap = 'round'; // butt, round or square
-		ctx.lineWidth = lineWidth
-		ctx.stroke();
-};
+      var drawCircle = function(color, lineWidth, percent) {
+      		percent = Math.min(Math.max(0, percent || 1), 1);
+      		ctx.beginPath();
+      		ctx.arc(0, 0, radius, 0, Math.PI * 2 * percent, false);
+      		ctx.strokeStyle = color;
+              ctx.lineCap = 'round'; // butt, round or square
+      		ctx.lineWidth = lineWidth
+      		ctx.stroke();
+      };
 
-drawCircle('#efefef', options.lineWidth, 1);
-            if(data.status==0)
-drawCircle('#efefef', options.lineWidth, options.percent / 100);
-            else
-                drawCircle('#7500e2', options.lineWidth, options.percent / 100);
-// script for track is end here ;)
+      drawCircle('#efefef', options.lineWidth, 1);
+                  if(data.status==0)
+      drawCircle('#efefef', options.lineWidth, options.percent / 100);
+                  else
+                      drawCircle('#7500e2', options.lineWidth, options.percent / 100);
+      // script for track is end here ;)
         }
       });
 });
