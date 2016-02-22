@@ -56,7 +56,6 @@ routerApp
    $http({
      method  : 'GET',
      url     : URL+'/v1/placeorder/address/'+$scope.id+'/order/'+$rootScope.order_id+'/',
-     params  :{type: $scope.stype},
      headers : {'Authorization': 'Bearer '+$cookies.get('key')} 
     })
     .success(function(data) {

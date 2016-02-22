@@ -219,6 +219,23 @@ angular.module('routerApp')
   }
 
 
+   task.sign = function(sub){
+    var defersign = $q.defer();
+    $http({
+      method  : 'POST',
+      url     : URL+'/users/sign_up/',
+      data    : sub,
+      headers : {'Content-Type': 'application/json'} 
+     }).success(function(response){
+        defersign.resolve(response);
+    })
+    .error(function(error,status){
+      defersign.reject(error);
+    })
+    return defersign.promise
+  }
+
+
 
 
   return task;

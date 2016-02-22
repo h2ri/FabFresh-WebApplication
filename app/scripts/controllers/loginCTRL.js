@@ -23,7 +23,7 @@ routerApp
       };
 
       var us = $scope.user;
-      task.login1(us)
+      task.login1(us)                 //call to service
       .then(function(data){
         $scope.$emit('UNLOAD');
         if(data.status=="Not Authenticated"){
@@ -34,7 +34,7 @@ routerApp
        console.log($cookies.get('key'));   
                   // testing
          
-          task.login2()
+          task.login2()                       // call to service 
           .then(function(data){
             if(data[0].UserInfo.flag){
                 console.log(data[0]);  
