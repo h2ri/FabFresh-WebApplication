@@ -2,26 +2,19 @@
 
 
 routerApp
-  .controller('reset_passwordCTRL', function($scope, $http) {
-    $scope.user = [];
-    var URL = 'http://fabfresh-dev.elasticbeanstalk.com';
+  .controller('reset_passwordCTRL', function($scope, $http,task) {
+   
     $scope.submitForm = function() {
       $scope.user = {
         "username": $scope.reset_password.email
       };
-    $http({
-      method  : 'POST',
-      url     : URL+'/users/info/reset_password/',
-      data    : $scope.user,
-      headers : {'Content-Type': 'application/json'} 
-     })
-      .success(function(data) {
-        if (data.errors) {
+          var us = $scope.user;
+          task.rep(us)
+        .then(function(response){
+          alert("An email has been sent to your email id");
+        },function(error){
           alert("Some error occured");
-        }
-        else {
-            alert("An email has been sent to your email id");
-        }
-      });
-    };
+        })
+      
+  }
 });

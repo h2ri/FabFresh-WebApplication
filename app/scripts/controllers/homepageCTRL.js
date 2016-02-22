@@ -2,8 +2,7 @@
 
 
 routerApp
-  .controller('homepageCTRL', function($http, $rootScope,$scope,$cookies,$state) {
-
+  .controller('homepageCTRL', function($http, $rootScope,$scope,$cookies,$state,task) {
      if($cookies.get('key') == undefined)
             {
               $state.go('home');
@@ -23,32 +22,22 @@ routerApp
         "addressLogitude": lng,
         "addressSubLocality": $scope.sublocal
       };
-    $http({
-      method  : 'POST',
-      url     : URL+'/users/address/',
-      data    : $scope.addres,
-      headers : {'Content-Type': 'application/json', 'Authorization': 'Bearer '+$cookies.get('key')}
-     })
-      .success(function(data) {
-        if (data.errors) {
-          alert("Some error occured");
+      var add = $scope.addres;
+      task.homep(add)
+      .then(function(reponse){
+        alert('Address has been added');
+      },function(error){
+        alert('Some error occured')
+      })
+      
+}
 
-        }
-        else {
-          alert("address has been added");
-        }
-      });
-    };
-
-     $cookies.put('count',4);
 });
-
 
 
 routerApp.directive('script1', function() {
   var flag=0;
 	 function load_script() {
-
             var s = document.createElement('script'); // use global document since Angular's $document is weak
             s.src = "https://maps.googleapis.com/maps/api/js?callback=initMap";
             document.body.appendChild(s);

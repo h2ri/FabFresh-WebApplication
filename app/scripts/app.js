@@ -2,7 +2,8 @@
 
 var routerApp = angular.module('routerApp', [
     'ui.router',
-    'ngCookies'
+    'ngCookies',
+    'simplePagination'
     ]);
  
 routerApp.config(function($stateProvider, $urlRouterProvider ) {
@@ -55,7 +56,7 @@ routerApp.config(function($stateProvider, $urlRouterProvider ) {
             controller: 'address_listCTRL',
         })
         .state('track_order', {
-            url: '/track_order',
+            url: '/orders',
             templateUrl: '../views/track.html',
             controller: 'trackCTRL',
         })
@@ -66,18 +67,26 @@ routerApp.config(function($stateProvider, $urlRouterProvider ) {
         })
          .state('Logout', {
             url: '/#',
-            template: '<h1>BYE<h1>',
+            template: '<h1>BYE</h1>',
             controller: 'logoutCTRL',
         })
-         .state('About', {
+         .state('Deliver', {
             url: '/#',
-            template: '<h1>yoyoyoyoyooy<h1>',
-            controller: 'AboutCTRL',
+            templateUrl: '../views/Deliver.html',
+           controller: 'address_listCTRL',
         })
 
-          .state('home', {
-            url: '/#',
-            
+          .state('Drop', {
+            url: '/Drop',
+            template: '<h1>Request successful</h1>',
+           controller: 'address_listCTRL',
         })
+         
         
 });
+/*
+routerApp.factory('UserService', function() {
+    return {
+        name : ''
+    };
+});*/   

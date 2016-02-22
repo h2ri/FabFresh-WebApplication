@@ -2,12 +2,12 @@ function updateMarkerAddress(str) {
   document.getElementById('address').innerHTML = str;
 }
 
-function updateMarkerPosition(latLng) {
-  document.getElementById('info').innerHTML = [
-    latLng.lat(),
-    latLng.lng()
-  ].join(', ');
-}
+// function updateMarkerPosition(latLng) {
+//   document.getElementById('info').innerHTML = [
+//     latLng.lat(),
+//     latLng.lng()
+//   ].join(', ');
+// }
 
 var marker;
 var lat,lng,postalcode,locality1;
@@ -32,7 +32,7 @@ function initMap() {
 
     getReverseGeocodingData(lat_lng.lat(), lat_lng.lng());
     $( "#map_sidebar" ).show( "fold");
-    updateMarkerPosition(marker.getPosition());
+   // updateMarkerPosition(marker.getPosition());
     lat=lat_lng.lat();
     lng=lat_lng.lng();
     //alert("latitude : " + lat_lng.lat());

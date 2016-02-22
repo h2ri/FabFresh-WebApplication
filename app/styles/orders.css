@@ -1,52 +1,81 @@
-#order{
-  height: 100vh;
-  width: 100%;
+
+.details {
+  align-content: center;
+  text-align: center;
+  font-size: 15px;
+  text-shadow: 1px 0px;
+  font-weight: 500;
+  background-color: #F8F8F8  ;
+
+}
+
+
+.coupon {
+ color: #000; 
+ font-family: 'Open Sans', sans-serif; 
+ font-size: 15px; 
+ font-weight: 300; 
+ line-height: 30px; 
+ padding-left: 15px;
+}
+
+.order_description {
+ color: #000; 
+ font-family: 'Open Sans', sans-serif; 
+ font-size: 15px; 
+ font-weight: 300; 
+ line-height: 30px; 
+ padding-left: 15px;
+}
+
+
+
+.orders {
+  width: 210px;
+  height: 310px;
   background-color: white;
-}
-
-#orders{
-  border-radius: 15px;
+  border-radius: 10px;
+  box-shadow: 0 0 5px 3px rgba(0, 0, 0, 0.1), 2px 2px 8px rgba(0, 0, 0, 0.1);
   position: relative;
-  margin-left: 30px;
-  margin-top: 40px;
   float: left;
-  width: 220px; 
-  height: 320px; 
-  padding: 0px; 
+  margin-left: 20px;
+  margin-top: 30px;
 }
-#order_id{
-  border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
-  text-align:center;
-  background-color:#707070;
-  width:220px;
-  height: 70px;
-  padding-top:1px;
-  
 
-}
-#order_description{
-  border: 1px solid #707070; 
-  text-align:left;
-  background-color:#F8F8F8 ;
-  width:220px;
-  height: 200px;
-  padding:10px;
+
+/*.orders .orders-body img {
+  height: 100px;
+  width: 100px;
+  border-radius: 10px;
+  border: 3px solid rgba(255, 255, 255, 0.6);
+  position: absolute;
+  top: -50px;
+  left: 50%;
+  margin-left: -50px;
+  box-shadow: 0 6px 6px -4px rgba(0, 0, 0, 0.2);
+}*/
+.orders .orders-body .status {
+  font-size: 15px;
+  text-align: center;
 
 }
 
-#cancel_order{
-  border-bottom-left-radius: 15px;
-  border-bottom-right-radius: 15px;
-   background-color:#707070 ;
+.orders .orders-body .time {
+  font-size: 12px;
+  text-transform: uppercase;
+  text-align: right;
+  padding-top: -3px;
+  margin-right: 10px;
 }
 
-#order_status{
-  
-  text-align:center;
-  background-color:#707070 ;
-  width:220px;
-  height: 50px;
-  padding:5px;
-
+.orders .orders-body .track{
+  font-size: 10px;
+  text-transform: uppercase;
+  text-align: right;
+  text-shadow: 1px 1px;
+  margin-right: 10px;
 }
+
+ 
+
+

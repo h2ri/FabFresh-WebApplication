@@ -1,0 +1,32 @@
+<div  id="deliver_box" >    
+   <form ng-submit="DROPForm()" name="myForm">
+       <center><input id="coupon_text" type="text" placeholder=" Coupon Code" size="20" ng-model="coupon">
+       <input id="coupon_button" type="button"  value="Apply" ng-click="check_couponvalidity()"></center>
+       <h3>Amount : {{amount}}</h3>
+       <h3>Amount After Discount : {{amount}}</h3>
+
+      
+       <div ng-repeat="x in data | startFrom:currentPage*1 | limitTo:1" >
+
+            <div id="address_box">
+                   <input type="radio" value={{x.id}} ng-model="$parent.id">
+                   <tst>{{x.address}}__{{x.id}}</tst><br> 
+                    
+                    
+                    
+            </div> 
+       </div>
+         
+           
+             <button ng-hide="currentPage == 0" id="left_button" ng-disabled="currentPage == 0" ng-click="currentPage=currentPage-1"><b><h1><<</h1></b></button>
+             <button  ng-hide="currentPage == l" id="right_button" ng-disabled="currentPage >= l" ng-click="currentPage=currentPage+1"><b><h1>>></h1></b></button>
+
+         
+             <button id="addr_button" ng-show="currentPage == l" ui-sref="homepage" ><h3>Add New Address</h3></button>
+
+
+
+
+       <center><button  id="drop_req_button" type="submit">Drop Request</button></center>
+   </form>
+</div>

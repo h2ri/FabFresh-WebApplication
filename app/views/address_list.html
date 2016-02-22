@@ -1,21 +1,19 @@
-<div id="address_list">
-  <table border="0.8">
-    <caption>Address List</caption>
-    <thead>
-      <tr>
-        <th>PostalCode</th>
-        <th>Locality</th>
-        <th>SubLocality</th>
-        <th>Address</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr ng-repeat="x in data">
-        <td>{{x.postalcode}}</td>
-        <td>{{x.addressLocality}}</td>
-        <td>{{x.addressSubLocality}}</td>
-        <td>{{x.address}}</td>
-      </tr>
-    </tbody>
-  </table>
+
+<div ng-repeat="x in data | startFrom:currentPage*1 | limitTo:1" >
+
+   <div id="box">
+          <h2>{{x.address}}</h2><br>   
+  </div> 
 </div>
+      <center>
+
+   <button  id="t5" class="btn btn-default"  ng-disabled="currentPage == 0" ng-click="currentPage=currentPage-1"><b><<</b><button>
+
+
+   <button  id="t5" class="btn btn-default"   ng-disabled="currentPage >= l-1" ng-click="currentPage=currentPage+1"><b></b>>></button>
+
+      </center><br>
+
+<center><button  id="t6" ui-sref="homepage" >Add New Address</button</center>
+
+

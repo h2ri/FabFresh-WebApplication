@@ -1,29 +1,26 @@
 <div id="placebody">    
-<div id="header1">
-    <h2><img src="images/fabfresh.png" height="30px;"></h2>
-</div>
+
 
     <form ng-submit="placeorderForm()">
     <div id="header2">
-        <h2>Select a service</h2>
-          <input type="radio" name="service_t" value="2" ng-model="stype" > Wash + Iron <br>
-          <input type="radio" name="service_t" value="0" ng-model="stype"> Wash + Fold<br>
-          <input type="radio" name="service_t" value="1" ng-model="stype"> Iron<br>
+        <center><h2><b>Select a service</b></h2></center>
+          <input type="radio" name="service_t" value="2" ng-model="stype" id="in"><b> Wash + Iron </b><br>
+          <input type="radio" name="service_t" value="0" ng-model="stype" id="in"><b> Wash + Fold </b><br>
+          <input type="radio" name="service_t" value="1" ng-model="stype" id="in"><b> Iron </b><br>
     </div>
 
-   <h2>Address List</h2>
+   <center><h2><b>Address List</b></h2></center>
    <div id="address_l">
           <div  ng-repeat="x in data">
-        <input type="radio" value="{{x.id}}" ng-model= "$parent.id" name="address" id="inputid">{{x.address}}<b>
-        {{x.id}}
+        <b id="placeorder_hover"><input type="radio" value="{{x.id}}" ng-model= "$parent.id" name="address" id="inputid"> <b>{{x.address}}{{x.id}}</b></b>
         </div>
    </div>
 
    <div id="header4">
-        <br><input type="text" placeholder="Coupon Code" size="20" ng-model="coupon">
+        <br><input type="text" placeholder="Coupon Code" size="20" ng-model="coupon" id="in">
         <input type="button"  value="Apply" ng-click="check_couponvalidity()">
         <b>{{isvalid}}</b>
-        <br><br><textarea rows="5" cols="50" placeholder="Special Request" value="spe_req" ng-model="sp_request">Special Request</textarea><br><br><br>
+        <br><br><textarea rows="5" cols="50" placeholder="Special Request" value="spe_req" ng-model="sp_request" id="in">Special Request</textarea><br><br><br>
     </div>
         <center><button type="submit">PLACE ORDER</button></center>
     </form>

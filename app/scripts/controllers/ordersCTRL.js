@@ -2,27 +2,17 @@
 
 
 routerApp
-  .controller('ordersCTRL', function($rootScope,$scope,$state, $http,$cookies) {
+  .controller('ordersCTRL', function($rootScope,$scope,$state, $http,$cookies,task) {
          if($cookies.get('key') == undefined)
             {
               $state.go('home');
               alert("Please log in to continue");
             }  
-          
     $scope.user = [];
     var URL = 'http://fabfresh-dev.elasticbeanstalk.com';
-    $http({
-      method  : 'GET',
-      url     : URL+'/orders/',
-      headers : {'Authorization': 'Bearer '+"hari"} 
-     })
-      .success(function(data) {
-        if (data.errors) {
-          alert("Some error occured");
-        }
-        else {
-          
-          var type = {};
+    task.order()
+      .then(function(data){
+        var type = {};
           type["0"] = "Wash";
           type["1"] = "Iron";
           type["2"] = "Wash and Iron";
@@ -61,13 +51,17 @@ routerApp
 
           }
 
-        }
-      });
+
+      },function(error){
+        alert("some error occured");
+      })
+          
     
     $scope.track_order = function(id) {
         $rootScope.order_id=id;
-        alert($rootScope.order_id);
         $state.go('track_order');
     };
-    
-});
+     
+        //alert($rootScope.order_id);
+        //$state.go('track_order');
+    });

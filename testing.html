@@ -1,0 +1,37 @@
+<style>
+
+li{
+  float:left;
+padding:20px;
+
+}
+</style>
+
+
+<ul class="pagination-plain">
+  <li class="previous">
+    <a href="#">Previous</a>
+  </li>
+  <li>
+    <a href="#">1</a>
+  </li>
+  <li class="next">
+    <a href="#">Newer</a>
+  </li>
+</ul>
+
+
+
+<div  ng-repeat="x in data">
+        <input type="radio" value="{{x.id}}" ng-model= "$parent.id" name="address" id="inputid">{{x.address}}<b>
+        
+        </div>
+
+
+
+         <div id="address_l">
+          <div  ng-repeat="x in data">
+        <input type="radio" value="{{x.id}}" ng-model= "$parent.id" name="address" id="inputid">{{x.address}}<b>
+        {{x.id}}
+        </div>
+   </div>

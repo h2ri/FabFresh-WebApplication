@@ -2,65 +2,80 @@
 
 
 routerApp
- .controller('address_listCTRL', function($window,$cookies, $rootScope,$scope, $http, $state) {
+ .controller('address_listCTRL', function($window,$cookies, $rootScope,$scope, $http, $state,Pagination,task) {
    $scope.user = [];
    var URL = 'http://fabfresh-dev.elasticbeanstalk.com'
+  
+      $scope.getAll = function(){
+        task.getAllTasks()
+        .then(function(response){
+           $scope.data=response;
+          $scope.l = $scope.data.length;
+          console.log($scope.l);
+          $scope.currentPage = 0;
+        $scope.pagination = Pagination.getNew(2);
+        },function(error){
+          alert("some error occured");
+        })
+      }
+      $scope.getAll();
+
+   $scope.check_couponvalidity = function(){
+    var x = {
+        "couponTag": $scope.coupon
+      };
+    task.checkCV(x)
+    .then(function(response){
+      if(response.status == 'Invalid Coupon'){
+        $scope.isvalid = response.status;
+      }else{
+        $scope.isvalid='Coupon Valid';
+      }
+    },function(error){
+      alert("some error occured");
+    })
+
+   }
+ 
+   $scope.placeorderForm = function() {
+      var x = $scope.id;
+      var y = $scope.stype;
+      task.placeForm(x,y)
+      .then(function(response){
+        console.log(response);
+        alert("Successfully Placed order");
+            $state.go('orders');
+      },function(error){
+        alert("Some error occured");
+      })
+    
+  }
+
+
+  $scope.DROPForm = function() {
    $http({
      method  : 'GET',
-     url     : URL+'/users/address/',
+     url     : URL+'/v1/placeorder/address/'+$scope.id+'/order/'+$rootScope.order_id+'/',
+     params  :{type: $scope.stype},
      headers : {'Authorization': 'Bearer '+$cookies.get('key')} 
     })
-     .success(function(data) {
-       if (data.errors) {
-         alert("Some error occured");
-       }
-       else {
-         $scope.data=data;
-       }
-     });
+    .success(function(data) {
+        if (data.errors) {
+          alert("Some error occured");
+        } 
+        else {
+          console.log(data);
+            alert("request completed");
+            
+        }
+    });
+  };
 
-   $scope.check_couponvalidity = function() {
-     //alert($scope.coupon);
-     $scope.user = {
-       "couponTag": $scope.coupon
-     };
-   $http({
-     method  : 'POST',
-     url     : URL+'/couponsvalididty/',
-     data : $scope.user,
-     headers : {'Authorization': 'Bearer '+$cookies.get('key'), 'Content-Type': 'application/json'} 
-    })
-     .success(function(data) {
-       if (data.errors) {
-         alert("Some error occured");
-       } else {
-         //alert(data.status);
-         if(data.status=="Invalid Coupon") {
-           $scope.isvalid=data.status;
-         }
-         else{
-           $scope.isvalid="Coupon Applied";
-         }
-         
-       }
-     });
-   };
- 
- 
 
-  $scope.placeorderForm = function() {
-     //alert($scope.coupon);
 
-     console.log($rootScope.userid);
-     alert($scope.sp_request);
-     alert("user_id: "+$rootScope.userid+"address_id: "+$scope.id+"service_type: "+$scope.stype);
-   $http({
-     method  : 'GET',
-     url     : URL+'/v1/placeorder/'+$rootScope.userid+'/address/'+$scope.id+'/type/'+$scope.stype+'/',
-     params  :{special_request: $scope.sp_request},
-     data : $scope.user,
-     headers : {'Authorization': 'Bearer '+$cookies.get('key'), 'Content-Type': 'application/json'} 
-    })
-   };
+  
 
 });
+
+
+ 

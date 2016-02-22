@@ -1,25 +1,98 @@
 track {
-    position:relative;
-    margin:80px;
-    width:220px; height:220px;
-    float: right;
-    margin-right: 400px;
+   position:fixed;
+   margin:80px;
+   width:220px; height:220px;
+   float: right;
+   margin-left: 45%;
+   margin-top: 10%;
 }
 canvas {
-    display: block;
-    position:absolute;
-    top:0;
-    left:0;
+   display: block;
+   position:absolute;
+   top:0;
+   left:0;
 }
 span1 {
-    color:#7500E2;
-    display:block;
-    line-height:220px;
-    text-align:center;
-    width:220px;
-    font-family:sans-serif;
-    font-size:40px;
-    font-weight:100;
-    margin-left:5px;
+   color:#343434 ;
+   display:block;
+   line-height:220px;
+   text-align:center;
+   width:220px;
+   font-family:sans-serif;
+   font-size:40px;
+   font-weight:100;
+   margin-left:5px;
+}
+#deliver_button_position{
+   margin-top: 20px;
+   position: relative;
+}
+#deliver_button{
+   color:#000 ;
+background-color: #fff; 
+border-radius: 10px;
+position:relative;
+bottom: 45%;
 }
 
+
+/*
+h1 {
+   color: white;
+   font-size: 30px;
+   position: fixed;
+   padding: 300px 100px;
+   font-weight: 500;
+}
+*/
+rdx {
+    color: #000;
+    font-weight: 150;
+    font-family: sans-serif;
+   text-decoration: all;
+    font-size: 20px;
+}
+text {
+    font-weight: 400;
+   text-shadow: 1px 1px 1px;
+    font-size: 60px;
+    color: #000;
+    padding: 6% 30px;
+}
+#track_id {
+   font-weight: 400;
+   text-shadow: 1px 1px 1px;
+   font-size: 60px;
+   color: #000;
+   margin-top: 10%;
+   margin-left: 10%;
+}
+.processing {
+    width: 50%;
+    height: 100%;
+   margin: auto;
+    background-color: white;
+   float: left;
+   border-top-left-radius: 10px;
+   border-bottom-left-radius: 10px;
+   text-decoration-style: double;
+   text-transform: capitalize;
+}
+hr { 
+   display: block;
+   margin-left: auto;
+   margin-right: auto;
+   border-style: inset;
+   border-width: 10px;
+}
+
+hr.style-two {
+   border: 0;
+   height: 1px;
+   background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
+
+#track_details {
+    margin-top: 10%;
+   margin-left: 10%;
+}

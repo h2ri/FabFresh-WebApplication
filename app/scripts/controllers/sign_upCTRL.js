@@ -1,7 +1,7 @@
 'use strict';
 
 routerApp
-  .controller('sign_upCTRL', function($rootScope, $scope, $http, $state){
+  .controller('sign_upCTRL', function($rootScope, $scope, $http, $state,$cookies){
     $scope.user = [];
     var URL = 'http://fabfresh-dev.elasticbeanstalk.com'
     $scope.submitForm = function() {
@@ -29,6 +29,7 @@ routerApp
           else{
 
            $cookies.put('key',data.access_token);
+           console.log($cookies.get('key'));
             alert("Successfully Signed up");
             $state.go('otp');
           }

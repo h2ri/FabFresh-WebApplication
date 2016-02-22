@@ -1,0 +1,84 @@
+
+#deliver_box{
+ 
+ position: absolute;
+ left: 50%;
+ top: 55%;
+ border-radius: 20px;
+ transform: translate(-50%, -50%);
+ width: 400px; 
+ height: 450px;
+ border: 1px solid #CCC; 
+ padding: 40px; 
+ background-color: #F8F8F8  ;
+}
+#address_box{
+ position: absolute;
+ border-radius: 50px;
+ left: 12%;
+ top: 37%;
+ width: 300px; 
+ height: 200px;
+ border: 1px solid #CCC; 
+ padding-top: 500px;
+ padding: 20px; 
+ background-color: white;
+
+}
+#drop_req_button{
+ color:#000 ;
+background-color: #fff; 
+border-radius: 10px;
+position:absolute;
+bottom: 5%;
+left: 38%;
+}
+
+#left_button{
+color:#000 ;
+background-color: transparent; 
+border:none;
+position:absolute;
+bottom: 40%;
+left: 2%;
+
+}
+
+#right_button{
+ color:#000 ;
+background-color: transparent; 
+border:none;
+position:absolute;
+bottom: 40%;
+right: 2%;
+
+}
+
+#addr_button{
+
+color:#000 ;
+background-color:#fff; 
+border-radius: 10000px;
+width: 250px; 
+height: 100px;
+position:absolute;
+bottom: 30%;
+right: 20%;
+
+}
+
+tst {
+color: #000;
+font-weight:60;
+font-size: 20px;
+font-family: Arial;
+}
+
+#coupon_text{
+ border-top-left-radius: .9em;
+ border-bottom-left-radius: .9em;
+}
+#coupon_button{
+ border-top-right-radius: .9em;
+ border-bottom-right-radius: .9em;
+}
