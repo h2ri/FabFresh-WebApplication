@@ -8,6 +8,7 @@ routerApp
         alert("Please log in to continue");
         return;
       }
+      
     $scope.getAddress = function(){
       service.getAddress()
         .then(function(response){
@@ -20,6 +21,12 @@ routerApp
         })
       };
       $scope.getAddress();
+
+      $scope.goToAddress = function(){
+        service.place=1;
+        $state.go('address');
+      };
+
 
       $scope.checkCouponValidity = function(){
       var x = {
@@ -38,13 +45,11 @@ routerApp
       })
     };
  
- 
-
   $scope.placeOrderForm = function() {
      service.placeOrder($scope)
         .then(function(response){
           if(response.status=='Time Up'){
-            alert("Order cannot be placed");
+            alert("Order cannot be placed right now");
           }
           else{
             alert("Order placed Successfully");
@@ -71,17 +76,26 @@ routerApp
       var btn6 = document.getElementById("btn6");
       var btn7 = document.getElementById("btn7");
         
+      if(service.place==1){
+        modal1.style.display = "block";
+        modal2.style.display = "none";
+        modal3.style.display = "none";
+        modal.style.display = "none";
+        service.place=0;
+      }
+      else{
 
-
-      modal1.style.display = "none";
-      modal2.style.display = "none";
-      modal3.style.display = "none";
-      modal.style.display = "block";
+        modal1.style.display = "none";
+        modal2.style.display = "none";
+        modal3.style.display = "none";
+        modal.style.display = "block";
+      }
       $scope.type=0;
 
 
       btn.onclick = function() {
-        modal1.style.display = "none";
+      $( '.mdl-layout__drawer, .mdl-layout__obfuscator' ).removeClass( 'is-visible' );
+      modal1.style.display = "none";
       modal2.style.display = "none";
       modal3.style.display = "none";
       modal.style.display = "block";

@@ -7,6 +7,15 @@ routerApp
         $state.go('home');
         alert("Please log in to continue");
       }
+
+    service.getOrder($rootScope.order_id)
+      .then(function(response){
+          $scope.order=response;
+      },function(error){
+          alert("some error occured");
+        })
+
+
     $scope.getAddress = function(){
       service.getAddress()
         .then(function(response){
@@ -32,6 +41,17 @@ routerApp
           }else{
             $scope.isvalid='Coupon Valid';
           }
+        },function(error){
+            alert("some error occured");
+      })
+    };
+
+
+    $scope.deliverNow = function(x) {
+      alert(x);
+     service.deliverNow($scope.data[x],$scope.order)
+        .then(function(response){
+          alert("Your order will be dilevered very soon.");
         },function(error){
             alert("some error occured");
       })

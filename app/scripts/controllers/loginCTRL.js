@@ -35,8 +35,15 @@ routerApp
             .then(function(data){
               if(data[0].UserInfo.flag){  
                   $rootScope.u_name=data[0].username; 
-                      $rootScope.otp_flag=1;
-                    $state.go('address');
+                    $rootScope.otp_flag=1;
+                    service.getAddress()
+                    .then(function(response){
+                        if(response.length>0){
+                          $state.go('place_order');
+                        }
+                        else
+                          $state.go('address');
+                    })
                 }
                 else
                   $state.go('otp');

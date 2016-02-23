@@ -5,7 +5,6 @@ angular.module('routerApp')
   var service = this;
       service.taskList = {};
 
-
   service.getAddress= function(){
     var defer = $q.defer();
     $http({
@@ -100,9 +99,41 @@ angular.module('routerApp')
      return deferpf.promise;
   };
 
+  service.deliverNow= function(address,order){
+      var deferpf = $q.defer();
+      $http({
+         method  : 'GET',
+         url     : URL+'/v1/placeorder/address/'+address.id+'/order/'+order.id+'/',
+         headers : {'Authorization': 'Bearer '+$cookies.get('key')} 
+      })
+      .success(function(response){
+          deferpf.resolve(response);
+      })
+      .error(function(error,status){
+        deferpf.reject(error);
+      })
+
+     return deferpf.promise;
+  };
 
 
 
+  service.getOrder= function(id){
+    var deferOrder = $q.defer();
+     $http({
+      method  : 'GET',
+      url     : URL+'/orders/'+id+'/',
+      headers : {'Authorization': 'Bearer '+ $cookies.get('key')} 
+     })
+    .success(function(response){
+        deferOrder.resolve(response);
+    })
+    .error(function(error,status){
+      deferOrder.reject(error);
+    })
+
+   return deferOrder.promise
+  };
 
     service.getOrders= function(){
     var deferOrder = $q.defer();

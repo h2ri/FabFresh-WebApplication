@@ -17,7 +17,7 @@ routerApp
     
   });
 
-  if($cookies.get('cstate') != undefined){
+  if($cookies.get('cstate') != undefined && $cookies.get('cstate') != 'login' && $cookies.get('cstate') != 'reset_password'){
     $state.go($cookies.get('cstate'));
     if($cookies.get('key') == undefined)
     $rootScope.otp_flag=0;

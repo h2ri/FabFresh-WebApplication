@@ -72,12 +72,10 @@ routerApp.config(function($stateProvider, $urlRouterProvider ) {
             controller: 'AboutCTRL',
         })
          .state('deliver', {
-            url: '/#',
+            url: '/orders',
             templateUrl: '../views/deliver.html',
             controller: 'address_listCTRL',
         })
-
-        
 });
 /*
 routerApp.factory('UserService', function() {

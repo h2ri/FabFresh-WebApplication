@@ -15,12 +15,13 @@
 	<li><rdx>Quantity: {{data.quantity}}</rdx></li>
 	<br>
 	<li><rdx>Current Status:  {{Status}}</rdx></li>
-	<div id="deliver_button_position"><button ui-sref="deliver" id="deliver_button">Deliver Now</button></div>
+	<div id="deliver_button_position">
+		<button ng-show="data.status==80" ui-sref="deliver" id="deliver_button">Deliver Now</button>
+	</div>
 </ul>
 </div>
 </div>
 <div class="track_orders">
-<track class="chart" id="graph"></track>
 
 <!--    <p><strong>this is a track page</strong></p>-->
 </div>

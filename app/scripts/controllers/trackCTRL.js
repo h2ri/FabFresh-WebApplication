@@ -6,6 +6,8 @@ routerApp
   .controller('trackCTRL', function($rootScope,$scope, $http, $cookies) {
     $scope.user = [];
     var URL = 'http://fabfresh-dev.elasticbeanstalk.com';
+
+
     $http({
       method  : 'GET',
       url     : URL+'/orders/'+$rootScope.order_id+'/',
@@ -47,7 +49,6 @@ routerApp
           type1["11"] = 90;
           type1["12"] = 100;  
             
-          $scope.data=data;
     //alert(data.id);
     //$rootScope.data = data;
           $scope.data=data;
@@ -111,7 +112,7 @@ routerApp
 
       //span.textContent = options.percent + '%';
           span.textContent = Status;
-      span.textContent = options.percent + '%';
+      //span.textContent = options.percent + '%';
           
       if (typeof(G_vmlCanvasManager) !== 'undefined') {
           G_vmlCanvasManager.initElement(canvas);

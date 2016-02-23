@@ -33,9 +33,14 @@ routerApp
 routerApp.directive('script1', function() {
   var flag=0;
 	 function load_script() {
+          if(flag==0){
             var s = document.createElement('script'); // use global document since Angular's $document is weak
             s.src = "https://maps.googleapis.com/maps/api/js?callback=initMap";
             document.body.appendChild(s);
+            flag=1;
+          }
+          else
+            initMap();
         }
     return {
       restrict: 'E',

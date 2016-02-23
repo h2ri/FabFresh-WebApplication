@@ -1,32 +1,33 @@
 <div  id="deliver_box" >  
-    <form ng-submit="submitForm()" name="myForm">
-        <center><input id="coupon_text" type="text" placeholder=" Coupon Code" size="20" ng-model="coupon">
-        <input id="coupon_button" type="button"  value="Apply" ng-click="checkCouponValidity()"></center>
-        <h3 id="text_shadow">Amount : {{data.amount}}</h3>
-        <h3 id="text_shadow">Amount After Discount : {{x.afterDiscount}}</h3>
+ <div class="dil_heading">
+     <h1>Delivery Details</h1>
+     <form ng-submit="checkCouponValidity()">
+       <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+           <input ng-model="coupon" class="mdl-textfield__input " id="coupon_text" type="text"  required>
+           <label  class="mdl-textfield__label"  id="coupon_text">Coupon </label><h4  id="sel_type">{{isvalid}}</h4>
+       </div>
+             <!-- Flat button with ripple -->
+         <button  type="submit" id="dil_apply">Apply</button>
+      </form>
+       <h3 id="text_shadow">Amount : {{data.amount}}</h3>
+       <h3 id="text_shadow">Amount After Discount : {{x.afterDiscount}}</h3>
 
-       
-        <div ng-repeat="x in data | startFrom:currentPage*1 | limitTo:1" >
+      
+       <div ng-repeat="x in data | startFrom:currentPage*1 | limitTo:1" >
 
-             <div id="address_box">
+           <div id="address_box">
+                 <tst>{{x.address}}__{{x.id}}</tst><br> 
+           </div> 
+       </div>
+         
+           
+             <button ng-hide="currentPage == 0" id="left_button" ng-disabled="currentPage == 0" ng-click="currentPage=currentPage-1"><b><<</b></button>
 
-                    <tst>{{x.address}}__{{x.id}}</tst><br> 
+             <button  ng-hide="currentPage == l" id="right_button" ng-disabled="currentPage >= l" ng-click="currentPage=currentPage+1"><b>>></b></button>
 
-             </div> 
-        </div>
-          
-            
-              <button ng-hide="currentPage == 0" id="left_button" ng-disabled="currentPage == 0" ng-click="currentPage=currentPage-1"><b><<</b></button>
+         
+             <button id="addr_button" ng-show="currentPage == l" ui-sref="address" >Add New Address</button>
 
-              <button  ng-hide="currentPage == l" id="right_button" ng-disabled="currentPage >= l" ng-click="currentPage=currentPage+1"><b>>></b></button>
-
-          
-              <button id="addr_button" ng-show="currentPage == l" ui-sref="address" ><h3>Add New Address</h3></button> 
-
-
-
-
-        <center><button  id="drop_req_button" type="submit">Drop Request</button></center>
-    </form>
+       <center><button  id="drop_req_button" ng-click="deliverNow(currentPage)">Drop Request</button></center>
+   </div>
 </div>
-    

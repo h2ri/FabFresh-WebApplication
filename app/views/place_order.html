@@ -3,21 +3,21 @@
 <div id="myModal" class="modal">
       <!-- Modal content -->
   <div class="modal-content">
-    <h3>Place order</h3>
+    <h3>Service Type</h3>
       <div class="modal-body">
           <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-2">
                           <input type="radio" id="option-2" class="mdl-radio__button" name="options" ng-model="type" value="0">
-                          <span class="mdl-radio__label">Wash + Iron</span>
+                          <span class="mdl-radio__label" id="sel_type">Wash + Iron</span>
                           </label>
                           <br>
                           <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-3">
                           <input type="radio" id="option-3" class="mdl-radio__button" name="options" ng-model="type" value="1">
-                          <span class="mdl-radio__label">Wash + Fold</span>
+                          <span class="mdl-radio__label" id="sel_type">Wash + Fold</span>
                           </label>
                           <br>
                           <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-4">
                           <input type="radio" id="option-4" class="mdl-radio__button" name="options" ng-model="type" value="2">
-                          <span class="mdl-radio__label">Iron</span>
+                          <span class="mdl-radio__label" id="sel_type">Iron</span>
                           </label><br>
 
                           <button id="btn1">Next</button>
@@ -30,7 +30,9 @@
     <div id="myModal1" class="modal">
       <!-- Modal content -->
       <div class="modal-content">
+
          <h3>Address</h3>
+          <button id="btn5" class="back_button">Back</button>
           <div class="modal-body" >
 
 
@@ -45,14 +47,14 @@
                
                <button ng-click="getAddress(x)" id = "btn2">Next</button>
             </div>
-          <button id="btn5">Back</button>
+          
             
               <button ng-hide="currentPage == 0" id="place_left_button" ng-disabled="currentPage == 0" ng-click="currentPage=currentPage-1"><b><<</b></button>
 
               <button  ng-hide="currentPage == l" id="place_right_button" ng-disabled="currentPage >= l" ng-click="currentPage=currentPage+1"><b>>></b></button>
 
           
-              <button id="place_addr_button" ng-show="currentPage == l" ui-sref="address" ><h2>Add New Address</h2></button> 
+              <button id="place_addr_button" ng-show="currentPage == l" ui-sref="address" >Add New Address</button> 
           
               
               
@@ -64,20 +66,21 @@
       <!-- Modal content -->
       <div class="modal-content">
          <h3>Coupon</h3>
+         <button id="btn6" class="back_button">Back</button>
           <div class="modal-body">
           <!-- Textfield with Floating Label -->
 
-            <form ng-submit="check_couponvalidity()">
+            <form ng-submit="checkCouponValidity()">
               <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                <input ng-model="coupon" class="mdl-textfield__input" type="text" id="sample3" required>
-                <label  class="mdl-textfield__label" for="sample3">Coupon</label>
+                <input ng-model="coupon" class="mdl-textfield__input" id="sel_type" type="text" id="sample3" required>
+                <label  class="mdl-textfield__label" for="sample3">Coupon </label><h4  id="sel_type">{{isvalid}}</h4>
               </div>
               <!-- Flat button with ripple -->
               <button  type="submit" id="apply">
               Apply
               </button>
             </form>
-            <button id="btn6">Back</button>
+            
             <button id="btn3">Next</button>
           </div>
       </div>
@@ -87,16 +90,16 @@
       <!-- Modal content -->
       <div class="modal-content">
          <h3>Spacial Instructions</h3>
+         <button id="btn7" class="back_button">Back</button>
           <div class="modal-body">
           <!-- Floating Multiline Textfield -->
 <form ng-submit="placeOrderForm()">
   <div class="mdl-textfield mdl-js-textfield">
-    <textarea ng-model="special_ins" class="mdl-textfield__input" type="text" rows= "4" id="sample5" ></textarea>
+    <textarea ng-model="special_ins" id="sel_type" class="mdl-textfield__input" type="text" rows= "4" id="sample5" ></textarea>
     <label class="mdl-textfield__label" for="sample5">Special Instructions....</label>
   </div>
   <button type="submit" id="btn4">Place Order</button>
 </form>
-<button id="btn7">Back</button>
               
               
           

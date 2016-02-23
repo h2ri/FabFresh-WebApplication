@@ -2,23 +2,27 @@
 <html>
 <head>
     
+    <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.4/material.teal-pink.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="styles/deliver.css">
     <link rel="stylesheet" href="styles/users.css">
     <link rel="stylesheet" href="styles/track.css">
     <link rel="stylesheet" href="styles/orders.css">
     <link rel="stylesheet" href="styles/profile.css">
-    <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.4/material.teal-pink.min.css">
+    
     <link rel="stylesheet" href="styles/address_list.css">
     <link rel="stylesheet" href="styles/place_order.css">
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="styles/main.css">
     <link rel="stylesheet" type="text/css" href="styles/mainApp.css">
     <link rel="stylesheet" href="bower_components/angular-chart.js/dist/angular-chart.css">
+  
+    <meta charset="utf-8">
     
     <style>
         .navbar { border-radius:0; }
-    </style>
-    
+    </style>  
 </head>
 <title>Fabfresh</title>
 
@@ -44,12 +48,17 @@
       <div class="mdl-layout__drawer">
         <span class="mdl-layout-title">{{u_name}}</span>
         <nav class="mdl-navigation">
-
-      <a class="mdl-navigation__link" ui-sref="homepage">Address</a>
-      <a class="mdl-navigation__link" ui-sref="orders">Orders</a>
-      <a class="mdl-navigation__link" id="placebtn" ui-sref="place_order">Placeorder</a>
-      <a class="mdl-navigation__link" ui-sref="profiles">About</a>
-      <a class="mdl-navigation__link" ui-sref="Logout">Logout</a>
+      <a class="mdl-navigation__link" onclick=autoclick() ui-sref="address">Address</a>
+      <a class="mdl-navigation__link" onclick=autoclick() ui-sref="orders">Orders</a>
+      <a class="mdl-navigation__link" onclick=autoclick() id="placebtn" ui-sref="place_order">Placeorder</a>
+      <a class="mdl-navigation__link" onclick=autoclick() ui-sref="profiles">About</a>
+      <a class="mdl-navigation__link" onclick=autoclick() ui-sref="Logout">Logout</a>
+           <script>
+           function autoclick() {
+               //alert("srfer");
+               $( '.mdl-layout__drawer, .mdl-layout__obfuscator' ).removeClass( 'is-visible' );
+           }
+           </script>
     
         </nav>
       </div>
@@ -75,10 +84,15 @@
     <script src="bower_components/lodash/lodash.js"></script>
     <script src="bower_components/angular-google-maps/dist/angular-google-maps.js"></script>
     <script src="bower_components/ng-simplePagination/simplePagination.js"></script>
+    <script src="bower_components/material-design-lite/material.min.js"></script>
+    <script src="/bower_components/angular-cookies/angular-cookies.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
+    
+
+
     <script src="scripts/app.js"></script>
     <script src="scripts/geomap.js"></script>
     <script src="scripts/profile.js"></script>
@@ -97,14 +111,5 @@
     <script src="scripts/hide.js"></script>
     <script src="scripts/services/services.js"></script>
         <!-- endbuild -->
-
-
-     <script src="https://storage.googleapis.com/code.getmdl.io/1.0.4/material.min.js"></script>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.8/angular-ui-router.min.js"></script>
-   <script src="/bower_components/angular-cookies/angular-cookies.js"></script>
-    <meta charset="utf-8">
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
-    
     </body>
 </html>

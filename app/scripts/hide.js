@@ -20,7 +20,6 @@ $(document.body).click(function(e){
 $('#login_btn').click(function(){
   $('#login').toggle(300);
   document.body.addEventListener('click', boxCloser, true);
-  
 });
 
 function boxCloser(e){
@@ -29,7 +28,7 @@ function boxCloser(e){
      document.body.removeEventListener('click', boxCloser, true);
      $('#login').hide();
   }
-    else if(e.target.id == 'input1'){
+    else if(e.target.id == 'login_submit'){
         document.body.removeEventListener('click', boxCloser, true);
      $('#login').hide();
     }
