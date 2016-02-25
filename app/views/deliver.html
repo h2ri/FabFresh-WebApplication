@@ -9,14 +9,14 @@
              <!-- Flat button with ripple -->
          <button  type="submit" id="dil_apply">Apply</button>
       </form>
-       <h3 id="text_shadow">Amount : {{order.amount}}</h3>
-       <h3 id="text_shadow">Amount After Discount : {{order.afterDiscount}}</h3>
+       <h3 id="text_shadow"><b>Amount : </b>₹ {{order.amount}}</h3>
+       <h3 id="text_shadow"><b>Amount After Discount : </b>₹ {{order.afterDiscount}}</h3>
 
       
        <div ng-repeat="x in data | startFrom:currentPage*1 | limitTo:1" >
 
            <div id="address_box">
-                 <tst>{{x.address}}__{{x.id}}</tst><br> 
+                 <tst>{{x.address}}</tst><br> 
            </div> 
        </div>
          

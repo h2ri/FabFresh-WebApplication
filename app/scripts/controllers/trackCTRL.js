@@ -112,6 +112,6 @@ routerApp
         if(data.status==0)
           drawCircle('#efefef', options.lineWidth, options.percent / 100);
         else
-          drawCircle('#000', options.lineWidth, options.percent / 100);
+          drawCircle('#303030', options.lineWidth, options.percent / 100);
       });
 });

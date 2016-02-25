@@ -224,3 +224,6 @@ body .btn:hover span {
   }
 }
 
+.log:hover {
+    border-color: red;
+}

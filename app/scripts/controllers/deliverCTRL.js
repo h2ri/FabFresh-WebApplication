@@ -53,6 +53,7 @@ routerApp
               $scope.isvalid = response.status;
             else
               $scope.isvalid='Coupon Applied';
+            
             service.getOrder($localStorage.order_id)
               .then(function(response){
                   $scope.order=response;
