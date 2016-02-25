@@ -3,7 +3,7 @@
 
 routerApp
  .controller('place_orderCTRL', function($localStorage,$window,$cookies, $rootScope,$scope, $http, $state,Pagination,service) {
-     if($cookies.get('key') == undefined){
+     if(angular.isUndefined($cookies.get('otp_flag'))){
         $state.go('login');
         alert("Please log in to continue");
         return;
@@ -11,6 +11,7 @@ routerApp
       
       service.getAddress()
         .then(function(response){
+          $scope.currentPage=0;
           $scope.data=response;
           $scope.l = $scope.data.length;
           $scope.pagination = Pagination.getNew(2);

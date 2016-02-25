@@ -8,16 +8,38 @@ var marker;
 var lat,lng,postalcode,locality1;
 function initMap() {
   var map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 10,
-    center: {lat: 12.934170, lng: 77.615511}
+    zoom: 15,
+    //center: {lat: 12.934170, lng: 77.615511}
   });
 
-  var infowindow = new google.maps.InfoWindow;
+
+  var infoWindow = new google.maps.InfoWindow({map: map});
+
+  // Try HTML5 geolocation.
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function(position) {
+      var pos = {
+        lat: position.coords.latitude,
+        lng: position.coords.longitude
+      };
+
+      infoWindow.setPosition(pos);
+      infoWindow.setContent("Your Current Location");
+      map.setCenter(pos);
+    }, function() {
+      handleLocationError(true, infoWindow, map.getCenter());
+    });
+  } 
+  //else {
+    // Browser doesn't support Geolocation
+  //  handleLocationError(false, infoWindow, map.getCenter());
+ // }
 
   marker = new google.maps.Marker({
     map: map,
+    "icon": 'http://maps.google.com/mapfiles/kml/paddle/wht-stars.png',
     animation: google.maps.Animation.DROP,
-    position: {lat: 12.934170, lng: 77.615511}
+   // position: {lat: 12.934170, lng: 77.615511}
   });
 
   marker.bindTo('position', map, 'center');

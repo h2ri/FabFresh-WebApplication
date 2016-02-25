@@ -28,6 +28,14 @@
     <style>
         .navbar { border-radius:0; }
     </style>  
+
+    <script>
+      function autoclick() {
+               //alert("srfer");
+        $( '.mdl-layout__drawer, .mdl-layout__obfuscator' ).removeClass( 'is-visible' );
+      }
+    </script>
+    
 </head>
 <title>Fabfresh</title>
 
@@ -41,30 +49,24 @@
       <header style="position: fixed; background-color: #111" class="mdl-layout__header">
         <div class="mdl-layout__header-row">
           <!-- Title -->
-          <span class="mdl-layout-title">FabFresh</span>
+          <span class="mdl-layout-title"><img src="images/fabfresh.png" height="35" width="200"></span>
           <!-- Add spacer, to align navigation to the right -->
           <div class="mdl-layout-spacer"></div>
+          <center ng-hide="otp_flag()"><a  ui-sref="login" id="login_btn" class="btn btn-default">Login</a></center>
 
-          <center ng-hide="otp_flag"><a  ui-sref="login" id="login_btn" class="btn btn-default">Login</a></center>
           <!-- Navigation. We hide it in small screens. -->
 
         </div>
       </header>
-      <div class="mdl-layout__drawer">
-        <span class="mdl-layout-title">{{u_name}}</span>
+      <div class="mdl-layout__drawer" style="position: fixed; margin-top: 64px">
+        <span class="mdl-layout-title" style="background-color:#606060 ; color:#fff"><img src="images/user.png" height="35" width="30">{{getUsername()}}</span>
         <nav class="mdl-navigation">
-      <a class="mdl-navigation__link" onclick=autoclick() ui-sref="address">Address</a>
-      <a class="mdl-navigation__link" onclick=autoclick() ui-sref="orders">Orders</a>
-      <a class="mdl-navigation__link" onclick=autoclick() id="placebtn" ui-sref="place_order">Placeorder</a>
-      <a class="mdl-navigation__link" onclick=autoclick() ui-sref="profiles">About</a>
-      <a class="mdl-navigation__link" onclick=autoclick() ui-sref="Logout">Logout</a>
-           <script>
-           function autoclick() {
-               //alert("srfer");
-               $( '.mdl-layout__drawer, .mdl-layout__obfuscator' ).removeClass( 'is-visible' );
-           }
-           </script>
-    
+
+      <a class="mdl-navigation__link" onclick=autoclick() ui-sref="address"><h4><img src="images/add1.png" height="20" width="25">   Address</h4></a>
+      <a class="mdl-navigation__link" onclick=autoclick() ui-sref="orders"><h4><img src="images/ord.png" height="20" width="25">  Orders</h4></a>
+      <a class="mdl-navigation__link" onclick=autoclick() id="placebtn" ui-sref="place_order"><h4><img src="images/placeord.png" height="20" width="25">  Placeorder</h4></a>
+      <a class="mdl-navigation__link" onclick=autoclick() ui-sref="profiles"><h4><img src="images/about.ico" height="20" width="25">  About</h4></a>
+      <a ng-show="otp_flag()" class="mdl-navigation__link" onclick=autoclick() ui-sref="logout"><h4><img src="images/logout.png" height="20" width="25">  Logout</h4></a>
         </nav>
       </div>
 
@@ -85,6 +87,7 @@
     <script src="bower_components/angular-ui-router-styles/ui-router-styles.js"></script>
     <script src="bower_components/Chart.js/Chart.js"></script>
     <script src="bower_components/angular-chart.js/dist/angular-chart.js"></script>
+    <script src="bower_components/simple-pagination/lib/pagination.js"></script>
     <script src="bower_components/angular-simple-logger/dist/angular-simple-logger.js"></script>
     <script src="bower_components/lodash/lodash.js"></script>
     <script src="bower_components/angular-google-maps/dist/angular-google-maps.js"></script>

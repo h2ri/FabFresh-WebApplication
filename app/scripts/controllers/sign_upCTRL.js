@@ -19,9 +19,8 @@ routerApp
             alert(data.status);
           }
           else{
-
-           $cookies.put('key',data.access_token);
-           console.log($cookies.get('key'));
+            $localStorage.username=$scope.sign_up.email; 
+           $cookies.put('token',data.access_token);
             alert("Successfully Signed up");
             $state.go('otp');
           }

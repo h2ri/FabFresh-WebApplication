@@ -29,6 +29,7 @@ module.exports = function(config) {
       'bower_components/angular-ui-router-styles/ui-router-styles.js',
       'bower_components/Chart.js/Chart.js',
       'bower_components/angular-chart.js/dist/angular-chart.js',
+      'bower_components/simple-pagination/lib/pagination.js',
       'bower_components/angular-simple-logger/dist/angular-simple-logger.js',
       'bower_components/lodash/lodash.js',
       'bower_components/angular-google-maps/dist/angular-google-maps.js',

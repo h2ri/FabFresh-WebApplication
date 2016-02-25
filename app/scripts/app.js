@@ -47,7 +47,7 @@ routerApp.config(function($stateProvider, $urlRouterProvider ) {
             controller: 'ordersCTRL',
         })
         .state('place_order', {
-            url: '/place_order',
+            url: '/place-order',
             templateUrl: '../views/place_order.html',
             controller: 'place_orderCTRL',
         })
@@ -61,7 +61,7 @@ routerApp.config(function($stateProvider, $urlRouterProvider ) {
             templateUrl: '../views/profile.html',
             //controller: 'profileCTRL',
         })
-         .state('Logout', {
+         .state('logout', {
             url: '/#',
             templateUrl: '../views/logout.html',
             //template: '<h1>BYE<h1>',
@@ -75,7 +75,7 @@ routerApp.config(function($stateProvider, $urlRouterProvider ) {
          .state('deliver', {
             url: '/deliver-now',
             templateUrl: '../views/deliver.html',
-            controller: 'address_listCTRL',
+            controller: 'deliverCTRL',
         })
 });
 /*

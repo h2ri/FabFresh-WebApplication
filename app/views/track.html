@@ -8,13 +8,14 @@
 <hr class="style-two">
 <div id="track_details">
 <ul>
-	<li><rdx>Amount: {{data.amount}}</rdx></li>
+	<li><rdx><b>Amount: </b>₹{{data.amount}}</rdx></li>
 	<br>
-	<li><rdx>Weight: {{data.weight}}</rdx></li>
+	<li><rdx><b>Weight: </b>{{data.weight}} kg</rdx></li>
 	<br>
-	<li><rdx>Quantity: {{data.quantity}}</rdx></li>
+	<li><rdx><b>Quantity: </b>{{data.quantity}} ps</rdx></li>
 	<br>
-	<li><rdx>Current Status:  {{Status}}</rdx></li>
+
+	<li><rdx><b>Current Status:  </b>{{Status}}</rdx></li>
 	<div id="deliver_button_position">
 		<button ng-show="data.status==80" ui-sref="deliver" id="deliver_button">Deliver Now</button>
 	</div>

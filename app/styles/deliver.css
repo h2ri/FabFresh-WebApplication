@@ -149,7 +149,7 @@ tst{
 
  position: absolute;
  background: #555; 
- margin-left: 5%; 
+ margin-left: 1%; 
  margin-top: 4%;  
 
 }
@@ -159,4 +159,8 @@ tst{
  color: #000;
  text-shadow: 2px 2px #909090 ;
 
+}
+
+.coupon_status{
+	margin-left:5%;
 }

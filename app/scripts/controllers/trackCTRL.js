@@ -3,20 +3,31 @@
 
 routerApp
 
-  .controller('trackCTRL', function($state,$localStorage,$rootScope,$scope, $http, $cookies) {
+  .controller('trackCTRL', function(service,$state,$localStorage,$rootScope,$scope, $http, $cookies) {
     $scope.user = [];
     var URL = 'http://fabfresh-dev.elasticbeanstalk.com';
-   
-    
-    if($localStorage.previousState!='orders' && $localStorage.previousState!=''){
+    if(angular.isUndefined($cookies.get('otp_flag'))){
+        $state.go('login');
+        return;
+    }
+    // console.log($localStorage.previousState);
+    // console.log($localStorage.currentState);
+    // console.log(service.order);
+
+    if($localStorage.previousState!='deliver' && $localStorage.previousState!='orders' && $localStorage.previousState!=''){
       $state.go('orders');
       return;
     }
-
+     else if($localStorage.previousState=='orders' && $localStorage.order_id==undefined){
+       service.order=0;
+       $state.go('orders');
+       return;
+     }
+    // service.order=0;
     $http({
       method  : 'GET',
       url     : URL+'/orders/'+$localStorage.order_id+'/',
-      headers : {'Authorization': 'Bearer ' + $cookies.get('key')
+      headers : {'Authorization': 'Bearer ' + $cookies.get('token')
                 } 
      })
       .success(function(data) {

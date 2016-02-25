@@ -2,11 +2,39 @@
 
 
 routerApp
-  .controller('homeCTRL', function($localStorage, $rootScope,$scope,$state,$cookies) {
+  .controller('homeCTRL', function(service,$localStorage, $rootScope,$scope,$state,$cookies) {
     var expireDate = new Date();
+
+   //console.log($cookies.get('token'));
+    //console.log($localStorage.homeState);
+    //console.log($localStorage.currentState);
     expireDate.setDate(expireDate.getDate() + 1);
-    if(angular.isUndefined($cookies.get('cstate')))
-      $rootScope.otp_flag=0;
+    if(angular.isDefined($cookies.get('otp_flag'))){
+      service.getAddress()
+        .then(function(response){
+          if(response.length>0)
+            $localStorage.homeState='place_order';
+          else
+            $localStorage.homeState='address';
+          $state.go($localStorage.homeState);
+        },function(error){
+          alert("some error occured");
+        })
+    }
+
+    $scope.otp_flag=function(){
+      if(angular.isDefined($cookies.get('otp_flag')))
+        return true;
+      else
+        return false;
+    }
+
+    $scope.getUsername=function(){
+      if(angular.isDefined($cookies.get('otp_flag')))
+        return $localStorage.username;
+      else
+        return "";
+    }
         
     $rootScope.previousState;
     $rootScope.currentState;
@@ -14,19 +42,6 @@ routerApp
       $( '.mdl-layout__drawer, .mdl-layout__obfuscator' ).removeClass( 'is-visible' );
       $localStorage.previousState = from.name;
       $localStorage.currentState = to.name;
-      $cookies.put('cstate',$localStorage.currentState,{'expires': expireDate});
   });
-  //console.log($localStorage.previousState);
-  //console.log($localStorage.currentState);
-  
-  if($cookies.get('cstate') != undefined && $cookies.get('cstate') != 'login' && $cookies.get('cstate') != 'reset_password'){
-    $state.go($cookies.get('cstate'));
-    if($cookies.get('key') == undefined)
-    $rootScope.otp_flag=0;
-    else  
-    $rootScope.otp_flag=1;
-  }
-  else
-    $rootScope.otp_flag=0;
 });
 

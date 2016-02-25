@@ -3,23 +3,25 @@
      <h1>Delivery Details</h1>
      <form ng-submit="applyCoupon()">
         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                <input ng-model="coupon" class="mdl-textfield__input sel_type" type="text" id="sample10" required>
-                <label  class="mdl-textfield__label" for="sample10">Coupon </label><h4  class="sel_type">{{isvalid}}</h4>
+
+                <input ng-model="coupon" class="mdl-textfield__input " type="text" id="sample10" required>
+                <label  class="mdl-textfield__label" for="sample10" >Coupon </label><b class="coupon_status">{{isvalid}}</b>
               </div>
              <!-- Flat button with ripple -->
          <button  type="submit" id="dil_apply">Apply</button>
       </form>
-       <h3 id="text_shadow">Amount : {{order.amount}}</h3>
-       <h3 id="text_shadow">Amount After Discount : {{order.afterDiscount}}</h3>
+
+       <h3 id="text_shadow"><b>Amount : </b>₹ {{order.amount}}</h3>
+       <h3 id="text_shadow"><b>Amount After Discount : </b>₹ {{order.afterDiscount}}</h3>
+
 
       
        <div ng-repeat="x in data | startFrom:currentPage*1 | limitTo:1" >
 
            <div id="address_box">
-                 <tst>{{x.address}}__{{x.id}}</tst><br> 
+                 <tst>{{x.address}}</tst><br> 
            </div> 
        </div>
-         
            
              <button ng-hide="currentPage == 0" id="left_button" ng-disabled="currentPage == 0" ng-click="currentPage=currentPage-1"><b><<</b></button>
 

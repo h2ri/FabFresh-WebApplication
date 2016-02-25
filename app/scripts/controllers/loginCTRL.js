@@ -2,7 +2,9 @@
 
 
 routerApp
-  .controller('loginCTRL', function($window, $rootScope,$scope, $http, $state, $cookies,service) {
+  .controller('loginCTRL', function($localStorage,$window, $rootScope,$scope, $http, $state, $cookies,service) {
+  document.body.addEventListener('click', boxCloser, true);
+  //$state.go($state.current, {}, {reload: true});
   $scope.$on('LOAD', function() {
         $scope.loading = true
       });
@@ -26,27 +28,25 @@ routerApp
           if(data.status=="Not Authenticated"){
               alert("Either email or password is wrong");
             } else {
-          $cookies.put('key',data.access_token, {'expires': expireDate});
-           $cookies.put('key1',data.access_token, {'expires': expireDate});
-         console.log($cookies.get('key'));   
-                    // testing
-           
+            $cookies.put('token',data.access_token, {'expires': expireDate}); 
+            
             service.login2()             
             .then(function(data){
               if(data[0].UserInfo.flag){  
-                  $rootScope.u_name=data[0].username; 
-                    $rootScope.otp_flag=1;
+                  
+                    $cookies.put('otp_flag',1);
                     service.getAddress()
                     .then(function(response){
-                        if(response.length>0){
-                          $state.go('place_order');
-                        }
+                        if(response.length>0)
+                          $localStorage.homeState = 'place_order';
                         else
-                          $state.go('address');
+                          $localStorage.homeState = 'address';
+                        $state.go($localStorage.homeState);
                     })
                 }
                 else
                   $state.go('otp');
+                $localStorage.username=data[0].username; 
             },function(error){
               alert("Some error occured");
             })

@@ -3,7 +3,7 @@
 
 routerApp
   .controller('addressCTRL', function($localStorage,$http, $rootScope,$scope,$cookies,$state,service) {
-     if($cookies.get('key') == undefined){
+     if(angular.isUndefined($cookies.get('otp_flag'))){
         $state.go('login');
         alert("Please log in to continue");
         return;
@@ -21,6 +21,7 @@ routerApp
       service.addAddress($scope.address)
       .then(function(reponse){
         alert('Address has been added');
+        $localStorage.homeState="place_order";
         if(service.deliver==1 && $localStorage.previousState=='deliver'){
           service.deliver=2;
           $state.go("deliver");
@@ -32,17 +33,18 @@ routerApp
         else
           $state.go("place_order");
       },function(error){
-        alert('Some error occured')
+          alert("We don't deliver to this area.");
       })
     };
-    $cookies.put('count',4);
 });
 
 
 
-routerApp.directive('script1', function() {
+routerApp.directive('script1', function($cookies) {
   var flag=0;
 	 function load_script() {
+          if($cookies.get('key') == undefined)
+            return;
           if(flag==0){
             var s = document.createElement('script'); // use global document since Angular's $document is weak
             s.src = "https://maps.googleapis.com/maps/api/js?callback=initMap";

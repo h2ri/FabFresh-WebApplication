@@ -5,15 +5,16 @@
         </div>
 
   <div class="orders-body">
-    <div class="time">{{x.created_at_time}}</div>
+    <div class="time">{{x.created_at_time | date:"HH:mm:ss, dd-MMM-yyyy"}}</div>
     <div class="status">{{x.status | uppercase}}</div>
     <div class="coupon">Coupon Code: {{x.coupon}}</div>
     <div class="details"><span>Cloths Details</span></div>
     <hr class="style-thr" width="50%">
     <div class="order_description">
-                        Quantity: {{x.quantity}}<br>
-                        Weight: {{x.weight}}<br>
-                        Type: {{x.order_type}}<br>
+      
+            <li type="circle">Quantity: {{x.quantity}} ps<br></li>
+            <li type="circle">Weight: {{x.weight}} kg<br></li>
+            <li type="circle">Type: {{x.order_type}}<br></li>
     </div>
     <div class="track"><button class="track_button" ng-click="track_order(x.id)">track order</button></div>
   </div>

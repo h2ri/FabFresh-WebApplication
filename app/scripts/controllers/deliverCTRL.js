@@ -2,15 +2,12 @@
 
 
 routerApp
-  .controller('address_listCTRL', function($localStorage,$window,$cookies, $rootScope,$scope, $http, $state,Pagination,service) {
+  .controller('deliverCTRL', function($localStorage,$window,$cookies, $rootScope,$scope, $http, $state,Pagination,service) {
     
-     if($cookies.get('key') == undefined){
-        $state.go('home');
-        alert("Please log in to continue");
+     if(angular.isUndefined($cookies.get('otp_flag'))){
+        $state.go('login');
+        return;
       }
-      console.log($localStorage.previousState);
-      console.log($localStorage.currentState);
-      console.log($localStorage.order_id);
        if( service.deliver!=2 && $localStorage.previousState!='track_order' && $localStorage.previousState!=''){
         $state.go('orders');
         return;

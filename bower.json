@@ -6,6 +6,7 @@
     "bootstrap": "^3.2.0",
     "angular-ui-router-styles": "^1.0.0",
     "angular-chart.js": "^0.8.8",
+    "simple-pagination": "^0.0.3",
     "angular-google-maps": "^2.3.2",
     "ng-simplePagination": "^1.0.3",
     "material-design-lite": "^1.1.1",
