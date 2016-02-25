@@ -1,16 +1,16 @@
 <div  id="deliver_box" >  
  <div class="dil_heading">
      <h1>Delivery Details</h1>
-     <form ng-submit="checkCouponValidity()">
-       <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-           <input ng-model="coupon" class="mdl-textfield__input " id="coupon_text" type="text"  required>
-           <label  class="mdl-textfield__label"  id="coupon_text">Coupon </label><h4  id="sel_type">{{isvalid}}</h4>
-       </div>
+     <form ng-submit="applyCoupon()">
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <input ng-model="coupon" class="mdl-textfield__input sel_type" type="text" id="sample10" required>
+                <label  class="mdl-textfield__label" for="sample10">Coupon </label><h4  class="sel_type">{{isvalid}}</h4>
+              </div>
              <!-- Flat button with ripple -->
          <button  type="submit" id="dil_apply">Apply</button>
       </form>
-       <h3 id="text_shadow">Amount : {{data.amount}}</h3>
-       <h3 id="text_shadow">Amount After Discount : {{x.afterDiscount}}</h3>
+       <h3 id="text_shadow">Amount : {{order.amount}}</h3>
+       <h3 id="text_shadow">Amount After Discount : {{order.afterDiscount}}</h3>
 
       
        <div ng-repeat="x in data | startFrom:currentPage*1 | limitTo:1" >
@@ -26,7 +26,7 @@
              <button  ng-hide="currentPage == l" id="right_button" ng-disabled="currentPage >= l" ng-click="currentPage=currentPage+1"><b>>></b></button>
 
          
-             <button id="addr_button" ng-show="currentPage == l" ui-sref="address" >Add New Address</button>
+             <button id="addr_button" ng-show="currentPage == l" ng-click="goToAddress()" >Add New Address</button>
 
        <center><button  id="drop_req_button" ng-click="deliverNow(currentPage)">Drop Request</button></center>
    </div>

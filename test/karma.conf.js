@@ -35,6 +35,12 @@ module.exports = function(config) {
       'bower_components/ng-simplePagination/simplePagination.js',
       'bower_components/material-design-lite/material.min.js',
       'bower_components/angular-cookies/angular-cookies.js',
+      'bower_components/angular-animate/angular-animate.js',
+      'bower_components/angular-aria/angular-aria.js',
+      'bower_components/angular-messages/angular-messages.js',
+      'bower_components/angular-material/angular-material.js',
+      'bower_components/ngstorage/ngStorage.js',
+      'bower_components/angular-local-storage/dist/angular-local-storage.js',
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower
       "app/scripts/**/*.js",

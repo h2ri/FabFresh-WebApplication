@@ -2,12 +2,13 @@
 
 
 routerApp
-  .controller('addressCTRL', function($http, $rootScope,$scope,$cookies,$state,service) {
+  .controller('addressCTRL', function($localStorage,$http, $rootScope,$scope,$cookies,$state,service) {
      if($cookies.get('key') == undefined){
         $state.go('login');
         alert("Please log in to continue");
         return;
       }
+
     $scope.submitForm = function() {
       $scope.address = {
         "address": document.getElementById('address').innerHTML,
@@ -20,7 +21,16 @@ routerApp
       service.addAddress($scope.address)
       .then(function(reponse){
         alert('Address has been added');
-        $state.go("place_order");
+        if(service.deliver==1 && $localStorage.previousState=='deliver'){
+          service.deliver=2;
+          $state.go("deliver");
+        }
+        else if(service.place==1 && $localStorage.previousState=='place_order'){
+          service.place=2;
+          $state.go("place_order");
+        }
+        else
+          $state.go("place_order");
       },function(error){
         alert('Some error occured')
       })

@@ -80,6 +80,25 @@ angular.module('routerApp')
     return defercv.promise
   };
 
+  service.applyCoupon = function(x){
+    var defercv = $q.defer();
+    $http({
+     method  : 'POST',
+     url     : URL+'/coupons/',
+     data : x,
+     headers : {'Authorization': 'Bearer '+$cookies.get('key'), 'Content-Type': 'application/json'} 
+    })
+    .success(function(response){
+      defercv.resolve(response);
+    })
+    .error(function(error,status){
+      defercv.reject(error);
+    })
+
+    return defercv.promise
+  };
+
+
 
    service.placeOrder= function(x){
       var deferpf = $q.defer();
@@ -87,6 +106,7 @@ angular.module('routerApp')
          method  : 'GET',
          url     : URL+'/v1/placeorder/address/'+x.addressId+'/order/'+"0/",
          params  :{type: x.type},
+         "special_instructions":x.special_ins,
          headers : {'Authorization': 'Bearer '+$cookies.get('key')} 
       })
       .success(function(response){
@@ -252,3 +272,29 @@ angular.module('routerApp')
 
   return service;
  });
+
+
+
+routerApp.factory('userService', ['$rootScope', function ($rootScope) {
+
+    var service = {
+      
+        model: {
+            name: '',
+            email: ''
+        },
+
+        SaveState: function () {
+            sessionStorage.userService = angular.toJson(service.model);
+        },
+
+        RestoreState: function () {
+            service.model = angular.fromJson(sessionStorage.userService);
+        }
+    }
+
+    $rootScope.$on("savestate", service.SaveState);
+    $rootScope.$on("restorestate", service.RestoreState);
+
+    return service;
+}]);

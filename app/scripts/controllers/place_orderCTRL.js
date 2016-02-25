@@ -2,28 +2,24 @@
 
 
 routerApp
- .controller('place_orderCTRL', function($window,$cookies, $rootScope,$scope, $http, $state,Pagination,service) {
+ .controller('place_orderCTRL', function($localStorage,$window,$cookies, $rootScope,$scope, $http, $state,Pagination,service) {
      if($cookies.get('key') == undefined){
         $state.go('login');
         alert("Please log in to continue");
         return;
       }
       
-    $scope.getAddress = function(){
       service.getAddress()
         .then(function(response){
           $scope.data=response;
           $scope.l = $scope.data.length;
-          $scope.currentPage = 0;
           $scope.pagination = Pagination.getNew(2);
         },function(error){
           alert("some error occured");
         })
-      };
-      $scope.getAddress();
-
       $scope.goToAddress = function(){
         service.place=1;
+        service.type=$scope.type;
         $state.go('address');
       };
 
@@ -76,7 +72,8 @@ routerApp
       var btn6 = document.getElementById("btn6");
       var btn7 = document.getElementById("btn7");
         
-      if(service.place==1){
+      if(service.place==2){
+        $scope.type=service.type;
         modal1.style.display = "block";
         modal2.style.display = "none";
         modal3.style.display = "none";
@@ -84,21 +81,21 @@ routerApp
         service.place=0;
       }
       else{
-
+        $scope.type=0;
+        service.place==0; 
         modal1.style.display = "none";
         modal2.style.display = "none";
         modal3.style.display = "none";
         modal.style.display = "block";
       }
-      $scope.type=0;
-
-
+      
       btn.onclick = function() {
-      $( '.mdl-layout__drawer, .mdl-layout__obfuscator' ).removeClass( 'is-visible' );
-      modal1.style.display = "none";
-      modal2.style.display = "none";
-      modal3.style.display = "none";
-      modal.style.display = "block";
+        $( '.mdl-layout__drawer, .mdl-layout__obfuscator' ).removeClass( 'is-visible' );
+        modal1.style.display = "none";
+        modal2.style.display = "none";
+        modal3.style.display = "none";
+        modal.style.display = "block";
+        service.place=0;
       }
 
       btn1.onclick = function() {

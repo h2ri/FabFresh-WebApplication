@@ -2,14 +2,15 @@
 
 
 routerApp
-  .controller('ordersCTRL', function($rootScope,$scope,$state, $http,$cookies,service) {
+  .controller('ordersCTRL', function($localStorage,$sessionStorage,$rootScope,$scope,$state, $http,$cookies,service,userService) {
    if($cookies.get('key') == undefined)
       {
         $state.go('login');
         alert("Please log in to continue");
         return;
       }  
-    service.getOrders()
+      
+      service.getOrders()
       .then(function(data){
         var type = {};
           type["0"] = "Wash";
@@ -44,7 +45,7 @@ routerApp
               if(data[i].quantity==null)
                   $scope.data[i].quantity=0;
               if(data[i].coupon==null)
-                  $scope.data[i].coupon="No Coupaon";
+                  $scope.data[i].coupon="No Coupon";
               if(data[i].afterDiscount==null)
                   $scope.data[i].afterDiscount="No Discount";
 
@@ -56,8 +57,8 @@ routerApp
       });
     
     $scope.track_order = function(id) {
-        $rootScope.order_id=id;
+        $localStorage.order_id=id;
         $state.go('track_order');
     };
-     $cookies.put('count',3);
+    $cookies.put('count',3);
 });

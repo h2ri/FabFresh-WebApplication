@@ -1,3 +1,4 @@
+
 <div id="placebody">    
     <!-- The Modal -->
 <div id="myModal" class="modal">
@@ -7,17 +8,17 @@
       <div class="modal-body">
           <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-2">
                           <input type="radio" id="option-2" class="mdl-radio__button" name="options" ng-model="type" value="0">
-                          <span class="mdl-radio__label" id="sel_type">Wash + Iron</span>
+                          <span class="mdl-radio__label sel_type">Wash + Iron</span>
                           </label>
                           <br>
                           <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-3">
                           <input type="radio" id="option-3" class="mdl-radio__button" name="options" ng-model="type" value="1">
-                          <span class="mdl-radio__label" id="sel_type">Wash + Fold</span>
+                          <span class="mdl-radio__label sel_type">Wash + Fold</span>
                           </label>
                           <br>
                           <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-4">
                           <input type="radio" id="option-4" class="mdl-radio__button" name="options" ng-model="type" value="2">
-                          <span class="mdl-radio__label" id="sel_type">Iron</span>
+                          <span class="mdl-radio__label sel_type">Iron</span>
                           </label><br>
 
                           <button id="btn1">Next</button>
@@ -54,7 +55,7 @@
               <button  ng-hide="currentPage == l" id="place_right_button" ng-disabled="currentPage >= l" ng-click="currentPage=currentPage+1"><b>>></b></button>
 
           
-              <button id="place_addr_button" ng-show="currentPage == l" ui-sref="address" >Add New Address</button> 
+              <button id="place_addr_button" ng-show="currentPage == l" ng-click="goToAddress()" >Add New Address</button> 
           
               
               
@@ -72,8 +73,8 @@
 
             <form ng-submit="checkCouponValidity()">
               <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                <input ng-model="coupon" class="mdl-textfield__input" id="sel_type" type="text" id="sample3" required>
-                <label  class="mdl-textfield__label" for="sample3">Coupon </label><h4  id="sel_type">{{isvalid}}</h4>
+                <input ng-model="coupon" class="mdl-textfield__input sel_type" type="text" id="sample3" required>
+                <label  class="mdl-textfield__label" for="sample3">Coupon </label><h4  class="sel_type">{{isvalid}}</h4>
               </div>
               <!-- Flat button with ripple -->
               <button  type="submit" id="apply">
@@ -95,7 +96,7 @@
           <!-- Floating Multiline Textfield -->
 <form ng-submit="placeOrderForm()">
   <div class="mdl-textfield mdl-js-textfield">
-    <textarea ng-model="special_ins" id="sel_type" class="mdl-textfield__input" type="text" rows= "4" id="sample5" ></textarea>
+    <textarea ng-model="special_ins" class="mdl-textfield__input sel_type" type="text" rows= "4" id="sample5" ></textarea>
     <label class="mdl-textfield__label" for="sample5">Special Instructions....</label>
   </div>
   <button type="submit" id="btn4">Place Order</button>

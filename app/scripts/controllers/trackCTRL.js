@@ -3,14 +3,19 @@
 
 routerApp
 
-  .controller('trackCTRL', function($rootScope,$scope, $http, $cookies) {
+  .controller('trackCTRL', function($state,$localStorage,$rootScope,$scope, $http, $cookies) {
     $scope.user = [];
     var URL = 'http://fabfresh-dev.elasticbeanstalk.com';
-
+   
+    
+    if($localStorage.previousState!='orders' && $localStorage.previousState!=''){
+      $state.go('orders');
+      return;
+    }
 
     $http({
       method  : 'GET',
-      url     : URL+'/orders/'+$rootScope.order_id+'/',
+      url     : URL+'/orders/'+$localStorage.order_id+'/',
       headers : {'Authorization': 'Bearer ' + $cookies.get('key')
                 } 
      })

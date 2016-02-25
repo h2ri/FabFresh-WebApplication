@@ -4,6 +4,7 @@ var routerApp = angular.module('routerApp', [
     'ui.router',
     'ngCookies',
     'simplePagination',
+    'ngStorage',
     ]);
  
 routerApp.config(function($stateProvider, $urlRouterProvider ) {
@@ -51,7 +52,7 @@ routerApp.config(function($stateProvider, $urlRouterProvider ) {
             controller: 'place_orderCTRL',
         })
         .state('track_order', {
-            url: '/orders',
+            url: '/track-order',
             templateUrl: '../views/track.html',
             controller: 'trackCTRL',
         })
@@ -72,7 +73,7 @@ routerApp.config(function($stateProvider, $urlRouterProvider ) {
             controller: 'AboutCTRL',
         })
          .state('deliver', {
-            url: '/orders',
+            url: '/deliver-now',
             templateUrl: '../views/deliver.html',
             controller: 'address_listCTRL',
         })
