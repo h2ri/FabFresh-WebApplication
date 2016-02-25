@@ -24,4 +24,23 @@ routerApp
         }
       });
     };
+
+
+   var flag=0;
+    $scope.set = function() {
+      if(flag)
+        return;
+      if($scope.reset_password!=undefined && $scope.reset_password.email!=undefined){
+        setClass('#Email');
+        flag=1;
+      }
+    };
+      $('.awesome-form .input-group input').focusout(function(){
+        var text_val = $(this).val();
+        if(text_val === "")
+          $(this).removeClass('has-value');
+        else {
+          $(this).addClass('has-value');
+        }
+    });
 });

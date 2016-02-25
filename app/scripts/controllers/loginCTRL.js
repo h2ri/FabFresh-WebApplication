@@ -14,7 +14,7 @@ routerApp
     var expireDate = new Date();
     expireDate.setDate(expireDate.getDate() + 1);
     $scope.user = [];
-   
+    
     var URL = 'http://fabfresh-dev.elasticbeanstalk.com';
        $scope.submitForm = function() {
            $scope.$emit('LOAD');
@@ -48,6 +48,7 @@ routerApp
                   $state.go('otp');
                 $localStorage.username=data[0].username; 
             },function(error){
+              $scope.$emit('UNLOAD');
               alert("Some error occured");
             })
             
@@ -57,4 +58,25 @@ routerApp
           alert('Some error occured');
         })
       };
+
+      
+    var flag=0;
+    $scope.set = function() {
+      if(flag)
+        return;
+      if($scope.login!=undefined && $scope.login.password!=undefined){
+        setClass('#Email');
+        setClass('#password');
+        flag=1;
+      }
+    };
+      $('.awesome-form .input-group input').focusout(function(){
+        var text_val = $(this).val();
+        if(text_val === "")
+          $(this).removeClass('has-value');
+        else {
+          $(this).addClass('has-value');
+        }
+    });
+
 });

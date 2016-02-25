@@ -26,7 +26,7 @@ routerApp.config(function($stateProvider, $urlRouterProvider ) {
         })
 
         .state('reset_password', {
-            url: '/#',
+            url: '/reset-password',
             templateUrl: '../views/reset_password.html',
             controller: 'reset_passwordCTRL'
         })
@@ -57,7 +57,7 @@ routerApp.config(function($stateProvider, $urlRouterProvider ) {
             controller: 'trackCTRL',
         })
         .state('profiles', {
-            url: '/#',
+            url: '/about-us',
             templateUrl: '../views/profile.html',
             //controller: 'profileCTRL',
         })
@@ -67,11 +67,7 @@ routerApp.config(function($stateProvider, $urlRouterProvider ) {
             //template: '<h1>BYE<h1>',
             controller: 'logoutCTRL',
         })
-         .state('About', {
-            url: '/#',
-            template: '<h1>yoyoyoyoyooy<h1>',
-            controller: 'AboutCTRL',
-        })
+        
          .state('deliver', {
             url: '/deliver-now',
             templateUrl: '../views/deliver.html',

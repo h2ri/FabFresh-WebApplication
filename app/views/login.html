@@ -1,15 +1,18 @@
-<div  id="login" class="container">	
-    <form ng-submit="submitForm()" name="myForm">
-        <input class="input1" placeholder="Email"  name="email" type="text" ng-pattern="/^[a-z0-9._]+@[a-z]+\.[a-z.]{2,5}$/" ng-model="login.email" required><br>
-
-        <span ng-show="myForm.email.$dirty && myForm.email.$error.required">Required</span>
-    	<span ng-show="!myForm.email.$error.required && !myForm.email.$valid">Email Invalid</span>
-        
-        <input class="input1" type="password" placeholder="Password" name="password" ng-model="login.password" required>
-        <br><br>
-        <input class="btn" ng-disabled="!myForm.email.$valid || !myForm.password.$valid" type="submit" id='login_submit' >
-<!--<i class="loading" ng-show="loading">Loading</i>-->
-<!--        <input id="input1" ng-disabled="!myForm.email.$valid || !myForm.password.$valid" type="submit"  class="btn">-->
+<div  id="login" class="container"> 
+    <form class="awesome-form" ng-submit="submitForm()" name="myForm">
+        <div class="input-group">
+            <input id="Email"  name="email" type="text" ng-pattern="/^[a-z0-9._]+@[a-z]+\.[a-z.]{2,5}$/" ng-model="login.email" required>
+            {{set()}}
+            <label for="Email">Email</label>
+            <span ng-show="!myForm.email.$error.required && !myForm.email.$valid">Email Invalid</span>
+        </div>
+        <br>
+        <div class="input-group">
+            <input type="password" id="password" name="password" ng-model="login.password" required>
+            <label for="password">Password</label>
+        </div>
+        <br>
+        <button style="background: #888;"class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" ng-disabled="!myForm.email.$valid || !myForm.password.$valid" type="submit" id='login_submit'>Login</button>
     </form>
     <br>    
     <a class="link_class" ui-sref="reset_password"><span>Forget Password..?</span></a><br><br>

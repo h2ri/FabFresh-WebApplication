@@ -2,6 +2,9 @@
 
 
 $(document.body).click(function(e){
+
+
+
    var $box = $('#forgot_password');
    if($box[0] && e.target.id !== 'forgot_password' && !$.contains($box[0], e.target))
       $box.remove();
@@ -35,14 +38,24 @@ function boxCloser(e){
 }
 
 
-$('input').on('focus', function() {
-  $('label').addClass('filled focused');
-});
+// $('input').on('focus', function() {
+//   $('label').addClass('filled focused');
+// });
 
-$('input').on('blur', function() {
-  $('label').removeClass('focused');
+// $('input').on('blur', function() {
+//   $('label').removeClass('focused');
   
-  if (this.value === '') {
-    $('label').removeClass('filled')
-  }
-});
+//   if (this.value === '') {
+//     $('label').removeClass('filled')
+//   }
+// });
+
+function setClass(str){
+      var text_val = $(str).val();
+        if(text_val === "") 
+          $(str).removeClass('has-value');
+        else 
+          $(str).addClass('has-value');
+    }
+
+  
