@@ -20,7 +20,6 @@ $(document.body).click(function(e){
 $('#login_btn').click(function(){
   $('#login').toggle(300);
   document.body.addEventListener('click', boxCloser, true);
-  
 });
 
 function boxCloser(e){

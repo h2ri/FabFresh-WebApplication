@@ -3,7 +3,8 @@
 var routerApp = angular.module('routerApp', [
     'ui.router',
     'ngCookies',
-    'simplePagination'
+    'simplePagination',
+    'ngStorage',
     ]);
  
 routerApp.config(function($stateProvider, $urlRouterProvider ) {
@@ -34,10 +35,10 @@ routerApp.config(function($stateProvider, $urlRouterProvider ) {
             templateUrl: '../views/otp.html',
             controller: 'otpCTRL'
         })
-        .state('homepage', {
-            url: '/homepage',
-            templateUrl: '../views/homepage.html',
-            controller: 'homepageCTRL',
+        .state('address', {
+            url: '/add-address',
+            templateUrl: '../views/address.html',
+            controller: 'addressCTRL',
             authenticate: 'true',
         })
         .state('orders', {
@@ -45,18 +46,13 @@ routerApp.config(function($stateProvider, $urlRouterProvider ) {
             templateUrl: '../views/orders.html',
             controller: 'ordersCTRL',
         })
-        .state('address_list', {
-            url: '/address',
-            templateUrl: '../views/address_list.html',
-            controller: 'address_listCTRL',
-        })
         .state('place_order', {
             url: '/place_order',
             templateUrl: '../views/place_order.html',
-            controller: 'address_listCTRL',
+            controller: 'place_orderCTRL',
         })
         .state('track_order', {
-            url: '/orders',
+            url: '/track-order',
             templateUrl: '../views/track.html',
             controller: 'trackCTRL',
         })
@@ -77,12 +73,10 @@ routerApp.config(function($stateProvider, $urlRouterProvider ) {
             controller: 'AboutCTRL',
         })
          .state('deliver', {
-            url: '/#',
+            url: '/deliver-now',
             templateUrl: '../views/deliver.html',
             controller: 'address_listCTRL',
         })
-
-        
 });
 /*
 routerApp.factory('UserService', function() {

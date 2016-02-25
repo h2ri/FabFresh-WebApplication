@@ -29,6 +29,11 @@ module.exports = function(config) {
       'bower_components/angular-ui-router-styles/ui-router-styles.js',
       'bower_components/Chart.js/Chart.js',
       'bower_components/angular-chart.js/dist/angular-chart.js',
+      'bower_components/simple-pagination/lib/pagination.js',
+      'bower_components/ng-simplePagination/simplePagination.js',
+      'bower_components/angular-cookies/angular-cookies.js',
+      'bower_components/material-design-lite/material.min.js',
+      'bower_components/ngstorage/ngStorage.js',
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower
       "app/scripts/**/*.js",
