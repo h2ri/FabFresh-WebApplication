@@ -10,6 +10,7 @@ routerApp
       }
 
     $scope.submitForm = function() {
+      
       $scope.address = {
         "address": document.getElementById('address').innerHTML,
         "addressLocality": locality1,
@@ -43,7 +44,8 @@ routerApp
 routerApp.directive('script1', function($cookies) {
   var flag=0;
 	 function load_script() {
-          if($cookies.get('key') == undefined)
+    
+          if($cookies.get('token') == undefined)
             return;
           if(flag==0){
             var s = document.createElement('script'); // use global document since Angular's $document is weak

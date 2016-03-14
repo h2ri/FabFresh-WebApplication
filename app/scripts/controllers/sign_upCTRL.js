@@ -12,6 +12,7 @@ routerApp
       };
       service.signUp($scope.user)
       .then(function(data){
+        
          if(data.email){
             alert(data.email);
           }

@@ -77,7 +77,7 @@ input[type=text]:focus, input[type=password]:focus, input[type=number]:focus {
 }
 input[type="text"], input[type="email"] {
   border: none;
-  outline: none; !important;
+  outline: none; 
   border-bottom: solid 2px #888;
 }
 input[type="submit"]:active {
@@ -86,7 +86,7 @@ input[type="submit"]:active {
 }
 input[type="password"] {
     border: none;
-    outline: none; !important;
+    outline: none; 
     border-bottom: solid 2px #888;
 }
 .input-group {

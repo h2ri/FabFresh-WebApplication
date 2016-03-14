@@ -13,10 +13,12 @@
         </div>
         <br>
         <button style="background: #888;"class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" ng-disabled="!myForm.email.$valid || !myForm.password.$valid" type="submit" id='login_submit'>Login</button>
+
     </form>
     <br>    
     <a class="link_class" ui-sref="reset_password"><span>Forget Password..?</span></a><br><br>
     <a class="btn" ui-sref="sign_up"><span>Sign Up</span></a> 
+     <button ng-click="fb()">Sign in with Facebook</button>
     
 </div>
 

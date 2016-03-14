@@ -2,9 +2,45 @@
 
 
 routerApp
-  .controller('loginCTRL', function($localStorage,$window, $rootScope,$scope, $http, $state, $cookies,service) {
+  .controller('loginCTRL', function($localStorage,$window, $rootScope,$scope, $http, $state, $cookies,service,$auth,$cookieStore) {
   document.body.addEventListener('click', boxCloser, true);
   //$state.go($state.current, {}, {reload: true});
+
+$scope.fb = function(){
+  FB.getLoginStatus(function(response) {
+   console.log(response);
+   if(response.status == "unknown")
+    fb();
+});
+}
+
+
+   function testAPI() {
+    console.log('Welcome!  Fetching your information.... ');
+    FB.api('/me', function(response) {
+      console.log('Successful login for: ' + response.name);
+      console.log(response);
+    });
+  }
+
+    function fb() {
+            FB.login(function (response) {
+                console.log(response);
+                if (response.authResponse) {
+                  var tkk = response.authResponse.accessToken;
+                  console.log(tkk);
+                    testAPI();
+                } else {
+                    console.log('User cancelled login or did not fully authorize.');
+                }
+            });
+        }
+
+
+
+
+
+
   $scope.$on('LOAD', function() {
         $scope.loading = true
       });
