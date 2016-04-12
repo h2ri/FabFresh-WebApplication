@@ -1,0 +1,23 @@
+
+    <div id="point6"><center>______________________________________________________</center></div>
+    <div id="point2"><center><button id="point3" ng-click="fb()">Connect With Facebook</button></center></div>
+    <div id="point5"><center>---------------------------------------OR----------------------------------------------</center></div>
+    <form class="awesome-form" ng-submit="submitForm()" name="myForm">
+        <div class="input-group">
+            <input id="Email"  name="email" type="text" ng-pattern="/^[a-z0-9._]+@[a-z]+\.[a-z.]{2,5}$/" ng-model="login.email" required>
+            {{set()}}
+            <label for="Email">Email</label>
+            <span ng-show="!myForm.email.$error.required && !myForm.email.$valid">Email Invalid</span>
+        </div>
+        <br>
+        <div class="input-group">
+            <input type="password" id="password" name="password" ng-model="login.password" required>
+            <label for="password">Password</label>
+        </div>
+        <br>
+        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" ng-disabled="!myForm.email.$valid || !myForm.password.$valid" type="submit" id='point4'>Login</button>
+
+    </form>
+    <br>    
+   <!--  <a class="link_class" ui-sref="reset_password"><span>Forget Password..?</span></a><br><br> -->
+   <div id="point7"><div> <a ui-sref="sign_up">Sign Up</a></div> </div>
