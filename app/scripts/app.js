@@ -21,7 +21,7 @@ routerApp.config(function($stateProvider, $urlRouterProvider,$authProvider ) {
         })
         
         .state('sign_up', {
-            url: '/#',
+            url: '/sign_up',
             templateUrl: '../views/sign_up.html',
             controller: 'sign_upCTRL'
         })

@@ -21,3 +21,47 @@
     <br>    
    <!--  <a class="link_class" ui-sref="reset_password"><span>Forget Password..?</span></a><br><br> -->
    <div id="point7"><div> <a ui-sref="sign_up">Sign Up</a></div> </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   <form class="awesome-form" ng-submit="submitForm()" name="myForm">
+         <div class="input-group">
+            <span><i class="material-icons">perm_identity</i></span>
+            <input placeholder='Name' id="name" type="text" ng-pattern="/^[a-zA-Z]+$/" name="name" ng-model="sign_up.name" required>
+<!--             <label for="Email">Name</label>
+            <span ng-show="!myForm.name.$error.required && !myForm.email.$valid">Invalid Name</span> -->
+        </div><br>
+
+        <div class="input-group">
+            <span><i class="material-icons">mail_outline</i></span>
+            <input placeholder='Email' d="Email" type="text" ng-pattern="/^[a-z0-9._]+@[a-z]+\.[a-z.]{2,5}$/" name="email" ng-model="sign_up.email" required>
+
+<!--             <label for="Email">Email</label>
+            <span ng-show="!myForm.email.$error.required && !myForm.email.$valid">Invalid email</span> -->
+        </div><br>
+        {{set()}}
+        <div class="input-group">
+        <span><i class="material-icons">phone_iphone</i></span>
+        <input placeholder='Mobile No' id="mobile" type="text" name="phone" ng-pattern="/^[0-9]{10}$/" ng-model="sign_up.phone" required>
+<!--         <label for="mobile">Mobile Number</label>
+        <span ng-show="!myForm.phone.$error.required && !myForm.phone.$valid">Mobile No. not valid</span> -->
+        </div><br>
+        <div class="input-group">
+        <span><i class="material-icons">lock_outline</i></span>
+        <input placeholder='Password' id="password" type="password" ng-minlength="6" name="password" ng-model="sign_up.password" required>
+<!--         <label for="password">Password</label>
+        <span ng-show="!myForm.password.$error.required && !myForm.password.$valid">Password should be atleast 6 character long</span> -->
+        </div><br>
+        <input id="input1" ng-disabled="!myForm.email.$valid || !myForm.phone.$valid || !myForm.password.$valid" type="submit" value="REGISTER" class="login_signup_btn">
+    </form>

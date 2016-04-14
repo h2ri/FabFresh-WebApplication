@@ -1,31 +1,89 @@
-#point1{
+#register{
   color: #212121;
-  height:25px;
+  height:8%;
   font-family: 'Roboto';
   font-weight: bold;
   font-size: 18px;
-    padding: 10px;
 }
+
+
+
+div.social-wrap{
+    width: 74%;
+    height: 15%;
+    margin-left: 13%;
+
+}
+
+div.social-wrap button {
+    position: relative;
+    width: 100%;
+    height: 50%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+
+    background: none;
+    border: none;
+    display: block;
+    background-size: 35px 35px;
+    background-position: left center;
+    background-repeat: no-repeat;
+    color: white;
+    font-family:"Merriweather Sans", sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    border-bottom: 2px solid transparent;
+    border-left: 1px solid transparent;
+    border-right: 1px solid transparent;
+    box-shadow: 0 4px 2px -2px gray;
+    text-shadow: rgba(0, 0, 0, .5) -1px -1px 0;
+    text-align: center;
+
+    border-color: #2d5073 ;
+    background-color: #3b5998 ;
+    background-image: url(http://icons.iconarchive.com/icons/danleech/simple/512/facebook-icon.png);
+}
+
 
 
 #point3{
-   background: #7F00FF;
+    background: #7F00FF;
     color: #FFFFFF;
     font-family: Sans-serif;
-    font-size: 20px;
-    height: 73%;
-    width: 300px;
-    line-height: 40px;
+    font-size: 12px;
+    position: relative;
+    width: 74.31%;
+    height: 50%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+
+#p1 {
+    overflow: hidden;
     text-align: center;
-    border: 0;
-    transition: all 0.3s ease 0s;
-    margin-top: 30px;
-
-
+}
+#p1:before,
+#p1:after {
+    border: inset 1px;
+    background-color: #FFF;
+    content: "";
+    display: inline-block;
+    height: 0px;
+    position: relative;
+    vertical-align: middle;
+    width: 50%;
+}
+#p1:before {
+    right: 0.5em;
+    margin-left: -50%;
+}
+#p1:after {
+    left: 0.5em;
+    margin-right: -50%;
 }
 #point4{
-   background:#FF1493;
-    color: #FFFFFF;
     font-family: Sans-serif;
     font-size: 20px;
     height: 40px;
@@ -70,22 +128,30 @@
   top:50%;
   left:50%;
   transform: translate(-50%,-43%);
-
-
 }
 
 #sign_up{
-  border-radius: 15px;
-  position: absolute;
-  left: 50%;
-  top: 45%;
-  box-shadow: 10px 10px 5px black;
-  transform: translate(-50%, -50%);
-  width: 250px; 
-  height: 330px;
+    padding: 10px 0px 0px 0px;
+  border-radius: 8px;
+  background-color: white;
   border: 1px solid #CCC; 
-  padding: 40px; 
-  background-color: #FFF
+  position: absolute;
+  width: 26.2%; 
+  height: 61%;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-55%);
+}
+
+#signup_to_login{
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    width: 100%;
+    height: 10%;
+    position: absolute;
+    bottom: 0px;
+    margin-left: 0px;
+    background: #CCC;
 }
 
 #reset_password{
@@ -118,39 +184,59 @@
 
 
 
-.cointainer input, .btn {
-  width: 100%;
-  height: 40px;
-  font-size: 16px;
-  transition: 0.6s;
-  border: none;
-  border-bottom: 1px solid #CCC;
-  background-color: transparent;
+.login_signup_btn {
+    border: 0;
+    padding: 0;
+    border-radius: 2px;
+    width: 100%;
+    height: 12%;
+    font-size: 14px;
+    font-family: 'Roboto';
+    background-color: #FF3366;
+}
+i {
+    width: 10%;
+    vertical-align: bottom;
+    float:left;
 }
 
+.awesome-form{
+    width: 74%;
+    position: absolute;
+    height: 56.7%;
+    left:50%;
+    transform: translate(-50%,0%);
+}
+.input-group{
+    width: 100%;
+}
 
-/* for floating labls*/
+.input-group input{
+    display: inline; 
+    width: 85%;  
+    float: right;
+}
+
 input:focus, input:active,, textarea {
   outline: none !important;
 }
 input[type=text]:focus, input[type=password]:focus, input[type=number]:focus {
+
     border-bottom: solid 2px #21a1e1;
 }
-input[type="text"], input[type="email"] {
+
+input[type="text"], input[type="email"],input[type="password"] {
   border: none;
   outline: none; 
-  border-bottom: solid 2px #888;
-  margin-left: 25;
+  border-bottom: solid 1px #CCC;
 }
-input[type="submit"]:active {
+
+input[type="submit"] {
   color: white;
-  background: #333;
 }
-input[type="password"] {
-    border: none;
-    outline: none; 
-    border-bottom: solid 2px #888;
-}
+
+
+/*
 .input-group {
   display: inline;
   position: relative;
@@ -167,7 +253,6 @@ input[type="password"] {
   left: 0px;
   -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
-  /*font-family: "Georgia", "Cambria", "Times New Roman", "Times", serif;*/
   font-family: 'Roboto';
   font-style: italic;
   font-size: 18px;
@@ -184,4 +269,4 @@ input[type="password"] {
   font-size: 12px;
   color: #aaa;
   opacity: 1;
-}
+}*/
