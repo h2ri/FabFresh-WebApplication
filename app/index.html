@@ -45,16 +45,11 @@
 
 
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-      <header style="position: fixed; background-color: black;" class="mdl-layout__header">
+      <header ng-show="otp_flag()" style="position: fixed; background-color: black;" class="mdl-layout__header">
         <div class="mdl-layout__header-row">
-          <!-- Title -->
           <span class="mdl-layout-title"><img src="images/fabfresh.png" height="35" width="200"></span>
-          <!-- Add spacer, to align navigation to the right -->
           <div class="mdl-layout-spacer"></div>
-          <center ng-hide="otp_flag()"><a  ui-sref="login" id="login_btn" class="btn btn-default">Login</a></center>
-
-          <!-- Navigation. We hide it in small screens. -->
-
+         
         </div>
       </header>
       <div class="mdl-layout__drawer" style="position: fixed; margin-top: 64px">
@@ -69,8 +64,14 @@
         </nav>
       </div>
 
-      <main class="mdl-layout__content">
-            <div id="container1" ui-view></div>
+
+      <main class="mdl-layout__content" id="asd">
+            <div  ng-hide="otp_flag()" id="logo"></div>
+            <div id="get_app"><p style="color:white;">Get App</p></div>
+            <a ng-click="goToPlaceOrder(0)" id="android_icon" href="https://play.google.com/store?hl=en"></a>
+                        <a ng-click="goToPlaceOrder(0)" id="ios_icon" href="https://itunes.apple.com/in/genre/ios/id36?mt=8"></a>
+            <a  ng-hide="otp_flag()" ui-sref="login" id="login_btn"><p style="color:white; overflow: hidden;">LOGIN</p></a>
+            <div  ui-view id="container1"></div>
 
       </main>
     </div>

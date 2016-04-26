@@ -4,7 +4,6 @@
 routerApp
   .controller('homeCTRL', function($window,service,$localStorage, $rootScope,$scope,$state,$cookies) {
     var expireDate = new Date();
-   
     
     expireDate.setDate(expireDate.getDate() + 1);
 

@@ -22,6 +22,7 @@
 
 
 
+
 .input1 {
  -webkit-transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1);
  transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1);
@@ -58,45 +59,18 @@ h1 {
  
 }
 
-body .btn {
- border: 1px solid black;
- padding: 5px 10px;
- color: black;
- text-decoration: none;
+#asd{
+  background-image: url("../images/main.jpg"); 
+  background-size: 100% 100%;
+
 }
-body .btn span {
- position: relative;
- z-index: 1;
- -webkit-transition: all 300ms ease-in;
- transition: all 300ms ease-in;
-}
-body .btn:hover span {
- opacity: 0;
- visibility: hidden;
-}
-.link_class {
-   float: right;
-   font-kerning: auto;
-   font-size: 15px;
-   font-stretch: condensed;
-   font-style: italic;
-   margin-bottom: -20px;
-   padding-left: 10px;
-}
-.btn-cont a{
-   color: dimgray;
-   margin-bottom: 0px;
-}
-.btn2 a{
-   margin-top: 0px;
-   padding-left: 50px;
-}
+
 #container1 {
  display: table;
  width:100%;
- background-image: url("../images/main.jpg");
+
  margin: 100px auto;
- margin-top: 65px;
+ margin-top: 0px;
  margin-bottom: 0px;
  border-radius: 4px;
  height: 100vh;
