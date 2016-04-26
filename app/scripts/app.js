@@ -21,7 +21,7 @@ routerApp.config(function($stateProvider, $urlRouterProvider,$authProvider ) {
         })
         
         .state('sign_up', {
-            url: '/sign_up',
+            url: '/#',
             templateUrl: '../views/sign_up.html',
             controller: 'sign_upCTRL'
         })
@@ -47,6 +47,11 @@ routerApp.config(function($stateProvider, $urlRouterProvider,$authProvider ) {
             templateUrl: '../views/orders.html',
             controller: 'ordersCTRL',
         })
+        .state('select_service', {
+            url: '/select-service',
+            templateUrl: '../views/select_service.html',
+            controller: 'select_serviceCTRL',
+        })
         .state('place_order', {
             url: '/place-order',
             templateUrl: '../views/place_order.html',
@@ -57,11 +62,7 @@ routerApp.config(function($stateProvider, $urlRouterProvider,$authProvider ) {
             templateUrl: '../views/track.html',
             controller: 'trackCTRL',
         })
-        .state('profiles', {
-            url: '/about-us',
-            templateUrl: '../views/profile.html',
-            //controller: 'profileCTRL',
-        })
+
          .state('logout', {
             url: '/#',
             templateUrl: '../views/logout.html',
@@ -74,6 +75,13 @@ routerApp.config(function($stateProvider, $urlRouterProvider,$authProvider ) {
             templateUrl: '../views/deliver.html',
             controller: 'deliverCTRL',
         })
+
+
+        //  .state('login_fb', {
+        //     url: '/fb_login',
+        //     templateUrl:'../views/loginfb.html'
+        //     controller: 'login_fbCTRL',
+        // })
 
          window.fbAsyncInit = function() {
     FB.init({

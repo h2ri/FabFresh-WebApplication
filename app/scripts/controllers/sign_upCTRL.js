@@ -1,7 +1,7 @@
 'use strict';
 
 routerApp
-  .controller('sign_upCTRL', function($rootScope, $scope, $http, $state,service,$cookies,$localStorage){
+  .controller('sign_upCTRL', function($rootScope, $scope, $http, $state,service,$cookies){
     $scope.user = [];
     var URL = 'http://fabfresh-dev.elasticbeanstalk.com'
     $scope.submitForm = function() {

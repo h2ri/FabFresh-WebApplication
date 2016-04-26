@@ -1,28 +1,37 @@
 
-<div class="track_orders">
-<track class="chart" id="graph"></track>
+     <div id="track-order">
+     	<div class="processing">
+       <div id="track_id">PICKUP ADDRESS</div>
+         <hr class="style-two">
+          <div id="track_details">
+	 		<table id="table01">
+	 			<caption style="text-align: left;"><b>ORDER SUMMARY</b></caption>
+	 			<br>
+				<tr>
+				<td id="td1">ORDER ID <b>{{data.id}}</b></td>
+				<td id="td1">QUANTITY <b>{{data.quantity}}</b></td>
 
-<!--<h1>Status = {{Status}}</h1>-->
-<div class="processing">
-<div id="track_id">{{data.id}}</div>
-<hr class="style-two">
-<div id="track_details">
-<ul>
-	<li><rdx><b>Amount: </b>₹{{data.amount}}</rdx></li>
-	<br>
-	<li><rdx><b>Weight: </b>{{data.weight}} kg</rdx></li>
-	<br>
-	<li><rdx><b>Quantity: </b>{{data.quantity}} ps</rdx></li>
-	<br>
+				</tr>
+				<br>
+				<tr>
+				<td id="td1">WEIGHT <b>{{data.weight}}</b></td>
+				<td id="td1">AMOUNT <b>{{data.amount}}</b></td>
+				</tr>
+	         </table>
+	         <br>
+	         <br>
+	         ORDER STATUS
+	         <br>
+	         <b>{{Status}}</b> 
+	       </div>
 
-	<li><rdx><b>Current Status:  </b>{{Status}}</rdx></li>
-	<div id="deliver_button_position">
-		<button ng-show="data.status==80" ui-sref="deliver" id="deliver_button">Deliver Now</button>
-	</div>
-</ul>
-</div>
-</div>
-<div class="track_orders">
+	       <!-- <track class="chart" id="graph"></track> -->
+	  		 <div id="deliver_button_position">
+		   <button ng-show="data.status==80" ui-sref="deliver" id="deliver_button">Deliver Now</button>
+	   		</div>
+       </div>
 
-<!--    <p><strong>this is a track page</strong></p>-->
-</div>
+     </div>
+     <div id="footer"><center>No.99,Koramangala Industrial Area,<br>5th Block,Banglore-95</center></div>
+
+

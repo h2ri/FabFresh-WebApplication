@@ -33,22 +33,7 @@ hr {
     border-style: inset;
     border-width: 10px;
 }
-.track{
-  font-size: 12px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  text-align: right;
-  padding-top: 15px;
-  margin-right: 10px;
-  border-radius: 10px;
-}
-.track_button{
- color:#000 ;
- background-color: #fff; 
- border-radius: 10px;
- position:relative;
- bottom: 45%;
-}
+
 
 
 .orders {
@@ -71,17 +56,6 @@ hr {
 .orders .orders-body {
   position: relative;
 }
-/*.orders .orders-body img {
-  height: 100px;
-  width: 100px;
-  border-radius: 10px;
-  border: 3px solid rgba(255, 255, 255, 0.6);
-  position: absolute;
-  top: -50px;
-  left: 50%;
-  margin-left: -50px;
-  box-shadow: 0 6px 6px -4px rgba(0, 0, 0, 0.2);
-}*/
 .orders .orders-body .status {
   font-size: 32px;
   text-align: center;
@@ -126,11 +100,6 @@ hr.style-thr{
  line-height: 30px; 
  padding-left: 10px;
 }
-
-
-
-
-
 hr.style13 {
     position: relative;
   height: 10px;

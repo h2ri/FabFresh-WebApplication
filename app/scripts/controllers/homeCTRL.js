@@ -4,12 +4,8 @@
 routerApp
   .controller('homeCTRL', function($window,service,$localStorage, $rootScope,$scope,$state,$cookies) {
     var expireDate = new Date();
-
-    //console.log($cookies.get('token'));
-    //console.log($localStorage.homeState);
-    //console.log($localStorage.previousState);
-    //console.log($localStorage.currentState);
-    //console.log($window.location.hash);
+   
+    
     expireDate.setDate(expireDate.getDate() + 1);
 
     if(angular.isDefined($cookies.get('otp_flag')) && $window.location.hash==''){

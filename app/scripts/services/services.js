@@ -255,6 +255,25 @@ angular.module('routerApp')
   };
 
 
+  service.loginfb = function(x){
+      var deferfb = $q.defer();
+      $http({
+          method  : 'GET',
+          url     : URL+'/users/register-by-token/facebook/',
+          params  :{acces_token: x.acces_token,email:x.email,phone:x.phone},
+         })
+      .success(function(response){
+        deferfb.resolve(response);
+    })
+    .error(function(error,status){
+      deferfb.reject(error);
+    })
+
+    return deferfb.promise
+  };
+
+
+
    service.signUp = function(sub){
     var defersign = $q.defer();
     $http({

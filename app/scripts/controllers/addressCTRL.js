@@ -3,6 +3,7 @@
 
 routerApp
   .controller('addressCTRL', function($localStorage,$http, $rootScope,$scope,$cookies,$state,service) {
+    
      if(angular.isUndefined($cookies.get('otp_flag'))){
         $state.go('login');
         alert("Please log in to continue");
@@ -49,7 +50,7 @@ routerApp.directive('script1', function($cookies) {
             return;
           if(flag==0){
             var s = document.createElement('script'); // use global document since Angular's $document is weak
-            s.src = "https://maps.googleapis.com/maps/api/js?callback=initMap";
+            s.src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyCtoQnoiVXCOGmw-QBEDlMdfeEb_eXr2dA&callback=initMap";
             document.body.appendChild(s);
             flag=1;
           }

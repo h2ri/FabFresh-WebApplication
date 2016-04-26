@@ -1,8 +1,28 @@
-<div  id="deliver_box" >  
- <div class="dil_heading">
-     <h1>Delivery Details</h1>
-     <form ng-submit="applyCoupon()">
-        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+<div id="deliver">
+  <div  id="deliver_box" >  
+     <div style="margin-left: 1%;"><h2 > PICKUP ADDRESS</h2></div>
+       <div ng-repeat="x in data | startFrom:currentPage*1 | limitTo:1" >
+
+           <div id="address_box">
+                 <tst>{{x.address}}</tst><br> 
+           </div> 
+           <button id="add" ng-click="goToAddress()">
+           <h2>+</h2> 
+           <p>ADD NEW ADDRESS</p>
+           </button>
+       </div>
+           
+             <button ng-hide="currentPage == 0" id="left_button" ng-disabled="currentPage == 0" ng-click="currentPage=currentPage-1"><b><<</b></button>
+
+             <button  ng-hide="currentPage == l-1" id="right_button" ng-disabled="currentPage >= l" ng-click="currentPage=currentPage+1"><b>>></b></button>
+
+              <div id="dis">
+                <h3><b>Amount : </b>₹ {{order.amount}}</h3>
+                <h3><b>Amount After Discount : </b>₹ {{order.afterDiscount}}</h3>
+              </div>
+
+             <form ng-submit="applyCoupon()">
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="left: 2%;">
 
                 <input ng-model="coupon" class="mdl-textfield__input " type="text" id="sample10" required>
                 <label  class="mdl-textfield__label" for="sample10" >Coupon </label><b class="coupon_status">{{isvalid}}</b>
@@ -11,25 +31,12 @@
          <button  type="submit" id="dil_apply">Apply</button>
       </form>
 
-       <h3 id="text_shadow"><b>Amount : </b>₹ {{order.amount}}</h3>
-       <h3 id="text_shadow"><b>Amount After Discount : </b>₹ {{order.afterDiscount}}</h3>
-
-
-      
-       <div ng-repeat="x in data | startFrom:currentPage*1 | limitTo:1" >
-
-           <div id="address_box">
-                 <tst>{{x.address}}</tst><br> 
-           </div> 
+       <div>
+         <center><button  id="drop_req_button" ng-click="deliverNow(currentPage)">Drop Request</button></center>
        </div>
-           
-             <button ng-hide="currentPage == 0" id="left_button" ng-disabled="currentPage == 0" ng-click="currentPage=currentPage-1"><b><<</b></button>
-
-             <button  ng-hide="currentPage == l" id="right_button" ng-disabled="currentPage >= l" ng-click="currentPage=currentPage+1"><b>>></b></button>
-
-         
-             <button id="addr_button" ng-show="currentPage == l" ng-click="goToAddress()" >Add New Address</button>
-
-       <center><button  id="drop_req_button" ng-click="deliverNow(currentPage)">Drop Request</button></center>
-   </div>
+ 
 </div>
+</div>
+
+<div id="footer"><center>No.99,Koramangala Industrial Area,<br>5th Block,Banglore-95</center></div>
+

@@ -1,9 +1,22 @@
+
 #register{
   color: #212121;
   height:8%;
   font-family: 'Roboto';
   font-weight: bold;
   font-size: 18px;
+}
+
+#point4{
+  border: 0;
+    padding: 0;
+    border-radius: 2px;
+    width: 100%;
+    height: 15%;
+    font-size: 14px;
+    font-family: 'Roboto';
+    background-color: #FF3366;
+    margin-top: 18%;
 }
 
 
@@ -46,20 +59,6 @@ div.social-wrap button {
 }
 
 
-
-#point3{
-    background: #7F00FF;
-    color: #FFFFFF;
-    font-family: Sans-serif;
-    font-size: 12px;
-    position: relative;
-    width: 74.31%;
-    height: 50%;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%,-50%);
-}
-
 #p1 {
     overflow: hidden;
     text-align: center;
@@ -83,40 +82,6 @@ div.social-wrap button {
     left: 0.5em;
     margin-right: -50%;
 }
-#point4{
-    font-family: Sans-serif;
-    font-size: 20px;
-    height: 40px;
-    width: 300px;
-    line-height: 40px;
-    margin: 25px 25px;
-    text-align: center;
-    border: 0;
-    transition: all 0.3s ease 0s;
-
-}
-
-#point5{
-  margin-top: 15px;
-  height:18px;
-  color: #212121;
-
-}
-#point6{
-  height:10px;
-  color: grey;
-  text-align: center;
-
-}
-
-#point7{
-  margin-top: 2px;
-  background-color: grey; 
-
-}
-
-
-
 
 #login{
   border-radius: 8px;
@@ -128,6 +93,7 @@ div.social-wrap button {
   top:50%;
   left:50%;
   transform: translate(-50%,-43%);
+  padding: 0px;
 }
 
 #sign_up{
@@ -236,37 +202,3 @@ input[type="submit"] {
 }
 
 
-/*
-.input-group {
-  display: inline;
-  position: relative;
-  border: none;
-  margin-left: 50px;
-  margin-top: 20px;
-}
-.input-group input {
-  padding: 5px 0px;
-}
-.input-group label {
-  position: absolute;
-  top: 50%;
-  left: 0px;
-  -webkit-transform: translateY(-50%);
-  transform: translateY(-50%);
-  font-family: 'Roboto';
-  font-style: italic;
-  font-size: 18px;
-  color: #212121;
-  margin-bottom: 5px;
-  pointer-events: none;
-  -webkit-transition: all 0.15s ease-out 0s;
-  transition: all 0.15s ease-out 0s;
-  opacity: 0.4;
-}
-.input-group input:focus + label,
-.input-group input.has-value + label {
-  top: -10px;
-  font-size: 12px;
-  color: #aaa;
-  opacity: 1;
-}*/

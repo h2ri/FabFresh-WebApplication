@@ -1,17 +1,17 @@
-track {
-    position:fixed;
-    margin:80px;
-    width:220px; height:220px;
-    float: right;
-    margin-left: 45%;
-    margin-top: 15%;
+#track-order{
+    height: 100%;
+    width: 100%;
+    background-color: #E5E4E2;
 }
-canvas {
-    display: block;
-    position:absolute;
-    top:0;
-    left:0;
+#table01{
+    width: 40%;
+    height: 60%;
 }
+
+#td1{
+    padding-top: 5%;
+}
+
 span1 {
     color:#343434;
     display:block;
@@ -26,64 +26,58 @@ span1 {
 #deliver_button_position{
     margin-top: 20px;
     position: relative;
+    margin-left: 10%;
 }
  #deliver_button{
-    color:#000 ;
+ color:#000 ;
+ background-color: #FF3366; 
+ border-radius: 5px;
+ position:relative;
+ bottom: 45%;
+ width: 30%;
+ height: 13%;
+}
+
+.track{
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-align: right;
+  padding-top: 15px;
+  margin-right: 10px;
+  border-radius: 10px;
+}
+.track_button{
+ color:#000 ;
  background-color: #fff; 
  border-radius: 10px;
  position:relative;
  bottom: 45%;
 }
-
-
-/*
-h1 {
-    color: white;
-    font-size: 30px;
-    position: fixed;
-    padding: 300px 100px;
-    font-weight: 500;
-}
-*/
-rdx {
-	color: #000;
-	font-weight: 150;
-	font-family: sans-serif;
-    text-decoration: all;
-	font-size: 20px;
-}
-text {
-	font-weight: 400;
-    text-shadow: 1px 1px 1px;
-	font-size: 60px;
-	color: #000;
-	padding: 6% 30px;
-}
 #track_id {
-    font-weight: 400;
-    text-shadow: 1px 1px 1px;
-    font-size: 60px;
+    font-weight: 200;
+    font-size: 15px;
     color: #000;
-    margin-top: 10%;
-    margin-left: 10%;
+    margin-top: 1%;
+    margin-left: 10px;
 }
 .processing {
-	width: 50%;
-	height: 100%;
-    margin: auto;
-	background-color: white;
-    float: left;
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
-    text-decoration-style: double;
-    text-transform: capitalize;
+	position: absolute;
+ left: 50%;
+ top: 50%;
+ border: 1px solid #111; 
+ transform: translate(-50%, -50%);
+ width: 75%; 
+ height: 75%;
+ background-color: white ;
+ border-radius: 5px;
 }
 hr { 
     display: block;
     margin-left: auto;
     margin-right: auto;
     border-style: inset;
-    border-width: 10px;
+    border-width: 5px;
 }
 
 hr.style-two {
@@ -93,6 +87,15 @@ hr.style-two {
 }
 
 #track_details {
-     margin-top: 10%;
-    margin-left: 10%;
+    margin-left: 1%;
+    margin-top: 1px;
+}
+#footer{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: black;
+    color:white;
+    height: 64px;
+
 }

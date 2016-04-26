@@ -9,7 +9,7 @@ routerApp
 $scope.fb = function(){
   FB.getLoginStatus(function(response) {
    console.log(response);
-   if(response.status == "unknown")
+   // if(response.status == "unknown")
     fb();
 });
 }
@@ -17,9 +17,10 @@ $scope.fb = function(){
 
    function testAPI() {
     console.log('Welcome!  Fetching your information.... ');
-    FB.api('/me', function(response) {
-      console.log('Successful login for: ' + response.name);
-      console.log(response);
+    FB.api('/me',{fields:'first_name,last_name,email,phone'}, function(response) {
+      console.log('Successful login for: ' + response.first_name );
+      console.log(response.email);
+      
     });
   }
 
@@ -28,12 +29,15 @@ $scope.fb = function(){
                 console.log(response);
                 if (response.authResponse) {
                   var tkk = response.authResponse.accessToken;
-                  console.log(tkk);
+                  
                     testAPI();
                 } else {
                     console.log('User cancelled login or did not fully authorize.');
                 }
-            });
+            },{scope: 'public_profile,email',
+               return_scopes: true,
+              
+             });
         }
 
 
