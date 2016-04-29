@@ -1,137 +1,40 @@
 #deliver{
-	width: 100%;
-	height: 100%;
-	background-color:  #E5E4E2;
+  width: 100%;
+  height: 100%;
+  background-color:  #E5E4E2;
 }
 
 #deliver_box{
  
- position: absolute;
+position: fixed;
  left: 50%;
  top: 50%;
  border: 1px solid #111; 
  transform: translate(-50%, -50%);
- width: 75%; 
- height: 75%;
+ width: 65%; 
+ height: 65%;
  background-color: white ;
  border-radius: 5px;
 
 }
 
-#address_box{
 
- position: absolute;
- left: 18px;
- top: 10%;
- width: 300px; 
- height: 200px;
- border: 1px solid #399689; 
- padding-top: 500px;
- padding: 20px; 
- background-color: #E5E4E2 ;
 
-}
-#add{
- position: absolute;
- margin-left: 327px;
- top: 10%;
- width: 300px; 
- height: 200px;
- padding-top: 500px;
- padding: 20px; 
- background-color: #E5E4E2 ;
-
-}
 
 #drop_req_button{
- color:#000 ;
- background-color:#FF3366; 
- width: 300px;
- height: 32px;
- border-radius: 5px;
+ color:white;
+ background-color:#FF0066; 
+ width:26.5%;
  position:relative;
- margin-top: 5%;
- left: 18px;
+ margin-top: 14%;
+ border: none;
+ left: 3%;
  float: left;
  bottom: 65px;
 
 }
 
-#left_button{
 
- display: block;
- position: absolute;
- margin: 0 auto;
- font-size: 0.8em;
- border: 1px solid #399689; 
- padding: 0.6em 1.2em;
- background-color: #E5E4E2
- color: #fff;
- font-family: 'Lato', Calibri, Arial, sans-serif;
- font-size: 1em;
- letter-spacing: 1px;
- text-transform: uppercase;
- cursor: pointer;
- display: inline-block;
- margin: 10px 2px;
- border-radius: 2px;
- margin-left:75px;
- margin-top:227px;
- object-position: center;
-
-}
-
-#right_button{
-
- display: block;
- position: absolute;
- margin: 0 auto;
- font-size: 0.8em;
- border: 1px solid #399689; 
- padding: 0.6em 1.2em;
- background-color: #E5E4E2
- color: #fff;
- font-family: 'Lato', Calibri, Arial, sans-serif;
- font-size: 1em;
- letter-spacing: 1px;
- text-transform: uppercase;
- cursor: pointer;
- display: inline-block;
- margin: 10px 2px;
- border-radius: 2px;
- margin-left:150px;
- margin-top:227px;
- object-position: center;
-
-}
-
-#addr_button{
-
- font-family: 'Lato', Calibri, Arial, sans-serif;
- font-size: 1em;
- letter-spacing: 1px;
- text-transform: uppercase;
- cursor: pointer;
- display: inline-block;
- color:#fff;
- background-color:#555; 
- width: 200px; 
- height: 50px;
- position:absolute;
- bottom: 50%;
- right: 8%;
-
-}
-
-tst{
-
- color: #000;
- font-weight:60;
- font-size: 20px;
- font-family: Arial;
- border:5px;
-
-}
 
 #coupon_text{
 
@@ -142,26 +45,169 @@ tst{
 #dil_apply{
 
  position: absolute;
- background: #FF3366; 
- margin-left: 1%; 
- margin-top: 4%;  
+   background: #FF0066; 
+   border: none;
+   color: white;
+   left:25%; 
+   top: 72%; 
 
 }
 
 #dis{
-	margin-top: 300px;
-	margin-left: 18px;
+  margin-top: 25%;
+  margin-left: 3%;
 }
 .coupon_status{
-	margin-left:5%;
+  margin-left:5%;
 }
 
 #footer{
-	position: fixed;
-	bottom: 0;
-	width: 100%;
-	background-color: black;
-	color:white;
-	height: 64px;
+    z-index: 1;
+   position: fixed;
+   padding-top: 15px;
+   bottom: 0%;
+   width: 100%;
+   background-color: #222;
+   color:white;
+   height: 64px;
+}
 
+#fl{
+  float: right;
+  position: fixed;
+  margin-top: -3.5%;
+}
+
+.facebook {
+
+margin-left: 76%;
+width: 55px;
+height: 55px;
+outline: none;
+border: none;
+position: fixed;
+background: url('../images/sprite.png') -17px 120px;
+}
+
+.twitter {
+margin-left: 80%;
+width: 55px;
+height: 55px;
+position: fixed;
+background: url('../images/sprite.png') -65px 120px;
+}
+
+.instagram {
+
+margin-left: 84%;
+width: 55px;
+height: 55px;
+position: fixed;
+background: url('../images/sprite.png') -113px 120px;
+}
+
+.linkedin {
+
+margin-left: 88%;
+width: 55px;
+height: 55px;
+position: fixed;
+background: url('../images/sprite.png') -161px 120px;
+}
+
+.fabfresh_image {
+   margin-top: -3%;
+   margin-left: 8%;
+   width: 165px;
+   height: 40px;
+   background: url('../images/sprite.png') -17px 60px;
+}
+
+
+#apply1 {
+  position: absolute;
+  background: #FF0066 ; 
+  border: none;
+  color: white;
+  left:24%; 
+  top: 73%;  
+}
+
+#address_box1{
+
+position: fixed;
+ left: 3%;
+ top: 10%;
+ width: 250px; 
+ height: 150px;
+ border: 1px solid #399689; 
+ padding-top: 500px;
+ padding: 20px; 
+ background-color: #E5E4E2 ;
+
+}
+
+ts{
+
+color: #000;
+font-weight:40;
+font-size: 15px;
+font-family: Arial;
+border:5px;
+
+}
+
+#add1{
+position: fixed;
+ margin-left: 35%;
+ top: 10%;
+ width: 250px; 
+ height: 150px;
+ padding-top: 500px;
+ padding: 20px; 
+ background-color: #E5E4E2 ;
+
+}
+
+#left_button1{
+position: absolute;
+background-color: #FF0066;
+color: white;
+border: none;
+margin-left:12%;
+margin-top:18%;
+
+}
+
+#right_button1{
+
+position: absolute;
+background-color: #FF0066 ;
+color:white;
+border: none;
+margin-left:15%;
+margin-top:18%;
+
+}
+
+.sel_type{
+ position: absolute;
+ top: 52%;
+ left: 28%;
+  color: #000;
+}
+
+#sample7{
+  position: fixed;
+   background-color:white;
+   top: 73%;
+   left: 3%;
+
+}
+
+.coupon_response{
+  position: absolute;
+  top: 72%;
+  left: 32%;
+  color: #000;
 }

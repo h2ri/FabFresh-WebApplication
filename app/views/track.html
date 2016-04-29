@@ -1,37 +1,51 @@
 
      <div id="track-order">
      	<div class="processing">
-       <div id="track_id">PICKUP ADDRESS</div>
-         <hr class="style-two">
-          <div id="track_details">
+     		 <div style="margin-left: 1%;"><h4><b>ORDER SUMMARY</b></h2></div>
 	 		<table id="table01">
-	 			<caption style="text-align: left;"><b>ORDER SUMMARY</b></caption>
-	 			<br>
+	 			
 				<tr>
-				<td id="td1">ORDER ID <b>{{data.id}}</b></td>
-				<td id="td1">QUANTITY <b>{{data.quantity}}</b></td>
+				<td ><h4>ORDER ID</h4> <h3>{{data.id}}</h3></td>
+				<td ><h4>QUANTITY</h4> <h3>{{data.quantity}} pcs</h3></td>
 
 				</tr>
 				<br>
 				<tr>
-				<td id="td1">WEIGHT <b>{{data.weight}}</b></td>
-				<td id="td1">AMOUNT <b>{{data.amount}}</b></td>
+				<td ><h4>WEIGHT</h4> <h3>{{data.weight}} kg</h3></td>
+				<td ><h4>AMOUNT</h4> <h3>{{data.amount}} RS</h3></td>
 				</tr>
 	         </table>
-	         <br>
-	         <br>
-	         ORDER STATUS
-	         <br>
-	         <b>{{Status}}</b> 
-	       </div>
+	         
+	         <p id="pl"><b>ORDER STATUS</b></p>
+	         
 
-	       <!-- <track class="chart" id="graph"></track> -->
-	  		 <div id="deliver_button_position">
+	       <div id="st">
+	         <div id="pick" ng-hide="data.status >=20" title="Pickup"></div>
+	         <div id="wash" ng-hide="data.status >=40" title="Wash"></div>
+	         <div id="iron" ng-hide="data.status >=60" title="Iron"></div>
+	         <div id="dl"   ng-hide="data.status >=80" title="Ready To Deliver"></div>
+
+	         <div id="pick2" ng-show="data.status >=20 " title="Pickup"></div>
+	         <div id="wash2" ng-show="data.status >=40" title="Wash"></div>
+	         <div id="iron2" ng-show="data.status >=60 " title="Iron"></div>
+	         <div id="dl2"   ng-show="data.status >=80" title="Ready To Deliver"></div>
+
+	        </div>
+	        <div id="deliver_button_position">
 		   <button ng-show="data.status==80" ui-sref="deliver" id="deliver_button">Deliver Now</button>
-	   		</div>
-       </div>
+	   		</div> 
+	   		
+	        
 
      </div>
-     <div id="footer"><center>No.99,Koramangala Industrial Area,<br>5th Block,Banglore-95</center></div>
+    <div id="footer"><center>No.99,Koramangala Industrial Area,<br>5th Block,Banglore-95</center>
+      <div class="fabfresh_image" > </div>
+       <div id="fl">
+       	<a href="https://www.facebook.com/Fabfresh-960819563955636/?fref=ts" class="facebook"></a>
+       <a href="https://twitter.com/fabfreshin" class="twitter"></a>
+       <a href="https://www.instagram.com/fabfresh.in/" class="instagram" ></a>
+       <a href="https://www.linkedin.com/company/fabfresh" class="linkedin"></a>
 
 
+       </div>
+   </div>

@@ -1,5 +1,64 @@
+#address_box{
+
+ position: fixed;
+ left: 3%;
+ top: 10%;
+ width: 250px; 
+ height: 150px;
+ border: 1px solid #399689; 
+ padding-top: 500px;
+ padding: 20px; 
+ background-color: #E5E4E2 ;
+
+}
+#add{
+ position: fixed;
+ margin-left: 35%;
+ top: 10%;
+ width: 250px; 
+ height: 150px;
+ padding-top: 500px;
+ padding: 20px; 
+ background-color: #E5E4E2 ;
+
+}
+
+
+#left_button{
+ position: absolute;
+ background-color: #FF0066;
+ color: white;
+ border: none;
+ margin-left:13%;
+ margin-top:19%;
+
+}
+
+#right_button{
+
+ position: absolute;
+ background-color: #FF0066;
+ color:white;
+ border: none;
+ margin-left:17%;
+ margin-top:19%;
+ 
+
+}
+tst{
+
+ color: #000;
+ font-weight:40;
+ font-size: 15px;
+ font-family: Arial;
+ border:5px;
+
+}
+
+
 #select_service{
-    height: 100vh;
+    position: fixed;
+    height: 100%;
     width: 100%;
     background-color: #E5E4E2;
 }
@@ -13,8 +72,8 @@
 
 #select_service1{
   position: fixed;
-  left:200px;
-  top:200px;
+  left:15%;
+  top:35%;
   height: 130px;
   width: 130px;
   background: url('../images/sprite.png') 0px 320px ; 
@@ -22,17 +81,18 @@
 
 #select_service2{
   position: fixed;
-  left:400px;
-  top:200px;
+  left:50%;
+  top:35%;
   height: 130px;
   width: 130px;
+  transform: translate(-50%);
   background: url('../images/sprite.png') -120px 320px ; 
 }
 
 #select_service3{
   position: fixed;
-  left:600px;
-  top:200px;
+  right:15%;
+  top:35%;
   height: 130px;
   width: 130px;
   background: url('../images/sprite.png') -240px 320px ; 
@@ -41,20 +101,27 @@
 
 #apply {
    position: absolute;
-   background: #555; 
-   margin-left: 5%;   
+   background: #FF0066; 
+   border: none;
+   color: white;
+   left:25%; 
+   top: 57%;  
 }
 
-       /* Add Animation */
-       @-webkit-keyframes animatetop {
-           from {top: -300px; opacity: 0} 
-           to {top: 0; opacity: 1}
-       }
+.typ{
+  position: fixed;
+  margin-top: 120px;
+  margin-left: 15px;
+  font-size: 20px;
+}
 
-       @keyframes animatetop {
-           from {top: -300px; opacity: 0}
-           to {top: 0; opacity: 1}
-       }
+.typ1{
+  position: fixed;
+  margin-top: 120px;
+  margin-left: 50px;
+  font-size: 20px;
+}
+
 #placeorder_hover:hover{
   background-color: #777;
   border-radius: 10px;
@@ -73,8 +140,8 @@
 }
 
 #place_left_button{
-color:#000 ;
-background-color: #fff; 
+color:white ;
+background-color: #FF0066; 
 border-radius: 10px;
 position:absolute;
 bottom: 50%;
@@ -114,9 +181,33 @@ font-family: Arial;
 }
 
 #sample5{
-   background-color:#fff;
+  position: fixed;
+   background-color:white;
+   top: 65%;
+   left: 3%;
+
 }
 
 .sel_type{
-   color: #000;
+  position: absolute;
+  top: 55%;
+  left: 32%;
+  color: #000;
+}
+#sample3{
+  position: absolute;
+  top: 57%;
+  left: 3%;
+}
+
+#btn4{
+   position: absolute;
+   width: 28%;
+   background: #FF0066; 
+   border: none;
+   color: white;
+   left:3%; 
+   top: 80%;
+
+
 }

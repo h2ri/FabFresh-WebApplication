@@ -45,22 +45,29 @@
 
 
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-      <header ng-show="otp_flag()" style="position: fixed; background-color: black;" class="mdl-layout__header">
+      <header ng-show="otp_flag()" style=" background-color: #222;" class="mdl-layout__header">
         <div class="mdl-layout__header-row">
-          <span class="mdl-layout-title"><img src="images/fabfresh.png" height="35" width="200"></span>
-          <div class="mdl-layout-spacer"></div>
+          <span class="mdl-layout-title"><div class = "fabfresh_icon"></div></span>
+          <div class="mdl-layout-spacer" style="margin-left:58%;"><div class="user_icon"></div></div><h5 style="margin-right: 8%;">{{getUsername()}}</h5>
          
         </div>
       </header>
-      <div class="mdl-layout__drawer" style="position: fixed; margin-top: 64px">
-        <span class="mdl-layout-title" style="background-color:#606060 ; color:#fff"><img src="images/user.png" height="35" width="30">{{getUsername()}}</span>
-        <nav class="mdl-navigation">
 
-      <a class="mdl-navigation__link" onclick=autoclick() ui-sref="address"><h4><img src="images/add1.png" height="20" width="25">   Address</h4></a>
-      <a class="mdl-navigation__link" onclick=autoclick() ui-sref="orders"><h4><img src="images/ord.png" height="20" width="25">  Orders</h4></a>
-      <a class="mdl-navigation__link" onclick=autoclick() id="placebtn" ui-sref="select_service"><h4><img src="images/placeord.png" height="20" width="25">  Placeorder</h4></a>
-      <a class="mdl-navigation__link" onclick=autoclick() ><h4><img src="images/about.ico" height="20" width="25">  About</h4></a>
-      <a ng-show="otp_flag()" class="mdl-navigation__link" onclick=autoclick() ui-sref="logout"><h4><img src="images/logout.png" height="20" width="25">  Logout</h4></a>
+
+
+      <div class="mdl-layout__drawer" style="position: fixed; margin-top: 64px; background-color: white;">
+  
+        <nav class="mdl-navigation" style="padding: 0">
+        <div id="home_div">
+            <a  class="mdl-navigation__link" onclick=autoclick() ui-sref="place_order"><div id="home_icon"  ></div>   <p>Home</p></a>
+        </div>
+
+        <div id=track_div>
+            <a  class="mdl-navigation__link" onclick=autoclick() ui-sref="orders"><div id="track_icon"  ></div>   <p>Track Orders</p></a>
+        </div>
+        <div id=logout_div>
+            <a  class="mdl-navigation__link" onclick=autoclick() ui-sref="logout"><div id="logout_icon"  ></div>   <p>Logout</p></a>
+        </div>
         </nav>
       </div>
 
@@ -68,14 +75,25 @@
       <main class="mdl-layout__content" id="asd">
             <div  ng-hide="otp_flag()" id="logo"></div>
             <div id="get_app"><p style="color:white;">Get App</p></div>
-            <a ng-click="goToPlaceOrder(0)" id="android_icon" href="https://play.google.com/store?hl=en"></a>
+            <a ng-click="goToPlaceOrder(0)" id="android_icon" href="https://play.google.com/store/apps/details?id=com.fabfresh.android&hl=en"></a>
                         <a ng-click="goToPlaceOrder(0)" id="ios_icon" href="https://itunes.apple.com/in/genre/ios/id36?mt=8"></a>
-            <a  ng-hide="otp_flag()" ui-sref="login" id="login_btn"><p style="color:white; overflow: hidden;">LOGIN</p></a>
+            <button ng-hide="otp_flag()" ui-sref="login" id="login_btn">LOGIN</button>
             <div  ui-view id="container1"></div>
 
       </main>
     </div>
 
+    <div ng-show="otp_flag()"  id="footer"><center>No.99,Koramangala Industrial Area,<br>5th Block,Banglore-95</center>
+      <div class="fabfresh_image" > </div>
+       <div id="fl">
+        <a href="https://www.facebook.com/Fabfresh-960819563955636/?fref=ts" class="facebook"></a>
+       <a href="https://twitter.com/fabfreshin" class="twitter"></a>
+       <a href="https://www.instagram.com/fabfresh.in/" class="instagram" ></a>
+       <a href="https://www.linkedin.com/company/fabfresh" class="linkedin"></a>
+
+
+       </div>
+   </div>
 
 </div>
     <!-- build:js(.) scripts/vendor.js -->

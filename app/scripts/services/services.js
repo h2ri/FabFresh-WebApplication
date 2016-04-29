@@ -100,7 +100,7 @@ angular.module('routerApp')
 
 
 
-   service.placeOrder= function(x){
+   service.placeOrder= function(x,addressId){
       // console.log(x.addressId);
       // console.log(x.type);
       // console.log(x.special_ins);
@@ -108,7 +108,7 @@ angular.module('routerApp')
        var deferpf = $q.defer();
       $http({
          method  : 'GET',
-         url     : URL+'/v1/placeorder/address/'+x.addressId+'/order/'+"0/",
+         url     : URL+'/v1/placeorder/address/'+addressId+'/order/'+"0/",
          params  :{type: x.type,special_instructions:x.special_ins},
          
          headers : {'Authorization': 'Bearer '+$cookies.get('token')} 

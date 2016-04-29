@@ -1,3 +1,18 @@
+.fabfresh_icon {
+  margin-left: 18%;
+  width: 250px;
+  height: 55px;
+  background: url('../images/sprite.png') -220px 120px;
+}
+
+.user_icon{
+  margin-top: -30%;
+  width: 55px;
+  height: 55px;
+  background: url('../images/sprite.png') -170px -15px;
+}
+
+
 .state{
  margin-left: 65%;
  margin-top: 2%;
@@ -35,7 +50,7 @@
  padding-bottom: 0.4em;
 }
 #input1:focus {
- border-color: #3F51B5;
+ border-color: #3F51B5 ;
 }
 
 body {
@@ -62,7 +77,6 @@ h1 {
 #asd{
   background-image: url("../images/main.jpg"); 
   background-size: 100% 100%;
-
 }
 
 #container1 {

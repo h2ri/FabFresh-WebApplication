@@ -1,6 +1,6 @@
 <div id="place_order">
   <div  class="processing" >  
-     <div style="margin-left: 1%;"><h2 > PICKUP ADDRESS</h2></div>
+     <div style="margin-left: 1%;"><h4><b>PICKUP ADDRESS</b></h4></div>
        
        <div ng-repeat="x in data | startFrom:currentPage*1 | limitTo:1" >
 
@@ -18,18 +18,33 @@
              <button  ng-hide="currentPage == l-1" id="right_button" ng-disabled="currentPage >= l" ng-click="currentPage=currentPage+1"><b>>></b></button>
              <div >
               <form ng-submit="checkCouponValidity()">
-              <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                <input ng-model="coupon" class="mdl-textfield__input sel_type" type="text" id="sample3" required>
-                <label  class="mdl-textfield__label" for="sample3">Coupon </label><h4  class="sel_type">{{isvalid}}</h4>
-              </div>
+
+                <input ng-model="coupon" type="text" id="sample3" placeholder="APPLY COUPON"required>
+                <h4  class="sel_type">{{isvalid}}</h4>
+          
               <button  type="submit" id="apply">
               Apply
               </button>
+            </form>
+
+            <form ng-submit="placeOrderForm(currentPage)">
+                <textarea ng-model="special_ins" placeholder="Special Instructions"  type="text" rows= "2" cols= "27" id="sample5"></textarea>
+    
+                <button type="submit" id="btn4">PICKUP NOW</button>
             </form>
             </div>
 
  </div>
 </div>
 
-<div id="footer"><center>No.99,Koramangala Industrial Area,<br>5th Block,Banglore-95</center></div>
+<div id="footer"><center>No.99,Koramangala Industrial Area,<br>5th Block,Banglore-95</center>
+      <div class="fabfresh_image" > </div>
+       <div id="fl">
+        <a href="https://www.facebook.com/Fabfresh-960819563955636/?fref=ts" class="facebook"></a>
+       <a href="https://twitter.com/fabfreshin" class="twitter"></a>
+       <a href="https://www.instagram.com/fabfresh.in/" class="instagram" ></a>
+       <a href="https://www.linkedin.com/company/fabfresh" class="linkedin"></a>
 
+
+       </div>
+   </div>

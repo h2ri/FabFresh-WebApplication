@@ -2,15 +2,141 @@
     height: 100%;
     width: 100%;
     background-color: #E5E4E2;
-}
-#table01{
-    width: 40%;
-    height: 60%;
+    position: relative;
 }
 
-#td1{
-    padding-top: 5%;
+.processing {
+ position: fixed;
+ left: 50%;
+ top: 50%;
+ border: 1px solid #111; 
+ transform: translate(-50%, -50%);
+ width: 80%; 
+ height: 76%;
+ background-color: white ;
+ border-radius: 5px;
+
 }
+
+#table01{
+    width: 40%;
+    height: 20%;
+    left: 3%;
+    position: absolute;
+}
+
+#pl{
+    position: absolute;
+    margin-top: 167px;
+    left: 3%;
+}
+
+#st{
+   
+    background-color: gray;
+    width: 250px;
+    height: 2px;
+    margin-top: 225px;
+    left: 3%;
+    /*z-index:-1;*/
+    display: flex;
+    position: absolute;
+}
+
+#pick{
+    margin-top: -22px;
+    position: absolute;
+    border-radius: 30%;
+    width: 55px;
+    height: 55px;
+    border-color: white;
+    background: url("../images/sprite.png") -15px 188px;
+    
+   
+}
+
+#wash{
+    margin-top: -22px;
+    margin-left: 70px;
+    border-radius: 30%;
+    position: absolute;
+    width: 55px;
+    height: 55px;
+    border-color: white;
+    background: url("../images/sprite.png") -130px 188px;
+     
+   
+}
+#iron{
+     margin-top: -22px;
+    margin-left: 140px;
+    border-radius: 30%;
+    position: absolute;
+    width: 55px;
+    height: 55px;
+    border-color: white;
+    background: url("../images/sprite.png") -70px 188px;
+    
+   
+}
+#dl{
+    margin-top: -22px;
+    margin-left: 210px;
+    border-radius: 30%;
+    position: absolute;
+    width: 55px;
+    height: 55px;
+    border-color: white;
+    background: url("../images/sprite.png") -186px 188px;
+   
+}
+
+#pick2{
+    margin-top: -22px;
+    border-radius: 30%;
+    position: relative;
+    width: 55px;
+    height: 55px;
+    border-color: white;
+    background: url("../images/sprite.png") -254px 188px;
+       
+   
+}
+#wash2{
+    margin-top: -22px;
+    margin-left: 16px;
+    border-radius: 30%;
+    position: absolute;
+    width: 55px;
+    height: 55px;
+    border-color: white;
+    background: url("../images/sprite.png") -370px 188px;
+
+}
+#iron2{
+     margin-top: -22px;
+    margin-left: 84px;
+    border-radius: 30%;
+    position: absolute;
+    width: 55px;
+    height: 55px;
+    border-color: white;
+    background: url("../images/sprite.png") -310px 188px;
+
+}
+#dl2{
+    margin-top: -22px;
+    margin-left: 154px;
+    border-radius: 30%;
+    position: absolute;
+    width: 55px;
+    height: 55px;
+    border-color: white;
+    background: url("../images/sprite.png") -426px 188px;
+
+}
+
+
 
 span1 {
     color:#343434;
@@ -25,19 +151,20 @@ span1 {
 }
 #deliver_button_position{
     margin-top: 20px;
-    position: relative;
-    margin-left: 10%;
+    margin-left: 15px;
+    
+
 }
  #deliver_button{
  color:#000 ;
- background-color: #FF3366; 
- border-radius: 5px;
- position:relative;
- bottom: 45%;
- width: 30%;
- height: 13%;
+ background-color: #FF0066; 
+ position: absolute;
+ left: 3%;
+ color: white;
+ margin-top: 270px;
+ width: 250px;
+ border: none;
 }
-
 .track{
   font-size: 12px;
   letter-spacing: 2px;
@@ -54,48 +181,5 @@ span1 {
  position:relative;
  bottom: 45%;
 }
-#track_id {
-    font-weight: 200;
-    font-size: 15px;
-    color: #000;
-    margin-top: 1%;
-    margin-left: 10px;
-}
-.processing {
-	position: absolute;
- left: 50%;
- top: 50%;
- border: 1px solid #111; 
- transform: translate(-50%, -50%);
- width: 75%; 
- height: 75%;
- background-color: white ;
- border-radius: 5px;
-}
-hr { 
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    border-style: inset;
-    border-width: 5px;
-}
 
-hr.style-two {
-    border: 0;
-    height: 1px;
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
-}
 
-#track_details {
-    margin-left: 1%;
-    margin-top: 1px;
-}
-#footer{
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    background-color: black;
-    color:white;
-    height: 64px;
-
-}

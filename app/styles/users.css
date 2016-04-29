@@ -2,12 +2,15 @@
   position: fixed;
   height: 4%;
   width: 5%;
-  background-color: red;
+  background-color: #FF0066;
+  color: white;
+  border: none;
   right: 10%;
   top: 3%;
   text-align: center; 
   border-radius: 2px;
 }
+
 #get_app{
   position: fixed;
   right: 24%;
@@ -23,6 +26,72 @@
   width: 250px;
   background: url('../images/sprite.png') 380px 118px ;
 }
+
+#home_icon{
+  float:left;
+  height: 40px;
+  width: 50px;
+  background: url('/images/sprite1.png') 587px 100px ;
+}
+
+
+#home_div{
+  height: 10%;
+  width: 100%;
+}
+
+
+#home_icon:hover{
+  float:left;
+  height: 40px;
+  width: 50px;
+  background: url('/images/sprite1.png') 587px 50px ;
+}
+
+
+#track_icon{
+  float:left;
+  height: 40px;
+  width: 50px;
+  background: url('/images/sprite1.png') 537px 97px ;
+}
+
+
+#track_div{
+  height: 10%;
+  width: 100%;
+}
+
+
+#track_icon:hover{
+  float:left;
+  height: 40px;
+  width: 50px;
+  background: url('/images/sprite1.png') 537px 47px ;
+}
+
+
+#logout_icon{
+  float:left;
+  height: 40px;
+  width: 50px;
+  background: url('/images/sprite1.png') 147px 97px ;
+}
+
+
+#logout_div{
+  height: 10%;
+  width: 100%;
+}
+
+
+#logout_icon:hover{
+  float:left;
+  height: 40px;
+  width: 50px;
+  background: url('/images/sprite1.png') 147px 47px ;
+}
+
 
 #android_icon{
    position: fixed;

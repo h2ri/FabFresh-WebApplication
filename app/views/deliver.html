@@ -1,12 +1,12 @@
 <div id="deliver">
-  <div  id="deliver_box" >  
-     <div style="margin-left: 1%;"><h2 > PICKUP ADDRESS</h2></div>
+  <div  class='processing' >  
+     <div style="margin-left: 1%;"><h4><b> DELIVERY ADDRESS</b></h2></div>
        <div ng-repeat="x in data | startFrom:currentPage*1 | limitTo:1" >
 
-           <div id="address_box">
+           <div id="address_box1">
                  <tst>{{x.address}}</tst><br> 
            </div> 
-           <button id="add" ng-click="goToAddress()">
+           <button id="add1" ng-click="goToAddress()">
            <h2>+</h2> 
            <p>ADD NEW ADDRESS</p>
            </button>
@@ -17,18 +17,15 @@
              <button  ng-hide="currentPage == l-1" id="right_button" ng-disabled="currentPage >= l" ng-click="currentPage=currentPage+1"><b>>></b></button>
 
               <div id="dis">
-                <h3><b>Amount : </b>₹ {{order.amount}}</h3>
-                <h3><b>Amount After Discount : </b>₹ {{order.afterDiscount}}</h3>
+                <h4><b>Amount : </b>₹ {{order.amount}}</h4>
+                <h4><b>Amount After Discount : </b>₹ {{order.afterDiscount}}</h4>
               </div>
 
              <form ng-submit="applyCoupon()">
-            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="left: 2%;">
-
-                <input ng-model="coupon" class="mdl-textfield__input " type="text" id="sample10" required>
-                <label  class="mdl-textfield__label" for="sample10" >Coupon </label><b class="coupon_status">{{isvalid}}</b>
-              </div>
+                <input ng-model="coupon" placeholder="APPLY COUPON" type="text" id="sample7" required>
+                <h4  class="coupon_response">{{isvalid}}</h4>
              <!-- Flat button with ripple -->
-         <button  type="submit" id="dil_apply">Apply</button>
+         <button  type="submit" id="apply1">Apply</button>
       </form>
 
        <div>
@@ -38,5 +35,14 @@
 </div>
 </div>
 
-<div id="footer"><center>No.99,Koramangala Industrial Area,<br>5th Block,Banglore-95</center></div>
+<div id="footer"><center>No.99,Koramangala Industrial Area,<br>5th Block,Banglore-95</center>
+      <div class="fabfresh_image" > </div>
+       <div id="fl">
+        <a href="https://www.facebook.com/Fabfresh-960819563955636/?fref=ts" class="facebook"></a>
+       <a href="https://twitter.com/fabfreshin" class="twitter"></a>
+       <a href="https://www.instagram.com/fabfresh.in/" class="instagram" ></a>
+       <a href="https://www.linkedin.com/company/fabfresh" class="linkedin"></a>
 
+
+       </div>
+   </div>

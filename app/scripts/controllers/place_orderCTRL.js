@@ -46,8 +46,9 @@ routerApp
       })
     };
  
-  $scope.placeOrderForm = function() {
-     service.placeOrder($scope)
+  $scope.placeOrderForm = function(t) {
+    console.log($scope.data[t].id);
+     service.placeOrder($scope,$scope.data[t].id)
         .then(function(response){
           if(response.status=='Time Up'){
             alert("Order cannot be placed right now");
