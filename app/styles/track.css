@@ -17,6 +17,19 @@
  border-radius: 5px;
 
 }
+.processing1 {
+ position: fixed;
+ left: 50%;
+ top: 50%;
+ border: 1px solid #111; 
+ transform: translate(-50%, -50%);
+ width: 50%; 
+ height: 56%;
+ background-color: rgba(0,0,0,.23); ;
+ border-radius: 5px;
+ color: white;
+
+}
 
 #table01{
     width: 40%;
@@ -168,18 +181,14 @@ span1 {
 .track{
   font-size: 12px;
   letter-spacing: 2px;
-  text-transform: uppercase;
-  text-align: right;
-  padding-top: 15px;
-  margin-right: 10px;
-  border-radius: 10px;
+  text-align: left;
+  padding-top: 10px;
+  margin-left: 2%;
+
+
 }
-.track_button{
- color:#000 ;
- background-color: #fff; 
- border-radius: 10px;
- position:relative;
- bottom: 45%;
+.track_a{
+ color:#0086C5;
 }
 
 

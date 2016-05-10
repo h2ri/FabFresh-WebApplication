@@ -1,21 +1,32 @@
+<div class="jumbotron">
+    
+<div class="container" >
 <div class="orders" ng-repeat="x in data" >
         <div class="orders-header">
-            <text>{{x.id}}</text>
-            <hr class="style-two">
+            <br>
+            <text><b style="margin-left: 2%;">{{x.id}}</b> </text>
+            <span style="float: right; margin-right: 2%; ">{{x.status | uppercase}}</span>
+            <p id="time">{{x.created_at_time | date:"medium"}}</p>
+            
         </div>
 
   <div class="orders-body">
-    <div class="time">{{x.created_at_time | date:"HH:mm:ss, dd-MMM-yyyy"}}</div>
-    <div class="status">{{x.status | uppercase}}</div>
-    <div class="coupon">Coupon Code: {{x.coupon}}</div>
-    <div class="details"><span>Cloths Details</span></div>
-    <hr class="style-thr" width="50%">
+    
+    <!-- <div class="coupon">Coupon Code: {{x.coupon}}</div>
+    -->
     <div class="order_description">
-      
-            <li type="circle">Quantity: {{x.quantity}} ps<br></li>
-            <li type="circle">Weight: {{x.weight}} kg<br></li>
-            <li type="circle">Type: {{x.order_type}}<br></li>
+            <br>
+            <hr class="style-two">
+            <!-- <li type="none">Quantity: {{x.quantity}} ps<br></li> -->
+            <li type="none"><b>Cloths Details:</b></li>
+            <li type="none">Weight: {{x.weight}} kg<br></li>
+            <li type="none">Type: {{x.order_type}}<br></li>
     </div>
-    <div class="track"><button class="track_button" ng-click="track_order(x.id)">track order</button></div>
+    <div class="track"><a class="track_button" ng-click="track_order(x.id)">Track Order</a></div>
   </div>
 </div>        
+    
+</div>
+
+
+</div>

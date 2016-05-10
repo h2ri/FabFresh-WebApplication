@@ -261,19 +261,27 @@ div.social-wrap button {
     padding: 40px; 
     background-color: #FFF
 }
+.btntt{
+  position: absolute;
+   width: 175%;
+   background: #FF0066; 
+   border: none;
+   color: white;
+   left:7%; 
+   top: 80%;
+}
 
 #otp{
     border-radius: 10px;
     position: absolute;
     left: 50%;
     top: 45%;
-    box-shadow: 10px 10px 5px black;
     transform: translate(-50%, -50%);
-    width: 250px; 
-    height: 250px;
-    border: 1px solid #CCC; 
+    width: 40%; 
+    height: 30%;
     padding: 40px; 
-    background-color: #FFF
+    background-color: rgba(0,0,0,.23);
+    color: white;
 }
 
 
@@ -304,7 +312,11 @@ i {
 .input-group{
     width: 100%;
 }
-
+#chu{
+   color: white;
+   margin-left: 60%;
+   
+}
 .input-group input{
     display: inline; 
     width: 85%;  

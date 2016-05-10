@@ -8,6 +8,12 @@
   background-color: #F3E8E8;
 
 }
+
+#time{
+  font-size: 15px;
+  align:right;
+  float: right;
+}
 .details span{
     margin-top: -10px;
 }
@@ -37,12 +43,9 @@ hr {
 
 
 .orders {
-  width: 250px;
-  height: 400px;
-  background-color: white;
-  border-radius: 10px;
-  
-  box-shadow: 0 0 5px 3px rgba(0, 0, 0, 0.1), 2px 2px 8px rgba(0, 0, 0, 0.1);
+  width: 200px;
+  height: 300%;
+  background-color: #DDD;
   position: relative;
   float: left;
   margin-left: 33px;
@@ -70,14 +73,7 @@ hr {
     position: fixed;
     margin-bottom: 10px;
 }
-.orders .orders-body .time {
-  font-size: 12px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  text-align: right;
-  padding-top: 50px;
-  margin-right: 10px;
-}
+
 hr.style-two {
     border: 0;
     height: 1px;

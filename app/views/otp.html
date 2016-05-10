@@ -1,15 +1,42 @@
-<div id="otp" class="container">
+<!-- <div id="otp" class="container">
     {{$rootScope.user_status}}
-    <form class="awesome-form" ng-submit="submitForm()" name="myForm">
-        <div class="input-group">
-        <input id="email" type="text" name="otp" ng-pattern="/^[0-9]+$/" ng-model="otp" required>
-        <label for="email">Enter OTP</label>
-        <span ng-show="!myForm.otp.$error.required && !myForm.otp.$valid">OTP should be numeric</span>
-        </div>
+
+    <center><h3 style="color: white">ENTER OTP</h3></center>
+        
+            <form class="awesome-form" ng-submit="submitForm()" name="myForm">
+        <input  type="text" name="otp" style="color: white; background-color: transparent;width: 80%;float: left;" ng-pattern="/^[0-9]+$/" ng-model="otp" required placeholder="Enter Your Otp">
         <br><br>
-        <input id="input1" ng-disabled="!myForm.otp.$valid" type="submit" class="btn">
+        <input ng-disabled="!myForm.otp.$valid" type="submit" class="btn btn-danger">
     </form><br>
-    <a class="link_class" ng-click='otpResend()' class='btn'><span>Resend OTP</span></a>
+        
+   <a  id="chu"ng-click='otpResend()' >RESENT
+    </a>
 </div>
 
-<div ui-view></div>
+<div ui-view></div> -->
+
+
+<div class="container" id="otp" >
+        <center><h3 style="color: white">Enter Otp</h3></center>
+    
+        <div class="row" >
+            <div class="col-sm-6">
+            <form role="form" ng-submit="submitForm()">
+        <div class="form-group"  name="myform" >
+            <input style="background-color: transparent;width: 200%;" type="text"   placeholder="Enter Otp" ng-model="otp">
+        </div>
+                <input type="submit" value="Submit" class="btntt"></button>
+            </form>
+            </div>
+
+        <div class="col-sm-6">
+            <a  id="chu" ng-click="otpResend()">RESENT</a>
+        </div>
+
+
+
+             </div>
+    
+
+    
+</div>
