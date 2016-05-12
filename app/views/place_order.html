@@ -1,50 +1,56 @@
-<div id="place_order">
-  <div  class="processing" >  
+<div  class="jumbotron" style="width: 100%;height: 100vh">
+<div  class="container" >  
+<br>
      <div style="margin-left: 1%;"><h4><b>PICKUP ADDRESS</b></h4></div>
        
-       <div ng-repeat="x in data | startFrom:currentPage*1 | limitTo:1" >
+       <div class="row">
+       <div ng-repeat="x in data | startFrom:currentPage*1 | limitTo:1" class="col-sm-3">
 
            <div id="address_box">
-                 <tst>{{x.address}}</tst><br> 
+                 <p style="font-size: 14px; font-weight: bolder; font-family: 'Roboto ',sans-serif;">{{x.address}}</p><br> 
            </div> 
-           <button id="add" ng-click="goToAddress()">
-           <h2>+</h2> 
-           <p>ADD NEW ADDRESS</p>
-           </button>
+
        </div>
+
+         <div class="col-sm-4">
+            <button id="add" ng-click="goToAddress()">
+           <h2>+</h2> 
+           <p style=" font-family: 'Roboto ',sans-serif; font-size: 15px;">ADD NEW ADDRESS</p>
+           </button>
+         </div>
            
-             <button ng-hide="currentPage == 0" id="left_button" ng-disabled="currentPage == 0" ng-click="currentPage=currentPage-1"><b><<</b></button>
+           </div>
+           <br>
+            <div class="row" style="margin-left: 4%; ">
+            <div class="col-sm-1">
+              <button  id="left_button" ng-disabled="currentPage == 0" ng-click="currentPage=currentPage-1"><b><<</b></button>
+            </div>
+            <div class="col-sm-1">
+               <button   id="right_button" ng-disabled="currentPage >= l-1" ng-click="currentPage=currentPage+1"><b>>></b></button>
+            </div>
+              
+            </div>
+            <br>
 
-             <button  ng-hide="currentPage == l-1" id="right_button" ng-disabled="currentPage >= l" ng-click="currentPage=currentPage+1"><b>>></b></button>
-             <div >
-              <form ng-submit="checkCouponValidity()">
+            <form ng-submit="checkCouponValidity()">
 
-                <input ng-model="coupon" type="text" id="sample3" placeholder="APPLY COUPON"required>
-                <h4  class="sel_type">{{isvalid}}</h4>
+                <input ng-model="coupon" type="text" placeholder="APPLY COUPON" style="border-bottom: 1px solid rgba(0, 0, 0, 0.9); width: 20%;" required>
+                
           
               <button  type="submit" id="apply">
               Apply
               </button>
+              <h4  class="sel_type">{{isvalid}}</h4>
             </form>
-
+            <br>
             <form ng-submit="placeOrderForm(currentPage)">
-                <textarea ng-model="special_ins" placeholder="Special Instructions"  type="text" rows= "2" cols= "27" id="sample5"></textarea>
-    
+                <textarea ng-model="special_ins" placeholder="Special Instructions"  type="text" rows= "3" cols= "32" id="sample5"></textarea>
+              <br><br>
                 <button type="submit" id="btn4">PICKUP NOW</button>
             </form>
-            </div>
+           <br><br>
 
  </div>
+
 </div>
-
-<div id="footer"><center>No.99,Koramangala Industrial Area,<br>5th Block,Banglore-95</center>
-      <div class="fabfresh_image" > </div>
-       <div id="fl">
-        <a href="https://www.facebook.com/Fabfresh-960819563955636/?fref=ts" class="facebook"></a>
-       <a href="https://twitter.com/fabfreshin" class="twitter"></a>
-       <a href="https://www.instagram.com/fabfresh.in/" class="instagram" ></a>
-       <a href="https://www.linkedin.com/company/fabfresh" class="linkedin"></a>
-
-
-       </div>
-   </div>
+  

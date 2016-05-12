@@ -24,7 +24,7 @@ function initMap() {
       };
 
       infoWindow.setPosition(pos);
-      infoWindow.setContent("Your Current Location");
+      infoWindow.setContent("Current Location Now Drag   ");
       map.setCenter(pos);
     }, function() {
       handleLocationError(true, infoWindow, map.getCenter());
@@ -37,7 +37,7 @@ function initMap() {
 
   marker = new google.maps.Marker({
     map: map,
-    "icon": 'http://maps.google.com/mapfiles/kml/paddle/wht-stars.png',
+    "icon": 'http://maps.google.com/mapfiles/kml/paddle/red-stars.png',
     animation: google.maps.Animation.DROP,
    // position: {lat: 12.934170, lng: 77.615511}
   });

@@ -1,28 +1,21 @@
 <div class="jumbotron">
     
 <div class="container" >
-<div class="orders" ng-repeat="x in data" >
-        <div class="orders-header">
-            <br>
-            <text><b style="margin-left: 2%;">{{x.id}}</b> </text>
-            <span style="float: right; margin-right: 2%; ">{{x.status | uppercase}}</span>
-            <p id="time">{{x.created_at_time | date:"medium"}}</p>
-            
-        </div>
 
-  <div class="orders-body">
-    
-    <!-- <div class="coupon">Coupon Code: {{x.coupon}}</div>
-    -->
-    <div class="order_description">
-            <br>
+
+<div class="orders" ng-repeat="x in data" >
+        
+            <h3 style="margin-left: 3%;margin-top: 1%"><b>{{x.id}}</b></h3>
+            <h5 style="float: right; margin-right: 4%;margin-top: -8%; ">{{x.status | uppercase}}</h5>
+            <center style="font-size: 10px;">{{x.created_at_time | date:"medium"}}</center>
+            
             <hr class="style-two">
-            <!-- <li type="none">Quantity: {{x.quantity}} ps<br></li> -->
-            <li type="none"><b>Cloths Details:</b></li>
-            <li type="none">Weight: {{x.weight}} kg<br></li>
-            <li type="none">Type: {{x.order_type}}<br></li>
-    </div>
+            
+            <li type="none" style="color: rgba(0,0,0,.40);margin-top: -7%; margin-left: 3%">Cloths Details:</li>
+            <li type="none" style="font-size: 15px;margin-left: 3%">Weight: {{x.weight}} kg<br></li>
+            <li type="none" style="font-size: 15px;margin-left: 3%">Type: {{x.order_type}}<br></li>
     <div class="track"><a class="track_button" ng-click="track_order(x.id)">Track Order</a></div>
+    <br>
   </div>
 </div>        
     
