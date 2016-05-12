@@ -3,7 +3,7 @@
 routerApp
   .controller('otpCTRL', function($localStorage,$rootScope, $scope, $http, $state,$cookies,service) {
     $scope.user = [];
-    var URL = 'http://fabfresh-dev.elasticbeanstalk.com'
+    
     
         $scope.otpResend = function(){
             service.otpResend()

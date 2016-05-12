@@ -76,6 +76,21 @@ routerApp.config(function($stateProvider, $urlRouterProvider,$authProvider ) {
             controller: 'deliverCTRL',
         })
 
+         .state('terms', {
+            url: '/T&C',
+            templateUrl: '../views/terms.html',
+        })
+
+         .state('privacy', {
+            url: '/privay_policy',
+            templateUrl: '../views/privacy.html',
+        })
+
+         .state('price', {
+            url: '/Price_tags',
+            templateUrl: '../views/price.html',
+            controller: 'priceCTRL',
+        })
 
         //  .state('login_fb', {
         //     url: '/fb_login',

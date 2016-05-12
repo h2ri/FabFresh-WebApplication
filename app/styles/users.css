@@ -73,7 +73,83 @@
   background: url('/images/sprite1.png') 537px 47px ;
 }
 
+#price_icon{
+  float:left;
+  height: 40px;
+  width: 50px;
+  background: url('/images/sprite1.png') 490px 100px ;
+}
 
+
+#price_div{
+  height: 10%;
+  width: 100%;
+}
+
+
+#price_icon:hover{
+  float:left;
+  height: 40px;
+  width: 50px;
+  background: url('/images/sprite1.png') 490px 51px ;
+}
+
+
+#tc_icon{
+  float:left;
+  height: 40px;
+  width: 50px;
+  background: url('/images/sprite1.png') 300px 97px ;
+}
+
+
+#tc_div{
+  height: 10%;
+  width: 100%;
+}
+
+
+#tc_icon:hover{
+  float:left;
+  height: 40px;
+  width: 50px;
+  background: url('/images/sprite1.png') 300px 47px ;
+}
+
+.tc p{
+  color: #000;
+  font-weight: bolder;
+  font-family: 'Roboto',sans-serif;
+  padding: 5px;
+}
+
+#pp_icon{
+  float:left;
+  height: 40px;
+  width: 50px;
+  background: url('/images/sprite1.png') 250px 100px ;
+}
+
+
+#pp_div{
+  height: 10%;
+  width: 100%;
+}
+
+
+#pp_icon:hover{
+  float:left;
+  height: 40px;
+  width: 50px;
+  background: url('/images/sprite1.png') 250px 51px ;
+}
+
+.pp p{
+  color: #000;
+  font-weight: bolder;
+  font-family: 'Roboto',sans-serif;
+  padding: 5px;
+}
 #logout_icon{
   float:left;
   height: 40px;

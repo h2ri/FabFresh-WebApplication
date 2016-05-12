@@ -55,7 +55,7 @@ $scope.fb = function(){
     expireDate.setDate(expireDate.getDate() + 1);
     $scope.user = [];
     
-    var URL = 'http://fabfresh-dev.elasticbeanstalk.com';
+    
        $scope.submitForm = function() {
            $scope.$emit('LOAD');
         $scope.user = {

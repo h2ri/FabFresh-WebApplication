@@ -4,7 +4,7 @@
 routerApp
   .controller('reset_passwordCTRL', function($scope, $http) {
     $scope.user = [];
-    var URL = 'http://fabfresh-dev.elasticbeanstalk.com';
+    var URL = 'http://fabfresh.elasticbeanstalk.com';
     $scope.submitForm = function() {
       $scope.user = {
         "username": $scope.reset_password.email

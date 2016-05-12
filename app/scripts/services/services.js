@@ -1,7 +1,8 @@
 'use strict'
 
 angular.module('routerApp')
- .service('service',function service($http,$q,$rootScope,$cookies){ var URL = 'http://fabfresh-dev.elasticbeanstalk.com';
+ .service('service',function service($http,$q,$rootScope,$cookies){ 
+  var URL = 'http://fabfresh.elasticbeanstalk.com';
   var service = this;
       service.taskList = {};
 
@@ -20,6 +21,23 @@ angular.module('routerApp')
     })
 
    return defer.promise
+  };
+
+  service.getPrice= function(){
+    var price = $q.defer();
+    $http({
+     method  : 'GET',
+     url     : URL+'/cloth/type/ ',
+     headers : {'Authorization': 'Bearer '+$cookies.get('token')} 
+    })
+    .success(function(response){
+        price.resolve(response);
+    })
+    .error(function(error,status){
+      price.reject(error);
+    })
+
+   return price.promise
   };
 
 

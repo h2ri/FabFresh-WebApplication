@@ -1,0 +1,24 @@
+<div class="jumbotron" style="width: 100%;height: 100%;">
+	<div class="container">
+	<h1 style="font-family:'Roboto',sans-serif;font-weight: bolder;">Price Tags</h1>
+  <table class="table table-hover">
+    <thead>
+      <tr style="font-weight: bolder;font-family: 'Roboto',sans-serif;">
+        <th>CLOTH TYPE</th>
+        <th>WASH + IRON</th>
+        <th>WASH</th>
+        <th>IRON</th>
+      </tr>
+    </thead>
+    <tbody ng-repeat="x in data" id>
+      <tr style="font-family: 'Roboto',sans-serif;">
+        <td>{{x.type_name | uppercase}}</td>
+        <td>RS {{x.type_price_wash_and_iron}}</td>
+        <td>RS {{x.type_price_wash }}</td>
+        <td>RS {{x.type_price_iron }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</div>
+

@@ -5,7 +5,7 @@ routerApp
 
   .controller('trackCTRL', function(service,$state,$localStorage,$rootScope,$scope, $http, $cookies) {
     $scope.user = [];
-    var URL = 'http://fabfresh-dev.elasticbeanstalk.com';
+    var URL = 'http://fabfresh.elasticbeanstalk.com';
     if(angular.isUndefined($cookies.get('otp_flag'))){
         $state.go('login');
         return;

@@ -3,7 +3,6 @@
 routerApp
   .controller('sign_upCTRL', function($rootScope, $scope, $http, $state,service,$cookies,$localStorage){
     $scope.user = [];
-    var URL = 'http://fabfresh-dev.elasticbeanstalk.com'
     $scope.submitForm = function() {
        $scope.user = {
         "password": $scope.sign_up.password,
