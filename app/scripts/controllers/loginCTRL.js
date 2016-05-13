@@ -17,9 +17,8 @@ $scope.fb = function(){
 
    function testAPI() {
     console.log('Welcome!  Fetching your information.... ');
-    FB.api('/me',{fields:'first_name,last_name,email,phone'}, function(response) {
-      console.log('Successful login for: ' + response.first_name );
-      console.log(response.email);
+    FB.api('/me',{fields:'first_name,email'},function(response) {
+            console.log(JSON.stringify(response));
       
     });
   }
@@ -29,7 +28,7 @@ $scope.fb = function(){
                 console.log(response);
                 if (response.authResponse) {
                   var tkk = response.authResponse.accessToken;
-                  
+                  console.log(tkk);
                     testAPI();
                 } else {
                     console.log('User cancelled login or did not fully authorize.');
@@ -38,7 +37,10 @@ $scope.fb = function(){
                return_scopes: true,
               
              });
-        }
+            
+        };
+
+
 
 
 

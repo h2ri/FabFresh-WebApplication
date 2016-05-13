@@ -26,6 +26,12 @@ routerApp.config(function($stateProvider, $urlRouterProvider,$authProvider ) {
             controller: 'sign_upCTRL'
         })
 
+        .state('login_fb', {
+            url: '/fb_login',
+            templateUrl:'../views/loginfb.html',
+            controller: 'loginCTRL',
+        })
+
         .state('reset_password', {
             url: '/reset-password',
             templateUrl: '../views/reset_password.html',
@@ -92,11 +98,7 @@ routerApp.config(function($stateProvider, $urlRouterProvider,$authProvider ) {
             controller: 'priceCTRL',
         })
 
-        //  .state('login_fb', {
-        //     url: '/fb_login',
-        //     templateUrl:'../views/loginfb.html'
-        //     controller: 'login_fbCTRL',
-        // })
+         
 
          window.fbAsyncInit = function() {
     FB.init({

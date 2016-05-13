@@ -2,7 +2,7 @@
 
 angular.module('routerApp')
  .service('service',function service($http,$q,$rootScope,$cookies){ 
-  var URL = 'http://fabfresh.elasticbeanstalk.com';
+  var URL = 'http://fabfresh-dev.elasticbeanstalk.com';
   var service = this;
       service.taskList = {};
 
