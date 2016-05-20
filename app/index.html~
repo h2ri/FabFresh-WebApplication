@@ -48,8 +48,7 @@
           <header ng-show="otp_flag()" style=" background-color: #222;" class="mdl-layout__header">
             <div class="mdl-layout__header-row">
               <span class="mdl-layout-title"><div class = "fabfresh_icon"></div></span>
-              <div class="mdl-layout-spacer" style="margin-left:50%;"><div class="user_icon"></div></div><h5 style="margin-right: 15%;">{{getUsername()}}</h5>
-              <a  ui-sref="logout" style="margin-left:-7%; color:#ffffff;">LOGOUT</a>
+              <div class="mdl-layout-spacer" style="margin-left:58%;"><div class="user_icon"></div></div><h5 style="margin-right: 11%;">{{getUsername()}}</h5>
              
             </div>
           </header>
@@ -79,9 +78,9 @@
                 <a  class="mdl-navigation__link" onclick=autoclick() ui-sref="privacy"><div id="pp_icon"  ></div>   <p>Privacy Policy</p></a>
             </div>
 
-            <!-- <div id=logout_div>
+            <div id=logout_div>
                 <a  class="mdl-navigation__link" onclick=autoclick() ui-sref="logout"><div id="logout_icon"  ></div>   <p>Logout</p></a>
-            </div> -->
+            </div>
             </nav>
           </div>
 
@@ -97,8 +96,8 @@
           </main>
         </div>
 
-        <div ng-show="otp_flag()"  id="footer"><center>Copyright Reserved &copy;<br>Moonshot Technology Private Limited</center>
-    
+        <div ng-show="otp_flag()"  id="footer"><center>No.99,Koramangala Industrial Area,<br>5th Block,Banglore-95</center>
+          <div class="fabfresh_image" > </div>
            <div id="fl">
             <a href="https://www.facebook.com/Fabfresh-960819563955636/?fref=ts" class="facebook"></a>
            <a href="https://twitter.com/fabfreshin" class="twitter"></a>

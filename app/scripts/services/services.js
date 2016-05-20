@@ -2,7 +2,7 @@
 
 angular.module('routerApp')
  .service('service',function service($http,$q,$rootScope,$cookies){ 
-  var URL = 'http://fabfresh-dev.elasticbeanstalk.com';
+  var URL = 'http://fabfresh.elasticbeanstalk.com';
   var service = this;
       service.taskList = {};
 
@@ -95,8 +95,47 @@ angular.module('routerApp')
       defercv.reject(error);
     })
 
-    return defercv.promise
+    return defercv.promise;
   };
+
+
+  service.reset = function(x){
+    var reset = $q.defer();
+    $http({
+      method  : 'POST',
+      url     : URL+'/users/info/reset-password/',
+      data    : x,
+      headers : {'Content-Type': 'application/json'} 
+    })
+    .success(function(response){
+      reset.resolve(response);
+    })
+    .error(function(error,status){
+      reset.reject(error);
+    })
+
+    return reset.promise;
+  };
+
+
+  service.cancel = function(x){
+    var cancel = $q.defer();
+    $http({
+     method  : 'POST',
+     url     : URL+'/cancel/',
+     data : x,
+     headers : {'Authorization': 'Bearer '+$cookies.get('token'), 'Content-Type': 'application/json'} 
+    })
+    .success(function(response){
+      cancel.resolve(response);
+    })
+    .error(function(error,status){
+      cancel.reject(error);
+    })
+
+    return cancel.promise
+  };
+
 
   service.applyCoupon = function(x){
     var defercv = $q.defer();
@@ -119,9 +158,6 @@ angular.module('routerApp')
 
 
    service.placeOrder= function(x,addressId){
-      // console.log(x.addressId);
-      // console.log(x.type);
-      // console.log(x.special_ins);
 
        var deferpf = $q.defer();
       $http({

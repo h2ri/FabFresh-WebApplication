@@ -70,4 +70,18 @@ routerApp
         service.order=1;
         $state.go('track_order');
     };
+
+    $scope.cancel_order = function(id){
+      var cd = {
+        "id": id,
+      };
+
+      service.cancel(cd)
+        .then(function(data){
+          window.alert("order succesfully cancelled");
+          $state.reload();
+        },function(error){
+          alert("Some Error Occoured");
+        });
+    };
 });

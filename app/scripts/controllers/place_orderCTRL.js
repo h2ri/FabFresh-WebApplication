@@ -54,7 +54,10 @@ routerApp
             alert("Order cannot be placed right now");
           }
           else{
+            if(response.status == 'Success')
             alert("Order placed Successfully");
+            else
+            window.alert(response.status);
             $state.go("orders");
           }
           

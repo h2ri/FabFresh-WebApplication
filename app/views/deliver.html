@@ -32,8 +32,8 @@
             </div>
             <br>
        
-                <h4><b>Amount : </b>₹ {{order.amount}}</h4>
-                <h4><b>Amount After Discount : </b>₹ {{order.afterDiscount}}</h4>
+                <h4><b>Amount : </b>{{amount}}</h4>
+                <h4><b>Amount After Discount : </b>{{afterDiscount}}</h4>
                 <br>
              <form ng-submit="applyCoupon()">
                 <input style="border-bottom:1px solid  rgba(0,0,0,.9); width: 17%" ng-model="coupon" placeholder="APPLY COUPON" type="text"  required>

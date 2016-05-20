@@ -3,13 +3,11 @@
 <body>
 <div  id="login" class="container"> 
     <div id="point1"><center>LOGIN</center></div>
-    <hr style="margin: 10px 0 0 0"></hr>
-     <!-- <div id="point2"><center><button id="point3" ng-click="fb()">Connect With Facebook</button></center></ --><!-- div> -->
+    <hr style="margin: 10px 0 0 0"></hr><br><br>
 
-     <div class="social-wrap social-wrap2"><button id="facebook" ui-sref = "login_fb" ng-click="fb()" font-family: 'Roboto ',sans-serif;> Connect With Facebook</button></div> 
-     <p id='p1'>OR</p>
+     
 
-   <form class="awesome-form" ng-submit="submitForm()" name="myForm">
+   <form class="awesome-form" ng-submit="submitForm()" name="myForm" style=" height:48%;">
         	
         	<div class="input-group" >
             <i  class="material-icons">mail_outline</i>
@@ -28,20 +26,13 @@
         <input ng-disabled="!myForm.email.$valid || !myForm.password.$valid" type="submit" id='point4' value="LOGIN"></input>
         
     </form>
+    
+    <input type="button" value="SIGNUP"  ui-sref="sign_up" id="sign_btn"></input>
 
-    <div id="signup_to_login" >
-        <div style="width: 50%; float: left;margin-top:2%;">
-            <p  style="float:right; color: gary; font-family: 'Roboto ',sans-serif; font-size: 16px;" >New User?</p>
-        </div>
-        <div style="width:50%; float: right; margin-top:2%" >
-        <a ui-sref="sign_up" style="margin-left:10% ;color: #212121; ffont-family: 'Roboto ',sans-serif;font-weight: bold; font-size: 16px;">Sign Up</a></div> 
-        
-    </div>
-
+    <center style="padding:10px;"><a  ui-sref="reset_password">Forgot Password..?</a></center>
 </div>
 
 
-<!--<i class="loading" ng-show="loading"></i>-->
 <div class="loader" ng-show="loading">
     
   <div class="inner one"></div>

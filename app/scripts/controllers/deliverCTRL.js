@@ -19,6 +19,14 @@ routerApp
     service.getOrder($localStorage.order_id)
       .then(function(response){
           $scope.order=response;
+          if($scope.order.amount == null)
+            $scope.amount = "~";
+          else
+            $scope.amount= "Rs " +$scope.order.amount;
+          if($scope.order.afterDiscount == null)
+            $scope.afterDiscount = "~";
+          else
+            $scope.afterDiscount= "Rs " +$scope.order.afterDiscount;
       },function(error){
           alert("some error occured");
         })

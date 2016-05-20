@@ -4,7 +4,7 @@
 routerApp
     .controller('select_serviceCTRL', function($scope, $rootScope, $http,$state) {
         $scope.user = [];
-        var URL = 'http://fabfresh-dev.elasticbeanstalk.com'
+        var URL = 'http://fabfresh.elasticbeanstalk.com'
 	        $scope.type=0;
             $scope.goToPlaceOrder = function(x){
                 $rootScope.type=x;

@@ -10,12 +10,12 @@ var routerApp = angular.module('routerApp', [
  
 routerApp.config(function($stateProvider, $urlRouterProvider,$authProvider ) {
     
-    $urlRouterProvider.otherwise('/home');
+    $urlRouterProvider.otherwise('login');
 
     $stateProvider
         
         .state('login', {
-            url: '/#',
+            url: '/login',
             templateUrl: '../views/login.html',
             controller: 'loginCTRL',
         })
@@ -97,6 +97,7 @@ routerApp.config(function($stateProvider, $urlRouterProvider,$authProvider ) {
             templateUrl: '../views/price.html',
             controller: 'priceCTRL',
         })
+
 
          
 

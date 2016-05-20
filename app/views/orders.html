@@ -16,7 +16,7 @@
             <li type="none" style="font-size: 15px;margin-left: 3%">Weight: {{x.weight}} kg<br></li>
             <li type="none" style="font-size: 15px;margin-left: 3%">Type: {{x.order_type}}<br></li>
     <div class="track"><a class="track_button" ng-click="track_order(x.id)">Track Order</a></div>
-    <br>
+    <div class="cancel"><a ng-click="cancel_order(x.id)">Cancel Order</a></div>
   </div>
   <br>
 </div>        

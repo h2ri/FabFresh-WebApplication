@@ -62,7 +62,7 @@ tst{
   top:35%;
   height: 130px;
   width: 130px;
-  background: url('../images/sprite.png') 0px 320px ; 
+  background: url('../images/sprite.png') -120px 320px ; 
 }
 
 #select_service2{
@@ -72,7 +72,7 @@ tst{
   height: 130px;
   width: 130px;
   transform: translate(-50%);
-  background: url('../images/sprite.png') -120px 320px ; 
+  background: url('../images/sprite.png') 0px 320px ; 
 }
 
 #select_service3{

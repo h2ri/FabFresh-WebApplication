@@ -52,6 +52,18 @@ routerApp
           type1["12"] = 100;  
             
           $scope.data=data;
+          if($scope.data.amount == null)
+            $scope.amount = "~";
+          else
+            $scope.amount= "Rs " +$scope.data.amount;
+          if($scope.data.weight == null)
+            $scope.weight = "~";
+          else
+            $scope.weight= $scope.data.weight + " kg";
+          if($scope.data.quantity == null)
+            $scope.quantity = "~";
+          else
+            $scope.quantity= $scope.data.quantity;
           var Status;
           data.status=parseInt(data.status);
           switch (data.status) {

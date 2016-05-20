@@ -18,8 +18,8 @@ hr.style-two {
 
 
 .orders {
-  width: 20%;
-  height: 30%;
+  width: 300px;
+  height: 180px;
   background-color: #EEE;
   border-radius: 2px;
   border: 1px solid #CCC;
@@ -27,5 +27,14 @@ hr.style-two {
   float: left;
   margin-left: 4%;
   margin-top: 4%;
+}
+
+.cancel{
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-align: left;
+  padding-top: 10px;
+  margin-left: 3%;
+  font-family: 'Roboto ',sans-serif;
 }
 
